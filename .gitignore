@@ -1,0 +1,8 @@
+node_modules
+dist
+*.local
+*.pem
+package
+/axiscommunications-vaas-sdk-*.tgz
+*.orig
+generated
