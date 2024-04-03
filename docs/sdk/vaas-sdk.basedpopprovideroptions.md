@@ -14,7 +14,44 @@ interface BaseDPopProviderOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [keyPair](./vaas-sdk.basedpopprovideroptions.keypair.md) |  | CryptoKeyPair | A  to be used for DPoP proof generation. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[keyPair](./vaas-sdk.basedpopprovideroptions.keypair.md)
+
+
+</td><td>
+
+
+</td><td>
+
+CryptoKeyPair
+
+
+</td><td>
+
+A  to be used for DPoP proof generation.
+
+
+</td></tr>
+</tbody></table>

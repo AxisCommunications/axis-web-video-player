@@ -14,7 +14,34 @@ constructor(options: CustomDPopProviderOptions);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [CustomDPopProviderOptions](./vaas-sdk.customdpopprovideroptions.md) |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+options
+
+
+</td><td>
+
+[CustomDPopProviderOptions](./vaas-sdk.customdpopprovideroptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

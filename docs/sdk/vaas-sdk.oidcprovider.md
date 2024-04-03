@@ -15,19 +15,152 @@ declare class OidcProvider implements CredentialsProvider
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./vaas-sdk.oidcprovider._constructor_.md) |  | Constructs a new instance of the <code>OidcProvider</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(options)](./vaas-sdk.oidcprovider._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `OidcProvider` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [getAuth()](./vaas-sdk.oidcprovider.getauth.md) |  | Gets an access token. |
-|  [handleSignInCallback()](./vaas-sdk.oidcprovider.handlesignincallback.md) |  | Handle the sign in response (callback) from the OIDC provider. |
-|  [handleSignOutCallback()](./vaas-sdk.oidcprovider.handlesignoutcallback.md) |  | Handle the sign out response (callback) from the OIDC provider. |
-|  [isSignedIn()](./vaas-sdk.oidcprovider.issignedin.md) |  | If the user is signed in or not. |
-|  [signInPopup()](./vaas-sdk.oidcprovider.signinpopup.md) |  | Signs in the user using a popup window to the OIDC provider. |
-|  [signInRedirect()](./vaas-sdk.oidcprovider.signinredirect.md) |  | Signs in the user using a redirect in the browser to the OIDC provider. |
-|  [signOut()](./vaas-sdk.oidcprovider.signout.md) |  | Signs out the user. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[getAuth()](./vaas-sdk.oidcprovider.getauth.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Gets an access token.
+
+
+</td></tr>
+<tr><td>
+
+[handleSignInCallback()](./vaas-sdk.oidcprovider.handlesignincallback.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Handle the sign in response (callback) from the OIDC provider.
+
+
+</td></tr>
+<tr><td>
+
+[handleSignOutCallback()](./vaas-sdk.oidcprovider.handlesignoutcallback.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Handle the sign out response (callback) from the OIDC provider.
+
+
+</td></tr>
+<tr><td>
+
+[isSignedIn()](./vaas-sdk.oidcprovider.issignedin.md)
+
+
+</td><td>
+
+
+</td><td>
+
+If the user is signed in or not.
+
+
+</td></tr>
+<tr><td>
+
+[signInPopup()](./vaas-sdk.oidcprovider.signinpopup.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Signs in the user using a popup window to the OIDC provider.
+
+
+</td></tr>
+<tr><td>
+
+[signInRedirect()](./vaas-sdk.oidcprovider.signinredirect.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Signs in the user using a redirect in the browser to the OIDC provider.
+
+
+</td></tr>
+<tr><td>
+
+[signOut()](./vaas-sdk.oidcprovider.signout.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Signs out the user.
+
+
+</td></tr>
+</tbody></table>

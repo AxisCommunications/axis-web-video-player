@@ -14,12 +14,67 @@ protected createProofJwt(uri: string, method: string, token?: string): Promise<s
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  uri | string |  |
-|  method | string |  |
-|  token | string | _(Optional)_ |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+uri
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+method
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+token
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;string&gt;

@@ -14,7 +14,34 @@ constructor(options: WebRtcClientOptions);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [WebRtcClientOptions](./vaas-sdk.webrtcclientoptions.md) |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+options
+
+
+</td><td>
+
+[WebRtcClientOptions](./vaas-sdk.webrtcclientoptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

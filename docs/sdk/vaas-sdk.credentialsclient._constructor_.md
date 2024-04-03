@@ -14,7 +14,34 @@ constructor(clientOptions: CredentialsClientOptions);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  clientOptions | [CredentialsClientOptions](./vaas-sdk.credentialsclientoptions.md) |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+clientOptions
+
+
+</td><td>
+
+[CredentialsClientOptions](./vaas-sdk.credentialsclientoptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

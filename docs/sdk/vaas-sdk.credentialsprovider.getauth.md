@@ -14,11 +14,55 @@ getAuth(uri: string, method: string): Promise<GetAuthBearer | GetAuthDPoP>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  uri | string | matches the htu claim in DPoP. |
-|  method | string | matches the htm claim in DPoP. |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+uri
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+matches the htu claim in DPoP.
+
+
+</td></tr>
+<tr><td>
+
+method
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+matches the htm claim in DPoP.
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[GetAuthBearer](./vaas-sdk.getauthbearer.md) \| [GetAuthDPoP](./vaas-sdk.getauthdpop.md)<!-- -->&gt;

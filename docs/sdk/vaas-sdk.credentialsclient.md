@@ -14,13 +14,80 @@ declare abstract class CredentialsClient
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(clientOptions)](./vaas-sdk.credentialsclient._constructor_.md) |  | Constructs a new instance of the <code>CredentialsClient</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(clientOptions)](./vaas-sdk.credentialsclient._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `CredentialsClient` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [onTokenCallback](./vaas-sdk.credentialsclient.ontokencallback.md) | <code>protected</code> | (uri: string, method: string) =&gt; Promise&lt;WebRtcToken&gt; | Handles the token callback and returns the token type to be used in the request. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[onTokenCallback](./vaas-sdk.credentialsclient.ontokencallback.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+(uri: string, method: string) =&gt; Promise&lt;WebRtcToken&gt;
+
+
+</td><td>
+
+Handles the token callback and returns the token type to be used in the request.
+
+
+</td></tr>
+</tbody></table>

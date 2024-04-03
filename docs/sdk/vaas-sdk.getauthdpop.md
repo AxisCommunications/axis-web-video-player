@@ -14,9 +14,76 @@ interface GetAuthDPoP
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [boundToken](./vaas-sdk.getauthdpop.boundtoken.md) |  | string |  |
-|  [proof](./vaas-sdk.getauthdpop.proof.md) |  | string |  |
-|  [type](./vaas-sdk.getauthdpop.type.md) |  | "DPoP" |  |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[boundToken](./vaas-sdk.getauthdpop.boundtoken.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[proof](./vaas-sdk.getauthdpop.proof.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[type](./vaas-sdk.getauthdpop.type.md)
+
+
+</td><td>
+
+
+</td><td>
+
+"DPoP"
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

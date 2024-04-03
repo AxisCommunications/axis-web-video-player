@@ -14,7 +14,34 @@ constructor(options: BaseDPopProviderOptions);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [BaseDPopProviderOptions](./vaas-sdk.basedpopprovideroptions.md) |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+options
+
+
+</td><td>
+
+[BaseDPopProviderOptions](./vaas-sdk.basedpopprovideroptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

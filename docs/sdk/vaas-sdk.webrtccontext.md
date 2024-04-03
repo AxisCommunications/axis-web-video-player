@@ -14,16 +14,106 @@ declare class WebRtcContext
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(context)](./vaas-sdk.webrtccontext._constructor_.md) |  | Constructs a new instance of the <code>WebRtcContext</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(context)](./vaas-sdk.webrtccontext._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `WebRtcContext` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [disconnect()](./vaas-sdk.webrtccontext.disconnect.md) |  | Disconnects the context. |
-|  [getVolumeLevel()](./vaas-sdk.webrtccontext.getvolumelevel.md) |  |  |
-|  [setErrorCallback(cb)](./vaas-sdk.webrtccontext.seterrorcallback.md) |  |  |
-|  [setVolumeLevel(volume)](./vaas-sdk.webrtccontext.setvolumelevel.md) |  | Set volume of played audio. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[disconnect()](./vaas-sdk.webrtccontext.disconnect.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Disconnects the context.
+
+
+</td></tr>
+<tr><td>
+
+[getVolumeLevel()](./vaas-sdk.webrtccontext.getvolumelevel.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[setErrorCallback(cb)](./vaas-sdk.webrtccontext.seterrorcallback.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[setVolumeLevel(volume)](./vaas-sdk.webrtccontext.setvolumelevel.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Set volume of played audio.
+
+
+</td></tr>
+</tbody></table>

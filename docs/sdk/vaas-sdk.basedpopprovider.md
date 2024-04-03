@@ -15,24 +15,200 @@ declare abstract class BaseDPopProvider implements CredentialsProvider
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./vaas-sdk.basedpopprovider._constructor_.md) |  | Constructs a new instance of the <code>BaseDPopProvider</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(options)](./vaas-sdk.basedpopprovider._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `BaseDPopProvider` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [boundToken](./vaas-sdk.basedpopprovider.boundtoken.md) | <code>protected</code> | string \| undefined |  |
-|  [exp](./vaas-sdk.basedpopprovider.exp.md) | <code>protected</code> | number \| undefined |  |
-|  [options](./vaas-sdk.basedpopprovider.options.md) | <code>protected</code> | [BaseDPopProviderOptions](./vaas-sdk.basedpopprovideroptions.md) |  |
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[boundToken](./vaas-sdk.basedpopprovider.boundtoken.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+string \| undefined
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[exp](./vaas-sdk.basedpopprovider.exp.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+number \| undefined
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[options](./vaas-sdk.basedpopprovider.options.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+[BaseDPopProviderOptions](./vaas-sdk.basedpopprovideroptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [createProofJwt(uri, method, token)](./vaas-sdk.basedpopprovider.createproofjwt.md) | <code>protected</code> | Creates a DPoP Proof JWT. This needs to be created and sent for every request using DPoP authentication. |
-|  [generateKeyPair(alg)](./vaas-sdk.basedpopprovider.generatekeypair.md) | <code>static</code> | Generates a  for a given JWS <code>alg</code> Algorithm identifier. |
-|  [getAuth(uri, method)](./vaas-sdk.basedpopprovider.getauth.md) | <code>abstract</code> | Get bound token and proof for the request. |
-|  [isExpired()](./vaas-sdk.basedpopprovider.isexpired.md) | <code>protected</code> | Checks if the token is expired or about to expire. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[createProofJwt(uri, method, token)](./vaas-sdk.basedpopprovider.createproofjwt.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+Creates a DPoP Proof JWT. This needs to be created and sent for every request using DPoP authentication.
+
+
+</td></tr>
+<tr><td>
+
+[generateKeyPair(alg)](./vaas-sdk.basedpopprovider.generatekeypair.md)
+
+
+</td><td>
+
+`static`
+
+
+</td><td>
+
+Generates a  for a given JWS `alg` Algorithm identifier.
+
+
+</td></tr>
+<tr><td>
+
+[getAuth(uri, method)](./vaas-sdk.basedpopprovider.getauth.md)
+
+
+</td><td>
+
+`abstract`
+
+
+</td><td>
+
+Get bound token and proof for the request.
+
+
+</td></tr>
+<tr><td>
+
+[isExpired()](./vaas-sdk.basedpopprovider.isexpired.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+Checks if the token is expired or about to expire.
+
+
+</td></tr>
+</tbody></table>

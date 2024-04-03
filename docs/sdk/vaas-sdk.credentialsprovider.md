@@ -14,7 +14,26 @@ interface CredentialsProvider
 
 ## Methods
 
-|  Method | Description |
-|  --- | --- |
-|  [getAuth(uri, method)](./vaas-sdk.credentialsprovider.getauth.md) | Get authentication for the request. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[getAuth(uri, method)](./vaas-sdk.credentialsprovider.getauth.md)
+
+
+</td><td>
+
+Get authentication for the request.
+
+
+</td></tr>
+</tbody></table>

@@ -14,11 +14,120 @@ interface EdgeLiveStreamDetailsOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [audioReceive?](./vaas-sdk.edgelivestreamdetailsoptions.audioreceive.md) |  | boolean | _(Optional)_ Whether to include audio in the stream. |
-|  [channel?](./vaas-sdk.edgelivestreamdetailsoptions.channel.md) |  | number | _(Optional)_ The video channel to use. |
-|  [framerate](./vaas-sdk.edgelivestreamdetailsoptions.framerate.md) |  | number | Framerate of the video stream. |
-|  [height](./vaas-sdk.edgelivestreamdetailsoptions.height.md) |  | number | Height of the video stream. |
-|  [width](./vaas-sdk.edgelivestreamdetailsoptions.width.md) |  | number | Width of the video stream. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[audioReceive?](./vaas-sdk.edgelivestreamdetailsoptions.audioreceive.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+_(Optional)_ Whether to include audio in the stream.
+
+
+</td></tr>
+<tr><td>
+
+[channel?](./vaas-sdk.edgelivestreamdetailsoptions.channel.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+_(Optional)_ The video channel to use.
+
+
+</td></tr>
+<tr><td>
+
+[framerate](./vaas-sdk.edgelivestreamdetailsoptions.framerate.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Framerate of the video stream.
+
+
+</td></tr>
+<tr><td>
+
+[height](./vaas-sdk.edgelivestreamdetailsoptions.height.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Height of the video stream.
+
+
+</td></tr>
+<tr><td>
+
+[width](./vaas-sdk.edgelivestreamdetailsoptions.width.md)
+
+
+</td><td>
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Width of the video stream.
+
+
+</td></tr>
+</tbody></table>

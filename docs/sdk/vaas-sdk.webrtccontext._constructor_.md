@@ -14,7 +14,34 @@ constructor(context: WebRtcContext$1);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  context | WebRtcContext$1 |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+context
+
+
+</td><td>
+
+WebRtcContext$1
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

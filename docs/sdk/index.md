@@ -6,7 +6,24 @@
 
 ## Packages
 
-|  Package | Description |
-|  --- | --- |
-|  [@axiscommunications/vaas-sdk](./vaas-sdk.md) |  |
+<table><thead><tr><th>
 
+Package
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[@axiscommunications/vaas-sdk](./vaas-sdk.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

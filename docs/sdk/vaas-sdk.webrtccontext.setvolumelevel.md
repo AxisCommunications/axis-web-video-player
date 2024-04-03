@@ -14,10 +14,39 @@ setVolumeLevel(volume: number): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  volume | number | Volume as float between 0.0 and 1.0. |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+volume
+
+
+</td><td>
+
+number
+
+
+</td><td>
+
+Volume as float between 0.0 and 1.0.
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;void&gt;

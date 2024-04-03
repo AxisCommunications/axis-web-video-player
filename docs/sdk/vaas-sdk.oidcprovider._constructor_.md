@@ -14,7 +14,34 @@ constructor(options: OidcProviderOptions);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  options | [OidcProviderOptions](./vaas-sdk.oidcprovideroptions.md) |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+options
+
+
+</td><td>
+
+[OidcProviderOptions](./vaas-sdk.oidcprovideroptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

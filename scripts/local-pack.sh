@@ -1,7 +1,7 @@
 #!/bin/bash
 root_path=$(git rev-parse --show-toplevel)
 
-cd "$root_path" || exit
+cd "$root_path/sdk" || exit
 
 npm ci
 

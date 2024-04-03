@@ -15,13 +15,68 @@ declare class WebRtcClient extends CredentialsClient
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./vaas-sdk.webrtcclient._constructor_.md) |  | Constructs a new instance of the <code>WebRtcClient</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(options)](./vaas-sdk.webrtcclient._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `WebRtcClient` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [startLiveStream({ streamDetails, videoElement, })](./vaas-sdk.webrtcclient.startlivestream.md) |  | Starts a live stream using WebRTC. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[startLiveStream({ streamDetails, videoElement, })](./vaas-sdk.webrtcclient.startlivestream.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Starts a live stream using WebRTC.
+
+
+</td></tr>
+</tbody></table>

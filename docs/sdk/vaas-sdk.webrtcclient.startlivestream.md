@@ -14,10 +14,37 @@ startLiveStream({ streamDetails, videoElement, }: LiveStreamOptions): Promise<We
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  { streamDetails, videoElement, } | [LiveStreamOptions](./vaas-sdk.livestreamoptions.md) |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+{ streamDetails, videoElement, }
+
+
+</td><td>
+
+[LiveStreamOptions](./vaas-sdk.livestreamoptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;[WebRtcLiveStreamContext](./vaas-sdk.webrtclivestreamcontext.md)<!-- -->&gt;

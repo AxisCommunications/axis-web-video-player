@@ -12,10 +12,39 @@ setErrorCallback(cb: ErrorCallback): void;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  cb | ErrorCallback | The callback to be called when an error occurs. |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+cb
+
+
+</td><td>
+
+ErrorCallback
+
+
+</td><td>
+
+The callback to be called when an error occurs.
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 void

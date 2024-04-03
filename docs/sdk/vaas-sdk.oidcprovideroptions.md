@@ -14,10 +14,101 @@ interface OidcProviderOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [clientId](./vaas-sdk.oidcprovideroptions.clientid.md) |  | string | The client identifier as registered with the OIDC. |
-|  [endpoint](./vaas-sdk.oidcprovideroptions.endpoint.md) |  | string | The URL of the OIDC provider. |
-|  [redirectUri](./vaas-sdk.oidcprovideroptions.redirecturi.md) |  | string | The redirect URI of the client to receive a sign in response from the OIDC provider. |
-|  [signOutRedirectUri?](./vaas-sdk.oidcprovideroptions.signoutredirecturi.md) |  | string | _(Optional)_ The redirect URI of the client to receive a sign out response from the OIDC provider. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[clientId](./vaas-sdk.oidcprovideroptions.clientid.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The client identifier as registered with the OIDC.
+
+
+</td></tr>
+<tr><td>
+
+[endpoint](./vaas-sdk.oidcprovideroptions.endpoint.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The URL of the OIDC provider.
+
+
+</td></tr>
+<tr><td>
+
+[redirectUri](./vaas-sdk.oidcprovideroptions.redirecturi.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The redirect URI of the client to receive a sign in response from the OIDC provider.
+
+
+</td></tr>
+<tr><td>
+
+[signOutRedirectUri?](./vaas-sdk.oidcprovideroptions.signoutredirecturi.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+_(Optional)_ The redirect URI of the client to receive a sign out response from the OIDC provider.
+
+
+</td></tr>
+</tbody></table>

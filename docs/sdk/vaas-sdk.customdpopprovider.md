@@ -15,19 +15,110 @@ declare class CustomDPopProvider extends BaseDPopProvider
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./vaas-sdk.customdpopprovider._constructor_.md) |  | Constructs a new instance of the <code>CustomDPopProvider</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(options)](./vaas-sdk.customdpopprovider._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `CustomDPopProvider` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [options](./vaas-sdk.customdpopprovider.options.md) | <code>protected</code> | [CustomDPopProviderOptions](./vaas-sdk.customdpopprovideroptions.md) |  |
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[options](./vaas-sdk.customdpopprovider.options.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+[CustomDPopProviderOptions](./vaas-sdk.customdpopprovideroptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [getAuth(uri, method)](./vaas-sdk.customdpopprovider.getauth.md) |  |  |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[getAuth(uri, method)](./vaas-sdk.customdpopprovider.getauth.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

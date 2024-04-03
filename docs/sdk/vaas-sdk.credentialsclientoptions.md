@@ -14,7 +14,42 @@ interface CredentialsClientOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [credentialsProvider](./vaas-sdk.credentialsclientoptions.credentialsprovider.md) |  | [CredentialsProvider](./vaas-sdk.credentialsprovider.md) |  |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[credentialsProvider](./vaas-sdk.credentialsclientoptions.credentialsprovider.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[CredentialsProvider](./vaas-sdk.credentialsprovider.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

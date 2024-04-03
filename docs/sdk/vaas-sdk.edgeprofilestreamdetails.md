@@ -15,13 +15,78 @@ declare class EdgeProfileStreamDetails implements StreamDetails
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(options)](./vaas-sdk.edgeprofilestreamdetails._constructor_.md) |  | Constructs a new instance of the <code>EdgeProfileStreamDetails</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(options)](./vaas-sdk.edgeprofilestreamdetails._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `EdgeProfileStreamDetails` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [withAudio](./vaas-sdk.edgeprofilestreamdetails.withaudio.md) | <code>readonly</code> | boolean |  |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[withAudio](./vaas-sdk.edgeprofilestreamdetails.withaudio.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

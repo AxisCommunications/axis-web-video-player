@@ -15,8 +15,63 @@ interface WebRtcClientOptions extends CredentialsClientOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [orgId](./vaas-sdk.webrtcclientoptions.orgid.md) |  | string | The organization id that the target belongs to. |
-|  [targetId](./vaas-sdk.webrtcclientoptions.targetid.md) |  | string | Id of the target to connect to. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[orgId](./vaas-sdk.webrtcclientoptions.orgid.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The organization id that the target belongs to.
+
+
+</td></tr>
+<tr><td>
+
+[targetId](./vaas-sdk.webrtcclientoptions.targetid.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Id of the target to connect to.
+
+
+</td></tr>
+</tbody></table>

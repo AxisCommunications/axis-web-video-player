@@ -6,42 +6,291 @@
 
 ## Classes
 
-|  Class | Description |
-|  --- | --- |
-|  [CustomDPopProvider](./vaas-sdk.customdpopprovider.md) | A DPoP credentials provider that uses a callback to get the bound token. |
-|  [EdgeLiveStreamDetails](./vaas-sdk.edgelivestreamdetails.md) | Set stream details such as resolution and framerate for an edge live stream. |
-|  [EdgeProfileStreamDetails](./vaas-sdk.edgeprofilestreamdetails.md) | Use a named stream profile. A stream profile contains a collection of parameters such as video codecs, resolutions, frame rates and compressions. |
-|  [OidcProvider](./vaas-sdk.oidcprovider.md) | A credentials provider that uses the OpenID Connect protocol to authenticate users. |
-|  [WebRtcClient](./vaas-sdk.webrtcclient.md) | Client that handles WebRTC communication with a specific target. |
-|  [WebRtcContext](./vaas-sdk.webrtccontext.md) | Context for a WebRTC communication. |
-|  [WebRtcLiveStreamContext](./vaas-sdk.webrtclivestreamcontext.md) | Context for a live stream WebRTC communication. |
+<table><thead><tr><th>
+
+Class
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[CustomDPopProvider](./vaas-sdk.customdpopprovider.md)
+
+
+</td><td>
+
+A DPoP credentials provider that uses a callback to get the bound token.
+
+
+</td></tr>
+<tr><td>
+
+[EdgeLiveStreamDetails](./vaas-sdk.edgelivestreamdetails.md)
+
+
+</td><td>
+
+Set stream details such as resolution and framerate for an edge live stream.
+
+
+</td></tr>
+<tr><td>
+
+[EdgeProfileStreamDetails](./vaas-sdk.edgeprofilestreamdetails.md)
+
+
+</td><td>
+
+Use a named stream profile. A stream profile contains a collection of parameters such as video codecs, resolutions, frame rates and compressions.
+
+
+</td></tr>
+<tr><td>
+
+[OidcProvider](./vaas-sdk.oidcprovider.md)
+
+
+</td><td>
+
+A credentials provider that uses the OpenID Connect protocol to authenticate users.
+
+
+</td></tr>
+<tr><td>
+
+[WebRtcClient](./vaas-sdk.webrtcclient.md)
+
+
+</td><td>
+
+Client that handles WebRTC communication with a specific target.
+
+
+</td></tr>
+<tr><td>
+
+[WebRtcContext](./vaas-sdk.webrtccontext.md)
+
+
+</td><td>
+
+Context for a WebRTC communication.
+
+
+</td></tr>
+<tr><td>
+
+[WebRtcLiveStreamContext](./vaas-sdk.webrtclivestreamcontext.md)
+
+
+</td><td>
+
+Context for a live stream WebRTC communication.
+
+
+</td></tr>
+</tbody></table>
 
 ## Abstract Classes
 
-|  Abstract Class | Description |
-|  --- | --- |
-|  [BaseDPopProvider](./vaas-sdk.basedpopprovider.md) | An abstract base class for DPoP providers. |
-|  [CredentialsClient](./vaas-sdk.credentialsclient.md) | Abstract class that handle communication with the credentials provider. |
+<table><thead><tr><th>
+
+Abstract Class
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[BaseDPopProvider](./vaas-sdk.basedpopprovider.md)
+
+
+</td><td>
+
+An abstract base class for DPoP providers.
+
+
+</td></tr>
+<tr><td>
+
+[CredentialsClient](./vaas-sdk.credentialsclient.md)
+
+
+</td><td>
+
+Abstract class that handle communication with the credentials provider.
+
+
+</td></tr>
+</tbody></table>
 
 ## Interfaces
 
-|  Interface | Description |
-|  --- | --- |
-|  [BaseDPopProviderOptions](./vaas-sdk.basedpopprovideroptions.md) | Options for the base DPoP provider. |
-|  [CredentialsClientOptions](./vaas-sdk.credentialsclientoptions.md) | Options for the credentials client. |
-|  [CredentialsProvider](./vaas-sdk.credentialsprovider.md) | A credentials provider that provides authentication for requests. |
-|  [CustomDPopProviderOptions](./vaas-sdk.customdpopprovideroptions.md) | Options for the custom DPoP provider. |
-|  [EdgeLiveStreamDetailsOptions](./vaas-sdk.edgelivestreamdetailsoptions.md) | Options for the EdgeLiveStreamDetails instance. |
-|  [EdgeProfileStreamDetailsOptions](./vaas-sdk.edgeprofilestreamdetailsoptions.md) | Options for the EdgeLiveStreamDetails instance. |
-|  [GetAuthBearer](./vaas-sdk.getauthbearer.md) | Authentication response using a bearer token. |
-|  [GetAuthDPoP](./vaas-sdk.getauthdpop.md) | Authentication response using DPoP bound token. |
-|  [LiveStreamOptions](./vaas-sdk.livestreamoptions.md) | Options for starting a live stream. |
-|  [OidcProviderOptions](./vaas-sdk.oidcprovideroptions.md) | Options for the OIDC provider. |
-|  [WebRtcClientOptions](./vaas-sdk.webrtcclientoptions.md) | Options for the WebRtcClient. |
+<table><thead><tr><th>
+
+Interface
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[BaseDPopProviderOptions](./vaas-sdk.basedpopprovideroptions.md)
+
+
+</td><td>
+
+Options for the base DPoP provider.
+
+
+</td></tr>
+<tr><td>
+
+[CredentialsClientOptions](./vaas-sdk.credentialsclientoptions.md)
+
+
+</td><td>
+
+Options for the credentials client.
+
+
+</td></tr>
+<tr><td>
+
+[CredentialsProvider](./vaas-sdk.credentialsprovider.md)
+
+
+</td><td>
+
+A credentials provider that provides authentication for requests.
+
+
+</td></tr>
+<tr><td>
+
+[CustomDPopProviderOptions](./vaas-sdk.customdpopprovideroptions.md)
+
+
+</td><td>
+
+Options for the custom DPoP provider.
+
+
+</td></tr>
+<tr><td>
+
+[EdgeLiveStreamDetailsOptions](./vaas-sdk.edgelivestreamdetailsoptions.md)
+
+
+</td><td>
+
+Options for the EdgeLiveStreamDetails instance.
+
+
+</td></tr>
+<tr><td>
+
+[EdgeProfileStreamDetailsOptions](./vaas-sdk.edgeprofilestreamdetailsoptions.md)
+
+
+</td><td>
+
+Options for the EdgeLiveStreamDetails instance.
+
+
+</td></tr>
+<tr><td>
+
+[GetAuthBearer](./vaas-sdk.getauthbearer.md)
+
+
+</td><td>
+
+Authentication response using a bearer token.
+
+
+</td></tr>
+<tr><td>
+
+[GetAuthDPoP](./vaas-sdk.getauthdpop.md)
+
+
+</td><td>
+
+Authentication response using DPoP bound token.
+
+
+</td></tr>
+<tr><td>
+
+[LiveStreamOptions](./vaas-sdk.livestreamoptions.md)
+
+
+</td><td>
+
+Options for starting a live stream.
+
+
+</td></tr>
+<tr><td>
+
+[OidcProviderOptions](./vaas-sdk.oidcprovideroptions.md)
+
+
+</td><td>
+
+Options for the OIDC provider.
+
+
+</td></tr>
+<tr><td>
+
+[WebRtcClientOptions](./vaas-sdk.webrtcclientoptions.md)
+
+
+</td><td>
+
+Options for the WebRtcClient.
+
+
+</td></tr>
+</tbody></table>
 
 ## Variables
 
-|  Variable | Description |
-|  --- | --- |
-|  [config](./vaas-sdk.config.md) | The configuration instance. This should only be used if other then the default values is needed. |
+<table><thead><tr><th>
 
+Variable
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[config](./vaas-sdk.config.md)
+
+
+</td><td>
+
+The configuration instance. This should only be used if other then the default values is needed.
+
+
+</td></tr>
+</tbody></table>

@@ -15,8 +15,63 @@ interface CustomDPopProviderOptions extends BaseDPopProviderOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [onGetBoundToken](./vaas-sdk.customdpopprovideroptions.ongetboundtoken.md) |  | (proof: string, resource: string) =&gt; Promise&lt;string&gt; | Callback function to get the bound token. |
-|  [resource](./vaas-sdk.customdpopprovideroptions.resource.md) |  | string | Resource identifier used in the <code>onGetBoundToken</code> callback. Should be used as an identifier for which resource and scope that needs a bound token. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[onGetBoundToken](./vaas-sdk.customdpopprovideroptions.ongetboundtoken.md)
+
+
+</td><td>
+
+
+</td><td>
+
+(proof: string, resource: string) =&gt; Promise&lt;string&gt;
+
+
+</td><td>
+
+Callback function to get the bound token.
+
+
+</td></tr>
+<tr><td>
+
+[resource](./vaas-sdk.customdpopprovideroptions.resource.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+Resource identifier used in the `onGetBoundToken` callback. Should be used as an identifier for which resource and scope that needs a bound token.
+
+
+</td></tr>
+</tbody></table>

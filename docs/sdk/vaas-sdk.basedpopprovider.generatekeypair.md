@@ -14,10 +14,39 @@ static generateKeyPair(alg?: JwsAlgorithm): Promise<CryptoKeyPair>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  alg | JwsAlgorithm | _(Optional)_ Supported JWS <code>alg</code> Algorithm identifier. Defaults to <code>ES256</code>. |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+alg
+
+
+</td><td>
+
+JwsAlgorithm
+
+
+</td><td>
+
+_(Optional)_ Supported JWS `alg` Algorithm identifier. Defaults to `ES256`<!-- -->.
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;CryptoKeyPair&gt;

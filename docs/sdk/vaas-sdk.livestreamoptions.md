@@ -14,8 +14,63 @@ interface LiveStreamOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [streamDetails](./vaas-sdk.livestreamoptions.streamdetails.md) |  | StreamDetails | Details for the stream. |
-|  [videoElement](./vaas-sdk.livestreamoptions.videoelement.md) |  | HTMLElement | Container element for the video. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[streamDetails](./vaas-sdk.livestreamoptions.streamdetails.md)
+
+
+</td><td>
+
+
+</td><td>
+
+StreamDetails
+
+
+</td><td>
+
+Details for the stream.
+
+
+</td></tr>
+<tr><td>
+
+[videoElement](./vaas-sdk.livestreamoptions.videoelement.md)
+
+
+</td><td>
+
+
+</td><td>
+
+HTMLElement
+
+
+</td><td>
+
+Container element for the video.
+
+
+</td></tr>
+</tbody></table>

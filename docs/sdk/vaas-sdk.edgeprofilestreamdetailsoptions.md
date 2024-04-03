@@ -14,8 +14,63 @@ interface EdgeProfileStreamDetailsOptions
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [audioReceive?](./vaas-sdk.edgeprofilestreamdetailsoptions.audioreceive.md) |  | boolean | _(Optional)_ Whether to include audio in the stream. |
-|  [streamProfile](./vaas-sdk.edgeprofilestreamdetailsoptions.streamprofile.md) |  | string | The profile to use for the stream. |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[audioReceive?](./vaas-sdk.edgeprofilestreamdetailsoptions.audioreceive.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+_(Optional)_ Whether to include audio in the stream.
+
+
+</td></tr>
+<tr><td>
+
+[streamProfile](./vaas-sdk.edgeprofilestreamdetailsoptions.streamprofile.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The profile to use for the stream.
+
+
+</td></tr>
+</tbody></table>

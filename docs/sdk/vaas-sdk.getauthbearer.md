@@ -14,8 +14,59 @@ interface GetAuthBearer
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [accessToken](./vaas-sdk.getauthbearer.accesstoken.md) |  | string |  |
-|  [type](./vaas-sdk.getauthbearer.type.md) |  | "Bearer" |  |
+<table><thead><tr><th>
 
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[accessToken](./vaas-sdk.getauthbearer.accesstoken.md)
+
+
+</td><td>
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[type](./vaas-sdk.getauthbearer.type.md)
+
+
+</td><td>
+
+
+</td><td>
+
+"Bearer"
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
