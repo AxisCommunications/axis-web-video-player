@@ -6,7 +6,7 @@ The following examples shows how to use the Axis VaaS SDK to live stream video f
 
 ### Using OpenID Connect (OIDC)
 
-An example how to use the SDK together with [OIDC](https://openid.net/developers/discover-openid-and-openid-connect/) with a sign in popup. After the user has signed in the live stream will start at the specified `videoElement` sent in the `startLiveStream` options.
+An example how to use the SDK together with [Authorization Code Flow with Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce) with a sign in popup. After the user has signed in the live stream will start at the specified `videoElement` sent in the `startLiveStream` options.
 
 ```ts
 import { OidcProvider, WebRtcClient, EdgeLiveStreamDetails } from "@axiscommunications/vaas-sdk";
