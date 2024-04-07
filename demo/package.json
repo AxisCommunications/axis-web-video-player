@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@types/express": "4.17.21",
-    "@types/node": "20.12.3",
-    "tsx": "4.7.1",
-    "vite": "5.2.7",
+    "@types/node": "20.12.5",
+    "tsx": "4.7.2",
+    "vite": "5.2.8",
     "vite-plugin-wasm": "3.3.0"
   },
   "dependencies": {
