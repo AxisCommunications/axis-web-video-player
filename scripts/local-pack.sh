@@ -26,7 +26,11 @@ cp docs/code-examples.md ./package/docs
 mkdir ./package/docs/dpop
 cp -r docs/sdk ./package/docs/sdk
 
-sed -i '' '/@lkp-rnd\/webrtcvideo/d' ./package/package.json
+# This is a two stage operation as -i without extension only works with GNU sed
+# while -i '' which is the BSD equivalent does not work on Linux on the other hand
+# Thus -i with an extension is the only portable way to do inplace replace
+sed -i.bak '/@lkp-rnd\/webrtcvideo/d' ./package/package.json
+rm ./package/package.json.bak
 
 version=$(jq -r '.version' package.json)
 
