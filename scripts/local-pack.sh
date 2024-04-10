@@ -24,10 +24,9 @@ cp package.json ./package
 mkdir ./package/docs
 cp docs/code-examples.md ./package/docs
 mkdir ./package/docs/dpop
-cp docs/dpop/customDPoP.jpg ./package/docs/dpop
 cp -r docs/sdk ./package/docs/sdk
 
-sed -i '/@lkp-rnd\/webrtcvideo/d' ./package/package.json
+sed -i '' '/@lkp-rnd\/webrtcvideo/d' ./package/package.json
 
 version=$(jq -r '.version' package.json)
 
