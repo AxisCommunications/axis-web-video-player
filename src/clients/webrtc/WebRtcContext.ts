@@ -31,6 +31,8 @@ export class WebRtcContext {
 
 	/**
 	 * Set volume of played audio.
+	 *
+	 * Note: This does not affect the mute setting
 	 * @param volume Volume as float between 0.0 and 1.0.
 	 */
 	setVolumeLevel(volume: number): Promise<void> {
@@ -42,5 +44,20 @@ export class WebRtcContext {
 	 */
 	getVolumeLevel(): Promise<number> {
 		return this.context.getVolumeLevel();
+	}
+
+	/**
+	 * Set the mute state of incoming audio (from the remote device).
+	 * @param state true for muted, false for unmuted.
+	 */
+	setMutedState(state: boolean): Promise<void> {
+		return this.context.setMuted(state);
+	}
+
+	/**
+	 * @returns Returns the current mute state, true for muted, false for unmuted.
+	 */
+	getMuteState(): Promise<boolean> {
+		return this.context.getMuted();
 	}
 }
