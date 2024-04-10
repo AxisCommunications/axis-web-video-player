@@ -50,7 +50,7 @@ export class WebRtcContext {
 	 * Set the mute state of incoming audio (from the remote device).
 	 * @param state true for muted, false for unmuted.
 	 */
-	setMutedState(state: boolean): Promise<void> {
+	setMuteState(state: boolean): Promise<void> {
 		return this.context.setMuted(state);
 	}
 
