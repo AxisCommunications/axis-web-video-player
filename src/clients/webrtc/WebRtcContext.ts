@@ -1,4 +1,4 @@
-import type { WebRtcContext as LkpWebRtcContext, ErrorCallback } from "@lkp-rnd/webrtcvideo";
+import type { WebRtcContext as LkpWebRtcContext, ErrorCallback } from "@axteams-one/webrtcvideo";
 import { SignalingClient } from "../signaling";
 
 /**
