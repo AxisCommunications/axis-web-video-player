@@ -54,6 +54,8 @@ export class WebRtcClient extends CredentialsClient {
 	/**
 	 * Starts a live stream using WebRTC.
 	 *
+	 * Note: If audio is requested it will start playback with mute=true and volume=0.0
+	 *
 	 * @returns The context for the live stream.
 	 */
 	async startLiveStream({
