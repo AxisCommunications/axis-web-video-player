@@ -30,7 +30,7 @@
     "typescript": "5.4.4"
   },
   "dependencies": {
-    "@lkp-rnd/webrtcvideo": "0.15.1",
+    "@axteams-one/webrtcvideo": "0.17.1",
     "dpop": "1.4.0",
     "jwt-decode": "4.0.0",
     "lodash.merge": "4.6.2",
