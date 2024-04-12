@@ -4,10 +4,10 @@ import { OidcProvider } from "@axiscommunications/vaas-sdk";
 
 export async function startOidc() {
 	const oidcProvider = new OidcProvider({
-		clientId: import.meta.env.VITE_OAUTH2_CLIENT_ID,
-		endpoint: import.meta.env.VITE_OAUTH2_ENDPOINT,
-		redirectUri: import.meta.env.VITE_OAUTH2_REDIRECT_URI,
-		signOutRedirectUri: import.meta.env.VITE_OAUTH2_SIGNOUT_REDIRECT_URI,
+		clientId: import.meta.env.VITE_OIDC_CLIENT_ID,
+		endpoint: import.meta.env.VITE_OIDC_ENDPOINT,
+		redirectUri: import.meta.env.VITE_OIDC_REDIRECT_URI,
+		signOutRedirectUri: import.meta.env.VITE_OIDC_SIGNOUT_REDIRECT_URI,
 	});
 
 	if (window.location.pathname === "/login-callback") {

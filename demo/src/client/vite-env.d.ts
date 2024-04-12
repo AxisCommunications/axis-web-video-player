@@ -2,9 +2,9 @@
 
 interface ImportMetaEnv {
 	readonly VITE_AUTH: "DPOP" | "OIDC";
-	readonly VITE_OAUTH2_CLIENT_ID: string;
-	readonly VITE_OAUTH2_ENDPOINT: string;
-	readonly VITE_OAUTH2_REDIRECT_URI: string;
+	readonly VITE_OIDC_CLIENT_ID: string;
+	readonly VITE_OIDC_ENDPOINT: string;
+	readonly VITE_OIDC_REDIRECT_URI: string;
 	readonly VITE_DPOP_ENDPOINT: string;
 	readonly VITE_DPOP_RESOURCE_ARN: string;
 	readonly VITE_DPOP_HTU: string;
