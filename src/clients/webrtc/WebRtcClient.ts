@@ -1,4 +1,4 @@
-import { LiveVideoRequestParamObject, WebRtcContext } from "@lkp-rnd/webrtcvideo";
+import { LiveVideoRequestParamObject, WebRtcContext } from "@axteams-one/webrtcvideo";
 import { CredentialsClient, type CredentialsClientOptions } from "../CredentialsClient";
 import { SignalingClient } from "../signaling";
 import { WebRtcLiveStreamContext } from "./WebRtcLiveStreamContext";

@@ -3,7 +3,7 @@ import init, {
 	type ErrorCallback,
 	WebRtcErrorCode,
 	type RequestTokenCallback,
-} from "@lkp-rnd/webrtcvideo";
+} from "@axteams-one/webrtcvideo";
 import { config } from "../../config";
 
 /**
