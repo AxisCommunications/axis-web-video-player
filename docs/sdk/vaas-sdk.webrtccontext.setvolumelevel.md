@@ -6,6 +6,8 @@
 
 Set volume of played audio.
 
+Note: This does not affect the mute setting
+
 **Signature:**
 
 ```typescript

@@ -80,6 +80,18 @@ Disconnects the context.
 </td></tr>
 <tr><td>
 
+[getMuteState()](./vaas-sdk.webrtccontext.getmutestate.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [getVolumeLevel()](./vaas-sdk.webrtccontext.getvolumelevel.md)
 
 
@@ -104,6 +116,20 @@ Disconnects the context.
 </td></tr>
 <tr><td>
 
+[setMuteState(state)](./vaas-sdk.webrtccontext.setmutestate.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Set the mute state of incoming audio (from the remote device).
+
+
+</td></tr>
+<tr><td>
+
 [setVolumeLevel(volume)](./vaas-sdk.webrtccontext.setvolumelevel.md)
 
 
@@ -113,6 +139,8 @@ Disconnects the context.
 </td><td>
 
 Set volume of played audio.
+
+Note: This does not affect the mute setting
 
 
 </td></tr>
