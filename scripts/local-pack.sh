@@ -38,7 +38,7 @@ npx --yes @axteams-one/lkp-sbom-compliance-cli@latest \
     --app-name VaaS-SDK \
     --app-version $version \
     --sbom-file-path ./node_modules/@axteams-one/webrtcvideo/webrtcvideo_sbom.cyclonedx.json
-cp ./sbom/sbom.json ./package/VaaS-SDK-sbom.cyclonedx.json
+cp ./sbom/sbom.json ./package/VaaS-SDK_sbom.cyclonedx.json
 
 version=$(jq -r '.version' package.json)
 
