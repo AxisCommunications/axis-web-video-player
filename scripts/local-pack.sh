@@ -32,6 +32,9 @@ cp -r docs/sdk ./package/docs/sdk
 sed -i.bak '/@axteams-one\/webrtcvideo/d' ./package/package.json
 rm ./package/package.json.bak
 
+version=$(jq -r '.version' package.json)
+
+# Create package
 npx --yes @axteams-one/lkp-sbom-compliance-cli@latest \
     --path . \
     --output sbom \
@@ -39,7 +42,4 @@ npx --yes @axteams-one/lkp-sbom-compliance-cli@latest \
     --app-version $version \
     --sbom-file-path ./node_modules/@axteams-one/webrtcvideo/webrtcvideo_sbom.cyclonedx.json
 cp ./sbom/sbom.json ./package/VaaS-SDK_sbom.cyclonedx.json
-
-version=$(jq -r '.version' package.json)
-
 tar -cvzf "axiscommunications-vaas-sdk-$version.tgz" package
