@@ -21,13 +21,13 @@
   ],
   "license": "UNLICENSED",
   "devDependencies": {
-    "@biomejs/biome": "1.6.4",
-    "@microsoft/api-documenter": "7.24.1",
-    "@microsoft/api-extractor": "7.43.0",
+    "@biomejs/biome": "1.7.1",
+    "@microsoft/api-documenter": "7.24.2",
+    "@microsoft/api-extractor": "7.43.1",
     "@types/lodash.merge": "4.6.9",
     "tsup": "8.0.2",
-    "type-fest": "4.15.0",
-    "typescript": "5.4.4"
+    "type-fest": "4.17.0",
+    "typescript": "5.4.5"
   },
   "dependencies": {
     "@axteams-one/webrtcvideo": "0.17.1",
