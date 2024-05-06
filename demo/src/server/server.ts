@@ -37,7 +37,7 @@ const options = {
 app.post("/auth", async (req: TypedRequestBody<AuthRequest>, res) => {
 	console.log("Request body:", req.body);
 
-	const request = await fetch("https://idp.stage.machineuser.connect.axis.com/session", {
+	const request = await fetch("https://idp.prod.machineuser.connect.axis.com/session", {
 		method: "POST",
 		dispatcher: new Agent({
 			connect: {
@@ -49,12 +49,13 @@ app.post("/auth", async (req: TypedRequestBody<AuthRequest>, res) => {
 	} as any);
 
 	const body: SessionResponse = await request.json();
-	const dPopResponse = await fetch("https://api.stage.authorizer.connect.axis.com/access", {
+	const dPopResponse = await fetch("https://api.prod.authorizer.connect.axis.com/access", {
 		method: "POST",
 		body: JSON.stringify({
 			resource: req.body.resource,
 			operations: [
-				"68bfc906-c385-4e0c-5888-c893f0dfbee6", // STREAM_VIDEO
+				//"68bfc906-c385-4e0c-5888-c893f0dfbee6", // STREAM_VIDEOstage
+				"b4bfc908-a033-9905-3a40-e5f2d80cd5d3", // STREAM_VIDEO prod
 			],
 			ttl,
 		}),
