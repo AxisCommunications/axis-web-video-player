@@ -54,7 +54,6 @@ app.post("/auth", async (req: TypedRequestBody<AuthRequest>, res) => {
 		body: JSON.stringify({
 			resource: req.body.resource,
 			operations: [
-				//"68bfc906-c385-4e0c-5888-c893f0dfbee6", // STREAM_VIDEOstage
 				"b4bfc908-a033-9905-3a40-e5f2d80cd5d3", // STREAM_VIDEO prod
 			],
 			ttl,
