@@ -11,6 +11,10 @@ export interface StreamDetails {
 	 * Whether the stream should include audio.
 	 */
 	get withAudio(): boolean;
+	/**
+	 * Optional audio transmission stream
+	 */
+	get audioTransmitStream(): MediaStream | undefined
 }
 
 // Extend with other stream details types

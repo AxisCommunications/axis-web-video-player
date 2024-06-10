@@ -73,6 +73,9 @@ export class WebRtcClient extends CredentialsClient {
 		request.setOrgId(this.options.orgId);
 		request.setVideoReceive(true);
 		request.setAudioReceive(streamDetails.withAudio);
+		if (streamDetails.audioTransmitStream) {
+			request.setInputStreams([streamDetails.audioTransmitStream])
+		}
 
 		await context.requestLive(request);
 		return new WebRtcLiveStreamContext(context);

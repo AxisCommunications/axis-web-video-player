@@ -37,6 +37,13 @@ export interface EdgeLiveStreamDetailsOptions {
 	 * The video channel to use.
 	 */
 	channel?: number;
+	/**
+	 * An optional `MediaStream` containing one or more audio tracks,
+	 * for audio transmission to the device, e.g. the stream returned by
+	 * `navigator.mediaDevices.getUserMedia({audio: true})`. If not set,
+	 * audio will not be transmitted.
+	 */
+	audioTransmitStream?: MediaStream;
 }
 
 /**
@@ -47,6 +54,10 @@ export class EdgeLiveStreamDetails implements StreamDetails {
 
 	get withAudio(): boolean {
 		return this.options.audioReceive ?? false;
+	}
+
+	get audioTransmitStream(): MediaStream | undefined {
+		return this.options.audioTransmitStream;
 	}
 
 	/**
