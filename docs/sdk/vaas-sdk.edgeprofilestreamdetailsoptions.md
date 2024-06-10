@@ -56,6 +56,25 @@ _(Optional)_ Whether to include audio in the stream.
 </td></tr>
 <tr><td>
 
+[audioTransmitStream?](./vaas-sdk.edgeprofilestreamdetailsoptions.audiotransmitstream.md)
+
+
+</td><td>
+
+
+</td><td>
+
+MediaStream
+
+
+</td><td>
+
+_(Optional)_ An optional `MediaStream` containing one or more audio tracks, for audio transmission to the device, e.g. the stream returned by `navigator.mediaDevices.getUserMedia({audio: true})`<!-- -->. If not set, audio will not be transmitted.
+
+
+</td></tr>
+<tr><td>
+
 [streamProfile](./vaas-sdk.edgeprofilestreamdetailsoptions.streamprofile.md)
 
 

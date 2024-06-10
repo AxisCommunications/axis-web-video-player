@@ -72,6 +72,25 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[audioTransmitStream](./vaas-sdk.edgeprofilestreamdetails.audiotransmitstream.md)
+
+
+</td><td>
+
+`readonly`
+
+
+</td><td>
+
+MediaStream \| undefined
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [withAudio](./vaas-sdk.edgeprofilestreamdetails.withaudio.md)
 
 
