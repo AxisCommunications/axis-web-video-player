@@ -2,6 +2,7 @@ import {
 	type CredentialsProvider,
 	EdgeLiveStreamDetails,
 	WebRtcClient,
+	WebRtcContextError,
 } from "@axiscommunications/vaas-sdk";
 
 export async function startLiveStream(
@@ -20,8 +21,32 @@ export async function startLiveStream(
 		width: 1280,
 	});
 
-	await webRtcClient.startLiveStream({
-		streamDetails,
-		videoElement,
-	});
+	try {
+		await webRtcClient.startLiveStream({
+			streamDetails,
+			videoElement,
+		});
+	} catch (error) {
+		const contextError = error as WebRtcContextError;
+		switch (contextError.type) {
+			case "SignalingConnectionFailed":
+				console.error(`Failed to connect to signaling server: ${contextError.message}`);
+				break;
+			case "TargetConnectionFailed":
+				console.error(`Failed to connect to target: ${contextError.message}`);
+				break;
+			case "TargetNotConnected":
+				console.error("The target was not connected");
+				break;
+			case "TargetConnectionDenied":
+				console.error(`Connecting to target not allowed: ${contextError.message}`);
+				break;
+			case "OperationNotSupportedByTarget":
+				console.error(`The target did not support a requested operation: ${contextError.message}`);
+				break;
+			default:
+				console.error(`Error: ${error}`);
+				break;
+		}
+	}
 }

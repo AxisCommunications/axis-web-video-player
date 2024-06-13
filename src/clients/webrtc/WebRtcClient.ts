@@ -1,8 +1,15 @@
-import { LiveVideoRequestParamObject, WebRtcContext } from "@axteams-one/webrtcvideo";
+import {
+	LiveVideoRequestParamObject,
+	SignalingHandler,
+	WebRtcContext,
+	WebRtcError,
+	WebRtcErrorCode
+} from "@axteams-one/webrtcvideo";
 import { CredentialsClient, type CredentialsClientOptions } from "../CredentialsClient";
 import { SignalingClient } from "../signaling";
 import { WebRtcLiveStreamContext } from "./WebRtcLiveStreamContext";
 import type { StreamDetails } from "./stream-details";
+import { WebRtcContextError } from "./WebRtcContextError";
 
 /**
  * Options for the WebRtcClient.
@@ -62,7 +69,20 @@ export class WebRtcClient extends CredentialsClient {
 		streamDetails,
 		videoElement,
 	}: LiveStreamOptions): Promise<WebRtcLiveStreamContext> {
-		const signalingHandler = await SignalingClient.Instance.connect(this.onTokenCallback);
+		let signalingHandler: SignalingHandler;
+		try {
+			signalingHandler = await SignalingClient.Instance.connect(this.onTokenCallback);
+		} catch (error) {
+			const webRtcError = error as WebRtcError;
+			if (webRtcError.code === WebRtcErrorCode.Timeout) {
+				throw new WebRtcContextError(
+					"SignalingConnectionFailed",
+					"Timeout when connecting to signaling server",
+					webRtcError
+				);
+			}
+			throw WebRtcContextError.fromWebRtcError(webRtcError);
+		}
 
 		const context = new WebRtcContext(signalingHandler, videoElement);
 		await context.setDeviceTokenCallback(this.onTokenCallback);
@@ -77,7 +97,20 @@ export class WebRtcClient extends CredentialsClient {
 			request.setInputStreams([streamDetails.audioTransmitStream])
 		}
 
-		await context.requestLive(request);
+		try {
+			await context.requestLive(request);
+		} catch (error) {
+			const webRtcError = error as WebRtcError;
+			if (webRtcError.code === WebRtcErrorCode.Timeout) {
+				throw new WebRtcContextError(
+					"TargetConnectionFailed",
+					"Timeout when connecting to the target",
+					webRtcError
+				);
+			}
+			throw WebRtcContextError.fromWebRtcError(webRtcError);
+		}
+
 		return new WebRtcLiveStreamContext(context);
 	}
 }

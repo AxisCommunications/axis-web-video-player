@@ -1,25 +1,23 @@
-import type { WebRtcContext as LkpWebRtcContext, ErrorCallback } from "@axteams-one/webrtcvideo";
+import type { WebRtcContext as LkpWebRtcContext, ErrorCallback, WebRtcError } from "@axteams-one/webrtcvideo";
 import { SignalingClient } from "../signaling";
+import { WebRtcContextError } from "./WebRtcContextError";
 
 /**
  * Context for a WebRTC communication.
  */
 export class WebRtcContext {
-	private errorCallback: ErrorCallback;
-
 	constructor(private context: LkpWebRtcContext) {
-		this.errorCallback = (error) => {
+		const errorCallback = this.createErrorCallback((error) => {
 			console.error("Context error:", error.toString());
-		};
-		SignalingClient.Instance.registerCallback(this.errorCallback);
-		context.setErrorHandler(this.errorCallback);
+		});
+		this.registerErrorCallback(errorCallback);
 	}
 
 	/**
-	 * @param cb The callback to be called when an error occurs.
+	 * @param callback The callback to be called when an error occurs.
 	 */
-	setErrorCallback(cb: ErrorCallback): void {
-		this.errorCallback = cb;
+	setErrorCallback(callback: WebRtcContextErrorCallback): void {
+		this.registerErrorCallback(this.createErrorCallback(callback));
 	}
 
 	/**
@@ -60,4 +58,21 @@ export class WebRtcContext {
 	getMuteState(): Promise<boolean> {
 		return this.context.getMuted();
 	}
+
+	private createErrorCallback(userCallback: WebRtcContextErrorCallback): ErrorCallback {
+		return (error: WebRtcError) => {
+			const contextError = WebRtcContextError.fromWebRtcError(error);
+			userCallback(contextError);
+		};
+	}
+
+	private registerErrorCallback(callback: ErrorCallback) {
+		SignalingClient.Instance.registerCallback(callback);
+		this.context.setErrorHandler(callback);
+	}
 }
+
+/**
+ * Callback function for context errors.
+ */
+export type WebRtcContextErrorCallback = (error: WebRtcContextError) => void;

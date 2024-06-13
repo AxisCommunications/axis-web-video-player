@@ -6,4 +6,5 @@ export {
 	type EdgeProfileStreamDetailsOptions,
 } from "./stream-details";
 export * from "./WebRtcContext";
+export * from "./WebRtcContextError";
 export * from "./WebRtcLiveStreamContext";
