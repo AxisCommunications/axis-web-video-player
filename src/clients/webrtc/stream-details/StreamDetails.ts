@@ -14,7 +14,7 @@ export interface StreamDetails {
 	/**
 	 * Optional audio transmission stream
 	 */
-	get audioTransmitStream(): MediaStream | undefined
+	get audioTransmitStream(): MediaStream | undefined;
 }
 
 // Extend with other stream details types

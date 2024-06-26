@@ -1,9 +1,9 @@
 import {
 	LiveVideoRequestParamObject,
-	SignalingHandler,
+	type SignalingHandler,
 	WebRtcContext,
-	WebRtcError,
-	WebRtcErrorCode
+	type WebRtcError,
+	WebRtcErrorCode,
 } from "@axteams-one/webrtcvideo";
 import { CredentialsClient, type CredentialsClientOptions } from "../CredentialsClient";
 import { SignalingClient } from "../signaling";
@@ -78,7 +78,7 @@ export class WebRtcClient extends CredentialsClient {
 				throw new WebRtcContextError(
 					"SignalingConnectionFailed",
 					"Timeout when connecting to signaling server",
-					webRtcError
+					webRtcError,
 				);
 			}
 			throw WebRtcContextError.fromWebRtcError(webRtcError);
@@ -94,9 +94,10 @@ export class WebRtcClient extends CredentialsClient {
 		request.setVideoReceive(true);
 		request.setAudioReceive(streamDetails.withAudio);
 		if (streamDetails.audioTransmitStream) {
-			request.setInputStreams([streamDetails.audioTransmitStream])
+			request.setInputStreams([streamDetails.audioTransmitStream]);
 		}
 
+		const liveContext = new WebRtcLiveStreamContext(context);
 		try {
 			await context.requestLive(request);
 		} catch (error) {
@@ -105,12 +106,12 @@ export class WebRtcClient extends CredentialsClient {
 				throw new WebRtcContextError(
 					"TargetConnectionFailed",
 					"Timeout when connecting to the target",
-					webRtcError
+					webRtcError,
 				);
 			}
 			throw WebRtcContextError.fromWebRtcError(webRtcError);
 		}
 
-		return new WebRtcLiveStreamContext(context);
+		return liveContext;
 	}
 }
