@@ -1,4 +1,4 @@
-import { type WebRtcError, WebRtcErrorCode } from "@axteams-one/webrtcvideo";
+import { type WebRtcError, WebRtcErrorCode } from "@axiscommunications/webrtcvideo";
 
 export class WebRtcContextError extends Error {
 	/**

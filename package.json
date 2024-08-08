@@ -1,7 +1,7 @@
 {
-  "name": "@axiscommunications/vaas-sdk",
-  "version": "0.0.5",
-  "description": "Axis Video as a Service (VaaS) SDK",
+  "name": "@axiscommunications/axis-vaas-video-player",
+  "version": "0.0.6",
+  "description": "Axis Video as a Service (VaaS) video player",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -10,10 +10,11 @@
   ],
   "scripts": {
     "build": "tsup src/index.ts --config tsup.config.ts",
-    "fix": "biome check . --apply-unsafe && biome format . --write",
+    "fix": "biome check . --write --unsafe && biome format . --write",
     "lint-ci": "npm run build && biome ci . && cd demo && tsc",
+    "docs": "./scripts/generate-docs.sh",
     "demo": "npm ci && npm run build && cd demo && npm run demo",
-    "local-pack": "./scripts/local-pack.sh"
+    "prepublishOnly": "./scripts/prepare-publish.sh"
   },
   "author": "Axis Communications AB",
   "collaborators": [
@@ -21,22 +22,23 @@
   ],
   "license": "UNLICENSED",
   "devDependencies": {
-    "@biomejs/biome": "1.8.2",
-    "@microsoft/api-documenter": "7.25.3",
-    "@microsoft/api-extractor": "7.47.0",
+    "@biomejs/biome": "1.8.3",
+    "@microsoft/api-documenter": "7.25.10",
+    "@microsoft/api-extractor": "7.47.5",
     "@types/lodash.merge": "4.6.9",
-    "tsup": "8.1.0",
-    "type-fest": "4.20.1",
-    "typescript": "5.5.2"
+    "tsup": "8.2.4",
+    "type-fest": "4.23.0",
+    "typescript": "5.5.4"
   },
   "dependencies": {
-    "@axteams-one/webrtcvideo": "1.0.0",
+    "@axiscommunications/webrtcvideo": "1.1.0",
     "dpop": "1.4.1",
     "jwt-decode": "4.0.0",
     "lodash.merge": "4.6.2",
     "oidc-client-ts": "3.0.1"
   },
   "files": [
-    "dist"
+    "dist",
+    "docs"
   ]
 }

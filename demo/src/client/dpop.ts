@@ -1,6 +1,6 @@
 import "./style.css";
 import { startLiveStream } from "./video.ts";
-import { CustomDPopProvider } from "@axiscommunications/vaas-sdk";
+import { CustomDPopProvider } from "@axiscommunications/axis-vaas-video-player";
 
 export async function startDPoP() {
 	const keyPair = await CustomDPopProvider.generateKeyPair();

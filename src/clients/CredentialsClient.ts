@@ -1,4 +1,4 @@
-import { type WebRtcToken, WebRtcTokenType } from "@axteams-one/webrtcvideo";
+import { type WebRtcToken, WebRtcTokenType } from "@axiscommunications/webrtcvideo";
 import type { CredentialsProvider } from "../credentials";
 
 /**

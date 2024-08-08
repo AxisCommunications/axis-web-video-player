@@ -1,5 +1,5 @@
 {
-  "name": "axis-vaas-sdk-demo",
+  "name": "axis-vaas-video-player-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,7 +16,7 @@
     "vite-plugin-wasm": "3.3.0"
   },
   "dependencies": {
-    "@axiscommunications/vaas-sdk": "file:..",
+    "@axiscommunications/axis-vaas-video-player": "file:..",
     "express": "4.19.2",
     "undici": "6.19.2"
   }

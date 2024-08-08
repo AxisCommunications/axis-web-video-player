@@ -2,8 +2,8 @@ import {
 	type CredentialsProvider,
 	EdgeLiveStreamDetails,
 	WebRtcClient,
-	WebRtcContextError,
-} from "@axiscommunications/vaas-sdk";
+	type WebRtcContextError,
+} from "@axiscommunications/axis-vaas-video-player";
 
 export async function startLiveStream(
 	credentialsProvider: CredentialsProvider,

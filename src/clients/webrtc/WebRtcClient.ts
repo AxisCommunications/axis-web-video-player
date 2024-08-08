@@ -4,7 +4,7 @@ import {
 	WebRtcContext,
 	type WebRtcError,
 	WebRtcErrorCode,
-} from "@axteams-one/webrtcvideo";
+} from "@axiscommunications/webrtcvideo";
 import { CredentialsClient, type CredentialsClientOptions } from "../CredentialsClient";
 import { SignalingClient } from "../signaling";
 import { WebRtcLiveStreamContext } from "./WebRtcLiveStreamContext";
