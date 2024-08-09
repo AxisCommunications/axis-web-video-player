@@ -1,0 +1,33 @@
+name: lint-tests
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/lint-tests.yml
+      - src/**
+  push:
+    paths:
+    - .github/workflows/lint-tests.yml
+    - src/**
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Lint and Format"
+        run: npm run lint-ci

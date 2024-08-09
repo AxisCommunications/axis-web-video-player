@@ -1,0 +1,41 @@
+name: docs-tests
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/docs-tests.yml
+      - src/**
+  push:
+    paths:
+    - .github/workflows/docs-tests.yml
+    - src/**
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  docs-updated:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+      - name: "Generate documentation"
+        run: npm run docs
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Check if docs changed"
+        run: |
+          if [ -z "$(git status --porcelain ./docs)" ]; then
+            echo "No docs changes"
+            exit 0
+          fi
+          echo "check failed: docs has changed"
+          git diff ./docs
+          exit 1
