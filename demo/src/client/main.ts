@@ -1,12 +1,12 @@
 import "./style.css";
 import { startDPoP } from "./dpop";
 import { startOidc } from "./oidc";
-import * as VaasSdk from "@axiscommunications/vaas-sdk";
+import * as VaasVideoPlayer from "@axiscommunications/axis-vaas-video-player";
 
 console.log("Auth type", import.meta.env.VITE_AUTH);
 
 // This is only needed if we want to use other environments than production
-VaasSdk.config.update({
+VaasVideoPlayer.config.update({
 	signalingServer: {
 		url: import.meta.env.VITE_VIDEO_SIGNALING_URL,
 	},

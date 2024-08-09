@@ -8,5 +8,4 @@ export default defineConfig({
 	clean: true,
 	minify: false,
 	platform: "browser",
-	noExternal: process.env.LOCAL_PACK ? ["@axteams-one/webrtcvideo"] : [],
 });

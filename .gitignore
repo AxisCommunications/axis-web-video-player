@@ -3,6 +3,6 @@ dist
 *.local
 *.pem
 package
-/axiscommunications-vaas-sdk-*.tgz
+/axiscommunications-axis-vaas-video-player-*.tgz
 *.orig
 generated

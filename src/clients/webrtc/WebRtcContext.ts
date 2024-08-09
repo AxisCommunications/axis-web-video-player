@@ -4,7 +4,7 @@ import type {
 	WebRtcError,
 	WebRtcEvent,
 	PtzPreset as InnerPtzPreset,
-} from "@axteams-one/webrtcvideo";
+} from "@axiscommunications/webrtcvideo";
 import { SignalingClient } from "../signaling";
 import { WebRtcContextError } from "./WebRtcContextError";
 
@@ -133,7 +133,7 @@ export class WebRtcContext {
 
 	/**
 	 * Jumps to a PTZ preset.
-	 * @param preset A PTZ preset received from {@link getPtzPresets}.
+	 * @param preset A PTZ preset received from {@link WebRtcContext.getPtzPresets}.
 	 */
 	async gotoPtzPreset(preset: PtzPreset): Promise<void> {
 		await this.ptz.waitForPtzReady();

@@ -1,6 +1,6 @@
 import "./style.css";
 import { startLiveStream } from "./video.ts";
-import { OidcProvider } from "@axiscommunications/vaas-sdk";
+import { OidcProvider } from "@axiscommunications/axis-vaas-video-player";
 
 export async function startOidc() {
 	const oidcProvider = new OidcProvider({

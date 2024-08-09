@@ -1,5 +1,5 @@
-# WebRTC with Axis VaaS SDK example
-An example how to use the VaaS SDK
+# WebRTC with Axis VaaS video player example
+An example how to use the VaaS video player
 
 ## Configuration
 
