@@ -153,6 +153,32 @@ Abstract class that handle communication with the credentials provider.
 </td></tr>
 </tbody></table>
 
+## Functions
+
+<table><thead><tr><th>
+
+Function
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[vaasInit()](./axis-vaas-video-player.vaasinit.md)
+
+
+</td><td>
+
+Initializes the VaaS library. This function must be called and its promise resolved before using any other VaaS library function.
+
+
+</td></tr>
+</tbody></table>
+
 ## Interfaces
 
 <table><thead><tr><th>

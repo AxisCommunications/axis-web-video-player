@@ -15,13 +15,15 @@ VaasVideoPlayer.config.update({
 	},
 });
 
-switch (import.meta.env.VITE_AUTH) {
-	case "DPOP":
-		startDPoP();
-		break;
-	case "OIDC":
-		startOidc();
-		break;
-	default:
-		throw new Error("Invalid auth type");
-}
+VaasVideoPlayer.vaasInit().then(() => {
+	switch (import.meta.env.VITE_AUTH) {
+		case "DPOP":
+			startDPoP();
+			break;
+		case "OIDC":
+			startOidc();
+			break;
+		default:
+			throw new Error("Invalid auth type");
+	}
+});

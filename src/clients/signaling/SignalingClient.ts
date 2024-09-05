@@ -1,10 +1,11 @@
-import init, {
+import {
 	SignalingHandler,
 	type ErrorCallback,
 	WebRtcErrorCode,
 	type RequestTokenCallback,
 } from "@axiscommunications/webrtcvideo";
 import { config } from "../../config";
+import { vaasInit, vaasIsInited } from "../init";
 
 /**
  * Singleton class that handles communication to the signaling server.
@@ -40,7 +41,12 @@ export class SignalingClient {
 			return this.signalingHandler;
 		}
 
-		await init();
+		if (!vaasIsInited) {
+			console.warn(
+				"Deprecation warning: vaasInit() should be called and resolved before calling any other VaaS function",
+			);
+			await vaasInit();
+		}
 
 		this.signalingHandler = new SignalingHandler();
 
