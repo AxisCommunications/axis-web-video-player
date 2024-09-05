@@ -3,6 +3,7 @@ import {
 	type ErrorCallback,
 	WebRtcErrorCode,
 	type RequestTokenCallback,
+	type WebRtcError,
 } from "@axiscommunications/webrtcvideo";
 import { config } from "../../config";
 import { vaasInit, vaasIsInited } from "../init";
@@ -15,6 +16,7 @@ export class SignalingClient {
 	private signalingHandler: SignalingHandler | undefined;
 	private errorCallbacks: ErrorCallback[];
 	private isConnected = false;
+	private connectionPromise: Promise<SignalingHandler> | undefined;
 
 	private constructor() {
 		this.errorCallbacks = [];
@@ -37,6 +39,9 @@ export class SignalingClient {
 	 * @returns The signaling handler.
 	 */
 	async connect(onTokenCallback: RequestTokenCallback): Promise<SignalingHandler> {
+		if (this.connectionPromise) {
+			return this.connectionPromise;
+		}
 		if (this.isConnected && this.signalingHandler) {
 			return this.signalingHandler;
 		}
@@ -47,6 +52,13 @@ export class SignalingClient {
 			);
 			await vaasInit();
 		}
+
+		let connectionResolve: ((signalingHandler: SignalingHandler) => void) | undefined;
+		let connectionReject: ((error: WebRtcError) => void) | undefined;
+		this.connectionPromise = new Promise((resolve, reject) => {
+			connectionResolve = resolve;
+			connectionReject = reject;
+		});
 
 		this.signalingHandler = new SignalingHandler();
 
@@ -63,9 +75,23 @@ export class SignalingClient {
 			}
 		});
 
-		await this.signalingHandler.connect(url, onTokenCallback);
+		try {
+			await this.signalingHandler.connect(url, onTokenCallback);
+		} catch (e) {
+			if (connectionReject) {
+				const error = e as WebRtcError;
+				connectionReject(error);
+				this.connectionPromise = undefined;
+			}
+			throw e;
+		}
+
 		this.isConnected = true;
 
+		if (connectionResolve) {
+			connectionResolve(this.signalingHandler);
+			this.connectionPromise = undefined;
+		}
 		return this.signalingHandler;
 	}
 
