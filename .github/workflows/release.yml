@@ -1,0 +1,60 @@
+name: "Create release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_candidate:
+        description: Publish release and package as release candidate (not "latest")
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Get version from package.json
+        run: |
+          echo RELEASE_VERSION=v$(jq -r .version package.json) >> $GITHUB_ENV
+      - name: Create release
+        run: |
+          LATEST=
+          if [[ "${{ inputs.release_candidate }}" = "true" ]]; then
+            LATEST="--latest=false"
+          fi
+          gh release create ${{ env.RELEASE_VERSION }} -F changelogs/${{ env.RELEASE_VERSION }}.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: create-release
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+      - name: Prepare publish
+        run: npm run prepublishOnly
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+      - name: Publish
+        run: |
+          TAG=
+          if [[ "${{ inputs.release_candidate }}" = "true" ]]; then
+            TAG="--tag rc"
+          fi
+          npm publish $TAG
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
