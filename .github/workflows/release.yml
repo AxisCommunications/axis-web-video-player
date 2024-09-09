@@ -27,7 +27,7 @@ jobs:
           if [[ "${{ inputs.release_candidate }}" = "true" ]]; then
             LATEST="--latest=false"
           fi
-          gh release create ${{ env.RELEASE_VERSION }} -F changelogs/${{ env.RELEASE_VERSION }}.md
+          gh release create ${{ env.RELEASE_VERSION }} -F changelogs/${{ env.RELEASE_VERSION }}.md $LATEST
         env:
           GH_TOKEN: ${{ github.token }}
 
