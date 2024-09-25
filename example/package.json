@@ -1,10 +1,10 @@
 {
-  "name": "axis-vaas-video-player-demo",
+  "name": "axis-vaas-video-player-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "demo": "npm run build && vite preview",
+    "example": "npm run build && vite preview",
     "build": "tsc && vite build",
     "start-server": "tsx src/server/server.ts"
   },

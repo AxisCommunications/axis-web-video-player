@@ -6,14 +6,14 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "workspaces": [
-    "demo"
+    "example"
   ],
   "scripts": {
     "build": "tsup src/index.ts --config tsup.config.ts",
     "fix": "biome check . --write --unsafe && biome format . --write",
-    "lint-ci": "npm run build && biome ci . && cd demo && tsc",
+    "lint-ci": "npm run build && biome ci . && cd example && tsc",
     "docs": "./scripts/generate-docs.sh",
-    "demo": "npm ci && npm run build && cd demo && npm run demo",
+    "example": "npm ci && npm run build && cd example && npm run example",
     "prepublishOnly": "./scripts/prepare-publish.sh"
   },
   "author": "Axis Communications AB",
