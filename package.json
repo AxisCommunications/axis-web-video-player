@@ -5,9 +5,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "workspaces": [
-    "example"
-  ],
   "scripts": {
     "build": "tsup src/index.ts --config tsup.config.ts",
     "fix": "biome check . --write --unsafe && biome format . --write",
