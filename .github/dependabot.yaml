@@ -13,6 +13,19 @@ updates:
       dependencies-major:
         update-types:
           - "major"
+  - package-ecosystem: "npm"
+    directory: "example"
+    versioning-strategy: increase
+    schedule:
+      interval: "weekly"
+    groups:
+      dependencies:
+        update-types:
+          - "minor"
+          - "patch"
+      dependencies-major:
+        update-types:
+          - "major"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
