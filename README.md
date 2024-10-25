@@ -29,3 +29,20 @@ See the [API reference](./docs/api/axis-vaas-video-player.md) for detailed infor
 ### Code examples
 
 See the [code examples](./docs/code-examples.md) for examples of how to use the Axis VaaS video player.
+
+### Build and run the example
+
+1. `cp example/.env.local{.template,}`
+
+2. Update `example/.env.local` with your settings
+    - Change VITE_VIDEO_ORG_ID to your organization id and VITE_VIDEO_TARGET_ID to your device target id.
+    - Change VITE_OIDC_CLIENT_ID and VITE_OIDC_ENDPOINT if you want to use OIDC authentication.
+    - Change VITE_AUTH to DPOP and set VITE_DPOP_RESOURCE_ARN to your resource group ARN if you want to use DPoP authentication.
+
+3. `npm install && npm run build && (cd example && npm install)`
+
+4. If you are using DPoP authentication, create the folder `example/cert` and copy your key.pem and cert.pem files to it. Then start the DPoP server in another terminal with the command `(cd example && npm run start-server)`.
+
+5. `npm run example`
+
+6. Open the URL printed by the server in 5. in a web browser.
