@@ -13,4 +13,5 @@ npm run build
 # Create SBOM
 npx --yes @cyclonedx/cyclonedx-npm@latest \
     --output-format JSON \
-    --output-file ./dist/VaaS-video-player_sbom.cyclonedx.json
+    --output-file ./dist/VaaS-video-player_sbom.cyclonedx.json \
+    --omit dev
