@@ -18,6 +18,6 @@
   "dependencies": {
     "@axiscommunications/axis-vaas-video-player": "file:..",
     "express": "4.21.1",
-    "undici": "6.20.1"
+    "undici": "6.21.0"
   }
 }
