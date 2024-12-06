@@ -5,12 +5,16 @@ on:
     paths:
       - .github/workflows/lint-tests.yml
       - src/**
+      - example/**
       - package.json
+      - package-lock.json
   push:
     paths:
       - .github/workflows/lint-tests.yml
       - src/**
+      - example/**
       - package.json
+      - package-lock.json
     branches:
       - main
   workflow_dispatch:
