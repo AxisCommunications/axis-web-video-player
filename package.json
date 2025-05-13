@@ -24,7 +24,7 @@
     "@microsoft/api-extractor": "7.52.7",
     "@types/lodash.merge": "4.6.9",
     "tsup": "8.4.0",
-    "type-fest": "4.40.1",
+    "type-fest": "4.41.0",
     "typescript": "5.8.3"
   },
   "dependencies": {
