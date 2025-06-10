@@ -9,8 +9,8 @@
     "start-server": "tsx src/server/server.ts"
   },
   "devDependencies": {
-    "@types/express": "5.0.2",
-    "@types/node": "22.15.29",
+    "@types/express": "5.0.3",
+    "@types/node": "22.15.30",
     "tsx": "4.19.4",
     "vite": "6.3.5",
     "vite-plugin-wasm": "3.4.1"
