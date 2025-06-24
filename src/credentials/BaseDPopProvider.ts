@@ -1,5 +1,5 @@
 import type { CredentialsProvider, GetAuthDPoP } from "./CredentialsProvider";
-import DPoP, { generateKeyPair } from "dpop";
+import { generateProof, generateKeyPair } from "dpop";
 
 /**
  * Options for the base DPoP provider.
@@ -35,7 +35,7 @@ export abstract class BaseDPopProvider implements CredentialsProvider {
 	 * @returns A new {@link https://developer.mozilla.org/en-US/docs/Web/API/CryptoKeyPair CryptoKeyPair} that can be used for DPoP proof generation.
 	 */
 	static async generateKeyPair(alg: JwsAlgorithm = "ES256"): Promise<CryptoKeyPair> {
-		return generateKeyPair(alg);
+		return await generateKeyPair(alg);
 	}
 
 	/**
@@ -49,7 +49,7 @@ export abstract class BaseDPopProvider implements CredentialsProvider {
 	 * Creates a DPoP Proof JWT. This needs to be created and sent for every request using DPoP authentication.
 	 */
 	protected async createProofJwt(uri: string, method: string, token?: string): Promise<string> {
-		return DPoP(this.options.keyPair, uri, method, undefined, token);
+		return await generateProof(this.options.keyPair, uri, method, undefined, token);
 	}
 
 	/**
