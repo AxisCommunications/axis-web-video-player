@@ -19,6 +19,17 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[AcsProStreamDetails](./axis-vaas-video-player.acsprostreamdetails.md)
+
+
+</td><td>
+
+Use an ACS stream profile. A stream profile contains a collection of parameters such as video codecs, resolutions, frame rates and compressions.
+
+
+</td></tr>
+<tr><td>
+
 [CustomDPopProvider](./axis-vaas-video-player.customdpopprovider.md)
 
 

@@ -4,6 +4,8 @@ export {
 	type EdgeLiveStreamDetailsOptions,
 	EdgeProfileStreamDetails,
 	type EdgeProfileStreamDetailsOptions,
+	AcsProStreamDetails,
+	type AcsProStreamDetailsBuildObject,
 } from "./stream-details";
 export * from "./WebRtcContext";
 export * from "./WebRtcContextError";

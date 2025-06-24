@@ -1,3 +1,4 @@
+import type { AcsProStreamDetailsBuildObject } from "./AcsProStreamDetails";
 import type { EdgeLiveStreamDetailsBuildObject } from "./EdgeLiveStreamDetails";
 import type { EdgeProfileStreamDetailsBuildObject } from "./EdgeProfileStreamDetails";
 
@@ -20,7 +21,8 @@ export interface StreamDetails {
 // Extend with other stream details types
 type StreamDetailsBuildObject =
 	| EdgeLiveStreamDetailsBuildObject
-	| EdgeProfileStreamDetailsBuildObject;
+	| EdgeProfileStreamDetailsBuildObject
+	| AcsProStreamDetailsBuildObject;
 
 // biome-ignore lint/complexity/noBannedTypes: will be expanded later
 export type AudioReceiveObject = {};
