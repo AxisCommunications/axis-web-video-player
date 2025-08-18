@@ -215,3 +215,4 @@ Zooms by the provided number of steps relative to the current position.
 
 </td></tr>
 </tbody></table>
+

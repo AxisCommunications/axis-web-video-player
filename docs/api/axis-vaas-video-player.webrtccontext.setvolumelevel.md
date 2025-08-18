@@ -49,6 +49,7 @@ Volume as float between 0.0 and 1.0.
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;void&gt;

@@ -63,6 +63,7 @@ matches the htm claim in DPoP.
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;[GetAuthBearer](./axis-vaas-video-player.getauthbearer.md) \| [GetAuthDPoP](./axis-vaas-video-player.getauthdpop.md)<!-- -->&gt;

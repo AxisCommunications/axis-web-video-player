@@ -112,3 +112,4 @@ _(Optional)_ The redirect URI of the client to receive a sign out response from 
 
 </td></tr>
 </tbody></table>
+

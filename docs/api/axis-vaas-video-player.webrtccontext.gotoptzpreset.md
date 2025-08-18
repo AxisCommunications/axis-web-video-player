@@ -47,6 +47,7 @@ A PTZ preset received from [WebRtcContext.getPtzPresets()](./axis-vaas-video-pla
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;void&gt;

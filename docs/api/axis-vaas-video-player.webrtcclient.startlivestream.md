@@ -47,6 +47,7 @@ Description
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;[WebRtcLiveStreamContext](./axis-vaas-video-player.webrtclivestreamcontext.md)<!-- -->&gt;

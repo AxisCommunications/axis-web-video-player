@@ -45,6 +45,7 @@ The callback to be called when an error occurs.
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 void

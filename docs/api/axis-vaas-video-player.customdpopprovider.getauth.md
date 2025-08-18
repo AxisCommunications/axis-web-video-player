@@ -57,6 +57,7 @@ string
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;[GetAuthDPoP](./axis-vaas-video-player.getauthdpop.md)<!-- -->&gt;

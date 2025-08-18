@@ -47,6 +47,7 @@ The number of steps to zoom. Positive numbers zoom in, negative numbers zoom out
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;void&gt;

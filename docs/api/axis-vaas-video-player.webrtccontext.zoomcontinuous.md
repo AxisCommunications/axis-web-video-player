@@ -47,6 +47,7 @@ The zoom velocity. Positive numbers zoom in, negative numbers zoom out. 0 stops 
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;void&gt;

@@ -47,6 +47,7 @@ _(Optional)_ Supported JWS `alg` Algorithm identifier. Defaults to `ES256`<!-- -
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;CryptoKeyPair&gt;

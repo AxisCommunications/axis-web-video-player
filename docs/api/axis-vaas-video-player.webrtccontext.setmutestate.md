@@ -47,6 +47,7 @@ true for muted, false for unmuted.
 
 </td></tr>
 </tbody></table>
+
 **Returns:**
 
 Promise&lt;void&gt;
