@@ -48,6 +48,12 @@ export interface LiveStreamOptions {
 	streamDetails: StreamDetails;
 }
 
+declare global {
+	interface HTMLElement {
+		_vaasPlayer?: WebRtcContext;
+	}
+}
+
 /**
  * Client that handles WebRTC communication with a specific target.
  */
@@ -97,7 +103,11 @@ export class WebRtcClient extends CredentialsClient {
 			request.setInputStreams([streamDetails.audioTransmitStream]);
 		}
 
+		// Bind reference to the video element so it keeps the context alive as long as it's present.
+		videoElement._vaasPlayer = context;
+		// Create wrapper for the context to register listeners before the request is sent.
 		const liveContext = new WebRtcLiveStreamContext(context);
+
 		try {
 			await context.requestLive(request);
 		} catch (error) {
@@ -111,7 +121,6 @@ export class WebRtcClient extends CredentialsClient {
 			}
 			throw WebRtcContextError.fromWebRtcError(webRtcError);
 		}
-
 		return liveContext;
 	}
 }

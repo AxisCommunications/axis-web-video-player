@@ -21,10 +21,12 @@ export class WebRtcContext {
 		this.registerErrorCallback(errorCallback);
 
 		this.ptz = new Ptz();
+		// Create a weak reference to the ptz object so that it doesn't keep the context alive.
+		const weakPtz = new WeakRef(this.ptz);
 		const eventCallback = (event: WebRtcEvent) => {
-			this.ptz.onEvent(event);
+			weakPtz.deref()?.onEvent(event);
 		};
-		context.setEventHandler(eventCallback);
+		this.context.setEventHandler(eventCallback);
 	}
 
 	/**

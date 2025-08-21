@@ -54,7 +54,6 @@ export async function startOidc() {
 	if (signedIn) {
 		videoContainer.style.display = "flex";
 		logoutButton.style.display = "block";
-		startLiveStream(oidcProvider, videoElement);
 	} else {
 		loginButton.style.display = "block";
 		loginButton.onclick = async () => {
@@ -62,8 +61,7 @@ export async function startOidc() {
 			videoContainer.style.display = "flex";
 			loginButton.style.display = "none";
 			logoutButton.style.display = "block";
-
-			startLiveStream(oidcProvider, videoElement);
 		};
 	}
+	return startLiveStream(oidcProvider, videoElement);
 }
