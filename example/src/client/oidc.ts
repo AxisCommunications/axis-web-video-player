@@ -1,8 +1,6 @@
-import "./style.css";
-import { startLiveStream } from "./video.ts";
-import { OidcProvider } from "@axiscommunications/axis-vaas-video-player";
+import { type CredentialsProvider, OidcProvider } from "@axiscommunications/axis-vaas-video-player";
 
-export async function startOidc() {
+export async function startOidc(): Promise<CredentialsProvider> {
 	const oidcProvider = new OidcProvider({
 		clientId: import.meta.env.VITE_OIDC_CLIENT_ID,
 		endpoint: import.meta.env.VITE_OIDC_ENDPOINT,
@@ -12,37 +10,20 @@ export async function startOidc() {
 
 	if (window.location.pathname === "/login-callback") {
 		await oidcProvider.handleSignInCallback();
-		return;
+		return oidcProvider;
 	}
 
 	if (window.location.pathname === "/logout-callback") {
 		await oidcProvider.handleSignOutCallback();
-		return;
+		return oidcProvider;
 	}
 
-	const app = document.querySelector<HTMLDivElement>("#app");
-	if (!app) {
-		throw new Error("Could not find #app");
-	}
-	app.innerHTML = `
-  <div>
-		<button id="loginButton" style="display: none;">Login</button>
-		<div id="videoContainer" style="position: fixed; top: 0; left: 0; height: 100%; width: 100%; display: none; flex-direction: column;">
-			<div style="flex-grow: 1;">
-		    <button id="logoutButton" style="display: none;">Logout</button>
-				<div id="video" style="position: relative; width: 100%; height: 100%; background-color: black;"></div>
-			</div>
-		</div>
-  </div>
-`;
+	const loginButton = document.querySelector<HTMLButtonElement>("#login-button");
+	const logoutButton = document.querySelector<HTMLButtonElement>("#logout-button");
+	const loginScreen = document.querySelector<HTMLDivElement>("#login-screen");
 
-	const videoContainer = document.querySelector<HTMLDivElement>("#videoContainer");
-	const videoElement = document.querySelector<HTMLDivElement>("#video");
-	const loginButton = document.querySelector<HTMLButtonElement>("#loginButton");
-	const logoutButton = document.querySelector<HTMLButtonElement>("#logoutButton");
-
-	if (!videoContainer || !videoElement || !loginButton || !logoutButton) {
-		throw new Error("Could not find video container, video element, login or logout button");
+	if (!loginButton || !logoutButton || !loginScreen) {
+		throw new Error("Could not find element in DOM");
 	}
 
 	logoutButton.onclick = async () => {
@@ -52,16 +33,17 @@ export async function startOidc() {
 
 	const signedIn = await oidcProvider.isSignedIn();
 	if (signedIn) {
-		videoContainer.style.display = "flex";
 		logoutButton.style.display = "block";
-	} else {
-		loginButton.style.display = "block";
+		return oidcProvider;
+	}
+
+	loginScreen.style.display = "flex";
+	return new Promise((resolve) => {
 		loginButton.onclick = async () => {
 			await oidcProvider.signInPopup();
-			videoContainer.style.display = "flex";
-			loginButton.style.display = "none";
+			loginScreen.style.display = "none";
 			logoutButton.style.display = "block";
+			resolve(oidcProvider);
 		};
-	}
-	return startLiveStream(oidcProvider, videoElement);
+	});
 }

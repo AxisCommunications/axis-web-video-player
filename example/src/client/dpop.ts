@@ -1,32 +1,16 @@
-import "./style.css";
-import { startLiveStream } from "./video.ts";
-import { CustomDPopProvider } from "@axiscommunications/axis-vaas-video-player";
+import {
+	type CredentialsProvider,
+	CustomDPopProvider,
+} from "@axiscommunications/axis-vaas-video-player";
 
-export async function startDPoP() {
+export async function startDPoP(): Promise<CredentialsProvider> {
 	const keyPair = await CustomDPopProvider.generateKeyPair();
 
-	const dPopProvider = new CustomDPopProvider({
+	return new CustomDPopProvider({
 		keyPair,
 		resource: import.meta.env.VITE_DPOP_RESOURCE_ARN,
 		onGetBoundToken,
 	});
-
-	const app = document.querySelector<HTMLDivElement>("#app");
-
-	if (!app) {
-		throw new Error("Could not find #app");
-	}
-
-	app.innerHTML = `
-			<div id="video"></div>
-	`;
-
-	const videoElement = document.querySelector<HTMLDivElement>("#video");
-	if (!videoElement) {
-		throw new Error("Could not find video element");
-	}
-
-	await startLiveStream(dPopProvider, videoElement);
 }
 
 const onGetBoundToken = async (dPopProof: string, resource: string) => {

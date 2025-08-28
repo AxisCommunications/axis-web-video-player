@@ -1,7 +1,8 @@
-import "./style.css";
 import { startDPoP } from "./dpop";
 import { startOidc } from "./oidc";
 import * as VaasVideoPlayer from "@axiscommunications/axis-vaas-video-player";
+import { startLiveStream } from "./live";
+import type { CredentialsProvider } from "@axiscommunications/axis-vaas-video-player";
 
 console.log("Auth type", import.meta.env.VITE_AUTH);
 
@@ -15,15 +16,29 @@ VaasVideoPlayer.config.update({
 	},
 });
 
-VaasVideoPlayer.vaasInit().then(() => {
-	switch (import.meta.env.VITE_AUTH) {
+type CredentialsProviderType = "DPOP" | "OIDC";
+
+async function createCredentialsProvider(
+	type: CredentialsProviderType,
+): Promise<CredentialsProvider> {
+	switch (type) {
 		case "DPOP":
-			startDPoP();
-			break;
-		case "OIDC":
-			startOidc();
-			break;
+			return await startDPoP();
+		case "OIDC": {
+			return await startOidc();
+		}
 		default:
 			throw new Error("Invalid auth type");
 	}
+}
+
+VaasVideoPlayer.vaasInit().then(async () => {
+	const videoContainer = document.querySelector<HTMLDivElement>("#video-container");
+	const videoElement = document.querySelector<HTMLDivElement>("#video");
+	if (!videoContainer || !videoElement) {
+		throw new Error("Could not find element in DOM");
+	}
+	const credentialsProvider = await createCredentialsProvider(import.meta.env.VITE_AUTH);
+	videoContainer.style.display = "flex";
+	startLiveStream(credentialsProvider, videoElement);
 });
