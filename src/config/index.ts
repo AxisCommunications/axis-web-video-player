@@ -73,6 +73,6 @@ class Config {
 
 /**
  * The configuration instance.
- * This should only be used if other then the default values is needed.
+ * This should only be used if other than the default values is needed.
  */
 export const config = Config.Instance.getConfig();

@@ -2,6 +2,9 @@ import type { AcsProStreamDetailsBuildObject } from "./AcsProStreamDetails";
 import type { EdgeLiveStreamDetailsBuildObject } from "./EdgeLiveStreamDetails";
 import type { EdgeProfileStreamDetailsBuildObject } from "./EdgeProfileStreamDetails";
 
+/**
+ * Interface for different types of live stream targets
+ */
 export interface StreamDetails {
 	/**
 	 * Builds the stream details object.

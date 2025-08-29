@@ -77,6 +77,14 @@ export type PtzFailed = "PtzFailed";
  * An error occured which did not fit into any other category.
  */
 export type OtherError = "OtherError";
+/**
+ * An error occured due to invalid configuration by the library user.
+ */
+export type ConfigurationError = "ConfigurationError";
+/**
+ * The target could not fulfil the playback request.
+ */
+export type TargetPlaybackError = "TargetPlaybackError";
 
 /**
  * The type of error.
@@ -92,7 +100,9 @@ export type WebRtcContextErrorType =
 	| OperationNotSupportedByTarget
 	| TargetConnectionFailed
 	| PtzFailed
-	| OtherError;
+	| OtherError
+	| ConfigurationError
+	| TargetPlaybackError;
 
 function mapWebRtcErrorCode(errorCode: WebRtcErrorCode): WebRtcContextErrorType {
 	switch (errorCode) {
@@ -118,6 +128,8 @@ function mapWebRtcErrorCode(errorCode: WebRtcErrorCode): WebRtcContextErrorType 
 		case WebRtcErrorCode.PtzUnavailable:
 		case WebRtcErrorCode.PtzServerErrorOther:
 			return "PtzFailed";
+		case WebRtcErrorCode.TargetPlaybackError:
+			return "TargetPlaybackError";
 	}
 	return "OtherError";
 }
