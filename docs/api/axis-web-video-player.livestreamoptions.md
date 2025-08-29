@@ -45,7 +45,7 @@ Description
 
 </td><td>
 
-StreamDetails
+[StreamDetails](./axis-web-video-player.streamdetails.md)
 
 
 </td><td>

@@ -19,12 +19,34 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[AcsProRecordingDetails](./axis-web-video-player.acsprorecordingdetails.md)
+
+
+</td><td>
+
+Details for ACS Pro recordings
+
+
+</td></tr>
+<tr><td>
+
 [AcsProStreamDetails](./axis-web-video-player.acsprostreamdetails.md)
 
 
 </td><td>
 
 Use an ACS stream profile. A stream profile contains a collection of parameters such as video codecs, resolutions, frame rates and compressions.
+
+
+</td></tr>
+<tr><td>
+
+[CloudStorageRecordingDetails](./axis-web-video-player.cloudstoragerecordingdetails.md)
+
+
+</td><td>
+
+Details for Cloud Storage recordings
 
 
 </td></tr>
@@ -63,12 +85,34 @@ Use a named stream profile. A stream profile contains a collection of parameters
 </td></tr>
 <tr><td>
 
+[EdgeRecordingDetails](./axis-web-video-player.edgerecordingdetails.md)
+
+
+</td><td>
+
+Details for Edge recordings
+
+
+</td></tr>
+<tr><td>
+
 [OidcProvider](./axis-web-video-player.oidcprovider.md)
 
 
 </td><td>
 
 A credentials provider that uses the OpenID Connect protocol to authenticate users.
+
+
+</td></tr>
+<tr><td>
+
+[PlaybackContext](./axis-web-video-player.playbackcontext.md)
+
+
+</td><td>
+
+Context for a recording playback session.
 
 
 </td></tr>
@@ -205,12 +249,45 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[AcsProRecordingDetailsOptions](./axis-web-video-player.acsprorecordingdetailsoptions.md)
+
+
+</td><td>
+
+Options for the [AcsProRecordingDetails](./axis-web-video-player.acsprorecordingdetails.md) instance
+
+
+</td></tr>
+<tr><td>
+
+[AcsProStreamDetailsOptions](./axis-web-video-player.acsprostreamdetailsoptions.md)
+
+
+</td><td>
+
+Options for the AcsProStreamDetails instance.
+
+
+</td></tr>
+<tr><td>
+
 [BaseDPopProviderOptions](./axis-web-video-player.basedpopprovideroptions.md)
 
 
 </td><td>
 
 Options for the base DPoP provider.
+
+
+</td></tr>
+<tr><td>
+
+[CloudStorageRecordingDetailsOptions](./axis-web-video-player.cloudstoragerecordingdetailsoptions.md)
+
+
+</td><td>
+
+Options for the [CloudStorageRecordingDetails](./axis-web-video-player.cloudstoragerecordingdetails.md) instance
 
 
 </td></tr>
@@ -271,6 +348,17 @@ Options for the EdgeLiveStreamDetails instance.
 </td></tr>
 <tr><td>
 
+[EdgeRecordingDetailsOptions](./axis-web-video-player.edgerecordingdetailsoptions.md)
+
+
+</td><td>
+
+Options for the [EdgeRecordingDetails](./axis-web-video-player.edgerecordingdetails.md) instance
+
+
+</td></tr>
+<tr><td>
+
 [GetAuthBearer](./axis-web-video-player.getauthbearer.md)
 
 
@@ -315,6 +403,39 @@ Options for the OIDC provider.
 </td></tr>
 <tr><td>
 
+[PlaybackOptions](./axis-web-video-player.playbackoptions.md)
+
+
+</td><td>
+
+Options for starting playback
+
+
+</td></tr>
+<tr><td>
+
+[RecordingDetails](./axis-web-video-player.recordingdetails.md)
+
+
+</td><td>
+
+Interface for different types of recordings
+
+
+</td></tr>
+<tr><td>
+
+[StreamDetails](./axis-web-video-player.streamdetails.md)
+
+
+</td><td>
+
+Interface for different types of live stream targets
+
+
+</td></tr>
+<tr><td>
+
 [WebRtcClientOptions](./axis-web-video-player.webrtcclientoptions.md)
 
 
@@ -346,7 +467,7 @@ Description
 
 </td><td>
 
-The configuration instance. This should only be used if other then the default values is needed.
+The configuration instance. This should only be used if other than the default values is needed.
 
 
 </td></tr>
@@ -378,6 +499,28 @@ Transmitting audio from the client to the target failed.
 </td></tr>
 <tr><td>
 
+[ChangeRecordingOptions](./axis-web-video-player.changerecordingoptions.md)
+
+
+</td><td>
+
+Options for changing the recording in an active playback session.
+
+
+</td></tr>
+<tr><td>
+
+[ConfigurationError](./axis-web-video-player.configurationerror.md)
+
+
+</td><td>
+
+An error occured due to invalid configuration by the library user.
+
+
+</td></tr>
+<tr><td>
+
 [OperationNotSupportedByTarget](./axis-web-video-player.operationnotsupportedbytarget.md)
 
 
@@ -395,6 +538,39 @@ A requested operation (typically audio to/from the target) was not supported.
 </td><td>
 
 An error occured which did not fit into any other category.
+
+
+</td></tr>
+<tr><td>
+
+[PlaybackPositionChangedCallback](./axis-web-video-player.playbackpositionchangedcallback.md)
+
+
+</td><td>
+
+Callback function for playback position updates.
+
+
+</td></tr>
+<tr><td>
+
+[PlayerState](./axis-web-video-player.playerstate.md)
+
+
+</td><td>
+
+Possible player states
+
+
+</td></tr>
+<tr><td>
+
+[PlayerStateChangedCallback](./axis-web-video-player.playerstatechangedcallback.md)
+
+
+</td><td>
+
+Callback function for player state changes.
 
 
 </td></tr>
@@ -450,6 +626,17 @@ The connection to the target failed.
 </td><td>
 
 The target is not connected to the signaling server.
+
+
+</td></tr>
+<tr><td>
+
+[TargetPlaybackError](./axis-web-video-player.targetplaybackerror.md)
+
+
+</td><td>
+
+The target could not fulfil the playback request.
 
 
 </td></tr>

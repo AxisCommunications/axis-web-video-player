@@ -4,10 +4,10 @@
 
 ## WebRtcClientOptions.targetId property
 
-Id of the target to connect to.
+Id of the target to connect to. Mandatory except for Cloud Storage playback
 
 **Signature:**
 
 ```typescript
-targetId: string;
+targetId?: string;
 ```

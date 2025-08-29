@@ -11,7 +11,7 @@ Use a named stream profile. A stream profile contains a collection of parameters
 ```typescript
 declare class EdgeProfileStreamDetails implements StreamDetails 
 ```
-**Implements:** StreamDetails
+**Implements:** [StreamDetails](./axis-web-video-player.streamdetails.md)
 
 ## Constructors
 

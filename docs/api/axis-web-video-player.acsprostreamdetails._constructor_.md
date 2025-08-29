@@ -37,7 +37,7 @@ options
 
 </td><td>
 
-AcsProStreamDetailsOptions
+[AcsProStreamDetailsOptions](./axis-web-video-player.acsprostreamdetailsoptions.md)
 
 
 </td><td>
