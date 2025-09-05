@@ -1,16 +1,19 @@
 import {
-	type CredentialsProvider,
 	EdgeLiveStreamDetails,
+	type SignalingConnection,
+	type TokenRequestCallback,
 	WebRtcClient,
 	type WebRtcContextError,
 } from "@axiscommunications/axis-web-video-player";
 
 export async function startLiveStream(
-	credentialsProvider: CredentialsProvider,
+	signalingConnection: SignalingConnection,
+	tokenRequestCallback: TokenRequestCallback,
 	videoElement: HTMLDivElement,
 ) {
 	const webRtcClient = new WebRtcClient({
-		credentialsProvider,
+		signalingConnection,
+		tokenRequestCallback,
 		orgId: import.meta.env.VITE_VIDEO_ORG_ID,
 		targetId: import.meta.env.VITE_VIDEO_TARGET_ID,
 	});

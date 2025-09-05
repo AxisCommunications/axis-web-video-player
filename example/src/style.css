@@ -12,10 +12,6 @@ body {
 	padding: 20px 0;
 }
 
-.topbar {
-	flex-direction: row;
-}
-
 .login-screen {
 	height: 100%;
 	width: 100%;

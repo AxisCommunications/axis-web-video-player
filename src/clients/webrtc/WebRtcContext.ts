@@ -4,7 +4,6 @@ import {
 	type WebRtcError,
 	PlayerState as InnerPlayerState,
 } from "@axiscommunications/webrtcvideo";
-import { SignalingClient } from "../signaling";
 import { WebRtcContextError } from "./WebRtcContextError";
 
 /**
@@ -84,7 +83,6 @@ export class WebRtcContext {
 	}
 
 	private registerErrorCallback(callback: ErrorCallback) {
-		SignalingClient.Instance.registerCallback(callback);
 		this.context.setErrorHandler(callback);
 	}
 

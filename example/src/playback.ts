@@ -1,13 +1,15 @@
 import {
-	type CredentialsProvider,
 	EdgeRecordingDetails,
 	type PlaybackContext,
+	type SignalingConnection,
+	type TokenRequestCallback,
 	WebRtcClient,
 	type WebRtcContextError,
 } from "@axiscommunications/axis-web-video-player";
 
 export async function startPlayback(
-	credentialsProvider: CredentialsProvider,
+	signalingConnection: SignalingConnection,
+	tokenRequestCallback: TokenRequestCallback,
 	videoElement: HTMLDivElement,
 ) {
 	const progressBar = document.querySelector<HTMLInputElement>("#progress-bar");
@@ -17,7 +19,8 @@ export async function startPlayback(
 	}
 
 	const webRtcClient = new WebRtcClient({
-		credentialsProvider,
+		signalingConnection,
+		tokenRequestCallback,
 		orgId: import.meta.env.VITE_VIDEO_ORG_ID,
 		targetId: import.meta.env.VITE_VIDEO_TARGET_ID,
 	});
