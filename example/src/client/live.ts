@@ -3,7 +3,7 @@ import {
 	EdgeLiveStreamDetails,
 	WebRtcClient,
 	type WebRtcContextError,
-} from "@axiscommunications/axis-vaas-video-player";
+} from "@axiscommunications/axis-web-video-player";
 
 export async function startLiveStream(
 	credentialsProvider: CredentialsProvider,

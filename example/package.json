@@ -1,5 +1,5 @@
 {
-  "name": "axis-vaas-video-player-example",
+  "name": "axis-web-video-player-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,7 +16,7 @@
     "vite-plugin-wasm": "3.5.0"
   },
   "dependencies": {
-    "@axiscommunications/axis-vaas-video-player": "file:..",
+    "@axiscommunications/axis-web-video-player": "file:..",
     "express": "5.1.0",
     "undici": "7.16.0"
   }

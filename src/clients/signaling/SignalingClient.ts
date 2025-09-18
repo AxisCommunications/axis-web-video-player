@@ -6,7 +6,7 @@ import {
 	type WebRtcError,
 } from "@axiscommunications/webrtcvideo";
 import { config } from "../../config";
-import { vaasInit, vaasIsInited } from "../init";
+import { axisWebVideoInit, isInited } from "../init";
 
 /**
  * Singleton class that handles communication to the signaling server.
@@ -46,11 +46,11 @@ export class SignalingClient {
 			return this.signalingHandler;
 		}
 
-		if (!vaasIsInited) {
+		if (!isInited) {
 			console.warn(
-				"Deprecation warning: vaasInit() should be called and resolved before calling any other VaaS function",
+				"Deprecation warning: axisWebVideoInit() should be called and resolved before calling any other Axis Web Video function",
 			);
-			await vaasInit();
+			await axisWebVideoInit();
 		}
 
 		let connectionResolve: ((signalingHandler: SignalingHandler) => void) | undefined;

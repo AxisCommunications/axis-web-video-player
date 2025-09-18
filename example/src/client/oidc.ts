@@ -1,4 +1,4 @@
-import { type CredentialsProvider, OidcProvider } from "@axiscommunications/axis-vaas-video-player";
+import { type CredentialsProvider, OidcProvider } from "@axiscommunications/axis-web-video-player";
 
 export async function startOidc(): Promise<CredentialsProvider> {
 	const oidcProvider = new OidcProvider({

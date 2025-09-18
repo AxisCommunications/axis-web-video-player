@@ -196,7 +196,7 @@
      * (REQUIRED) Whether to generate a doc model file.
      */
     "enabled": true,
-    "apiJsonFilePath": "<projectFolder>/generated/axis-vaas-video-player.api.json"
+    "apiJsonFilePath": "<projectFolder>/generated/axis-web-video-player.api.json"
 
 
     /**

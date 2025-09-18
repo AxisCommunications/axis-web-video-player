@@ -1,13 +1,13 @@
 import { startDPoP } from "./dpop";
 import { startOidc } from "./oidc";
-import * as VaasVideoPlayer from "@axiscommunications/axis-vaas-video-player";
+import * as AxisWebVideoPlayer from "@axiscommunications/axis-web-video-player";
 import { startLiveStream } from "./live";
-import type { CredentialsProvider } from "@axiscommunications/axis-vaas-video-player";
+import type { CredentialsProvider } from "@axiscommunications/axis-web-video-player";
 
 console.log("Auth type", import.meta.env.VITE_AUTH);
 
 // This is only needed if we want to use other environments than production
-VaasVideoPlayer.config.update({
+AxisWebVideoPlayer.config.update({
 	signalingServer: {
 		url: import.meta.env.VITE_VIDEO_SIGNALING_URL,
 	},
@@ -32,7 +32,7 @@ async function createCredentialsProvider(
 	}
 }
 
-VaasVideoPlayer.vaasInit().then(async () => {
+AxisWebVideoPlayer.axisWebVideoInit().then(async () => {
 	const videoContainer = document.querySelector<HTMLDivElement>("#video-container");
 	const videoElement = document.querySelector<HTMLDivElement>("#video");
 	if (!videoContainer || !videoElement) {

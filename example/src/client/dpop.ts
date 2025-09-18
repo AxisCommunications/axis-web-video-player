@@ -1,7 +1,7 @@
 import {
 	type CredentialsProvider,
 	CustomDPopProvider,
-} from "@axiscommunications/axis-vaas-video-player";
+} from "@axiscommunications/axis-web-video-player";
 
 export async function startDPoP(): Promise<CredentialsProvider> {
 	const keyPair = await CustomDPopProvider.generateKeyPair();
