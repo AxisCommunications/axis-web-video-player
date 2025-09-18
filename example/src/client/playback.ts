@@ -4,7 +4,7 @@ import {
 	type PlaybackContext,
 	WebRtcClient,
 	type WebRtcContextError,
-} from "@axiscommunications/axis-vaas-video-player";
+} from "@axiscommunications/axis-web-video-player";
 
 export async function startPlayback(
 	credentialsProvider: CredentialsProvider,
