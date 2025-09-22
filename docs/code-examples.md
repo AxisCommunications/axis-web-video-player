@@ -2,14 +2,14 @@
 
 ## Live stream video examples
 
-The following examples shows how to use the Axis VaaS video player to live stream video from a camera using WebRTC with different credentials providers.
+The following examples shows how to use the Axis Web Video Player to live stream video from a camera using WebRTC with different credentials providers.
 
 ### Using OpenID Connect (OIDC)
 
 An example how to use the video player together with [Authorization Code Flow with Proof Key for Code Exchange (PKCE)](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce) with a sign in popup. After the user has signed in the live stream will start at the specified `videoElement` sent in the `startLiveStream` options.
 
 ```ts
-import { OidcProvider, WebRtcClient, EdgeLiveStreamDetails } from "@axiscommunications/axis-vaas-video-player";
+import { OidcProvider, WebRtcClient, EdgeLiveStreamDetails } from "@axiscommunications/axis-web-video-player";
 
 // Create an OIDC provider.
 const oidcProvider = new OidcProvider({
@@ -50,7 +50,7 @@ await webRtcClient.startLiveStream({
 
 ### Using DPoP with callback
 
-In this example the video player is used together with [DPoP](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-dpop-03) with a callback function. 
+In this example the video player is used together with [DPoP](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-dpop-03) with a callback function.
 
 ```mermaid
 flowchart LR
@@ -58,7 +58,7 @@ flowchart LR
      id1(( ))-->|"1. Create WebRTC client with DPoP Provider"|webrtc[WebRTC Client]
      id1-->|"2. Start live-stream"|webrtc
      end
-     
+
      subgraph "Backend"
      webrtc-->|"3. Get DPoP bound token\n{dpop_proof, resource}"|backend(( ))
      cert([Service Principal Certificate])
@@ -74,7 +74,7 @@ flowchart LR
 The `onGetBoundToken` function is called with the DPoP proof and the resource to get a bound token. After the bound token is received the live stream will start at the specified `videoElement` sent in the `startLiveStream` options.
 
 ```ts
-import { CustomDPopProvider, WebRtcClient, EdgeLiveStreamDetails } from "@axiscommunications/axis-vaas-video-player";
+import { CustomDPopProvider, WebRtcClient, EdgeLiveStreamDetails } from "@axiscommunications/axis-web-video-player";
 
 // Generate a key pair to be used for DPoP proof generation.
 const keyPair = await CustomDPopProvider.generateKeyPair();
@@ -83,11 +83,11 @@ const keyPair = await CustomDPopProvider.generateKeyPair();
  * Create a DPoP provider. Depending on the value of `resource` this can be reused for
  * multiple clients. If the resource is for a specific camera a new provider should be created
  * for each client.
- * 
+ *
  * `resource` is an identifier for the resource to get a bound token for. This can be either a
  * specific camera or a group id of cameras to be able to reuse the same token for.
- * 
- * `onGetBoundToken` is a callback function that will be called with the DPoP proof and the 
+ *
+ * `onGetBoundToken` is a callback function that will be called with the DPoP proof and the
  * resource to get a bound token.
  */
 const dPopProvider = new CustomDPopProvider({

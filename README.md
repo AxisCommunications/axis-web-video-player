@@ -1,14 +1,14 @@
-# Axis Video as a Service (VaaS) video player
+# Axis Web Video Player
 
 ## Overview
 
-The Axis VaaS video player makes it easy to use Axis camera video inside a browser.
+The Axis Web Video Player makes it easy to use Axis camera video inside a browser.
 
 ## Getting started
 
 ### Installation
 
-The Axis VaaS video player is packaged as an npm package published to AxisCommunications github NPM registry.
+The Axis Web Video Player is packaged as an npm package published to AxisCommunications github NPM registry.
 
 To access packages from github NPM registry you need to provide a Personal Access Token to NPM. Add the following lines to your `~/.npmrc`:
 ```sh
@@ -19,16 +19,16 @@ To access packages from github NPM registry you need to provide a Personal Acces
 Package can then be installed with:
 
 ```sh
-npm install @axiscommunications/axis-vaas-video-player
+npm install @axiscommunications/axis-web-video-player
 ```
 
 ### Api reference
 
-See the [API reference](./docs/api/axis-vaas-video-player.md) for detailed information about the classes and interfaces in the Axis VaaS video player.
+See the [API reference](./docs/api/axis-web-video-player.md) for detailed information about the classes and interfaces in the Axis Web Video Player.
 
 ### Code examples
 
-See the [code examples](./docs/code-examples.md) for examples of how to use the Axis VaaS video player.
+See the [code examples](./docs/code-examples.md) for examples of how to use the Axis Web Video Player.
 
 ### Build and run the example
 

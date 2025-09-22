@@ -1,7 +1,7 @@
 {
-  "name": "@axiscommunications/axis-vaas-video-player",
-  "version": "2.0.0",
-  "description": "Axis Video as a Service (VaaS) video player",
+  "name": "@axiscommunications/axis-web-video-player",
+  "version": "1.0.0",
+  "description": "Axis Web Video player",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",

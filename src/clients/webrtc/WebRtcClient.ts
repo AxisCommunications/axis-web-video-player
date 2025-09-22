@@ -50,7 +50,7 @@ export interface LiveStreamOptions {
 
 declare global {
 	interface HTMLElement {
-		_vaasPlayer?: WebRtcContext;
+		_axisWebVideoPlayer?: WebRtcContext;
 	}
 }
 
@@ -104,7 +104,7 @@ export class WebRtcClient extends CredentialsClient {
 		}
 
 		// Bind reference to the video element so it keeps the context alive as long as it's present.
-		videoElement._vaasPlayer = context;
+		videoElement._axisWebVideoPlayer = context;
 		// Create wrapper for the context to register listeners before the request is sent.
 		const liveContext = new WebRtcLiveStreamContext(context);
 

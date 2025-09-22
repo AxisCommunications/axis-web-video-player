@@ -2,21 +2,21 @@ import init from "@axiscommunications/webrtcvideo";
 
 let gResolve: ((_: unknown) => void) | null = null;
 
-export let vaasIsInited = false;
+export let isInited = false;
 
 const initPromise = new Promise((resolve) => {
 	gResolve = resolve;
 }).then(async () => {
 	await init();
-	vaasIsInited = true;
+	isInited = true;
 });
 
 /**
- * Initializes the VaaS library.
+ * Initializes the Axis Web Video library.
  * This function must be called and its promise resolved before using any other
- * VaaS library function.
+ * Axis Web Video library function.
  */
-export function vaasInit(): Promise<void> {
+export function axisWebVideoInit(): Promise<void> {
 	if (gResolve) {
 		gResolve(null);
 		gResolve = null;
