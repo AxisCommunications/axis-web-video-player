@@ -46,6 +46,11 @@ export class PlaybackContext<T extends RecordingDetails> extends WebRtcContext {
 
 	/**
 	 * Jump to a different position in the recording.
+	 *
+	 * Note that `Date` only has millisecond precision.
+	 * If the recording start time has microsecond precision (and the microsecond part is non-zero),
+	 * converting it right away into Date might lead to attempting to play before the start, resulting in an error.
+	 *
 	 * @param position The absolute time to start playing from.
 	 */
 	async jump(position: Date) {
