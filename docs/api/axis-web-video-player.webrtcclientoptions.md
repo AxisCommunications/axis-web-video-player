@@ -57,7 +57,7 @@ The organization id that the target belongs to.
 </td></tr>
 <tr><td>
 
-[targetId](./axis-web-video-player.webrtcclientoptions.targetid.md)
+[targetId?](./axis-web-video-player.webrtcclientoptions.targetid.md)
 
 
 </td><td>
@@ -70,7 +70,7 @@ string
 
 </td><td>
 
-Id of the target to connect to.
+_(Optional)_ Id of the target to connect to. Mandatory except for Cloud Storage playback
 
 
 </td></tr>

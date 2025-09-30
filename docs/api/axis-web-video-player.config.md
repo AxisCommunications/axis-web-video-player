@@ -4,7 +4,7 @@
 
 ## config variable
 
-The configuration instance. This should only be used if other then the default values is needed.
+The configuration instance. This should only be used if other than the default values is needed.
 
 **Signature:**
 

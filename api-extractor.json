@@ -60,7 +60,6 @@
    * This would direct API Extractor to embed those types directly in the .d.ts rollup, as if they had been
    * local files for library1.
    */
-  "bundledPackages": ["@axiscommunications/webrtcvideo"],
 
   /**
    * Specifies what type of newlines API Extractor should use when writing output files.  By default, the output files
@@ -395,8 +394,13 @@
       "default": {
         "logLevel": "warning"
         // "addToApiReportFile": false
+      },
+      "ae-missing-release-tag": {
+        "logLevel": "none"
+      },
+      "ae-internal-missing-underscore": {
+        "logLevel": "none"
       }
-
       // "ae-extra-release-tag": {
       //   "logLevel": "warning",
       //   "addToApiReportFile": true
@@ -416,8 +420,10 @@
       "default": {
         "logLevel": "warning"
         // "addToApiReportFile": false
+      },
+      "tsdoc-param-tag-missing-hyphen": {
+        "logLevel": "none"
       }
-
       // "tsdoc-link-tag-unescaped-text": {
       //   "logLevel": "warning",
       //   "addToApiReportFile": true

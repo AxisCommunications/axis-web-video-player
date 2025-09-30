@@ -17,6 +17,10 @@
       </div>
       <div id="video-container" class="video-container" style="display: none">
         <div id="video" class="video"></div>
+        <div id="playback-controls" style="display: none" >
+          <input type="range" id="progress-bar" class="progress-bar" disabled />
+          <button id="play-pause-button" disabled>Play</button>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/client/main.ts"></script>

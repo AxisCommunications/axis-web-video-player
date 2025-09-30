@@ -3,6 +3,7 @@ import { startOidc } from "./oidc";
 import * as AxisWebVideoPlayer from "@axiscommunications/axis-web-video-player";
 import { startLiveStream } from "./live";
 import type { CredentialsProvider } from "@axiscommunications/axis-web-video-player";
+import { startPlayback } from "./playback";
 
 console.log("Auth type", import.meta.env.VITE_AUTH);
 
@@ -40,5 +41,18 @@ AxisWebVideoPlayer.axisWebVideoInit().then(async () => {
 	}
 	const credentialsProvider = await createCredentialsProvider(import.meta.env.VITE_AUTH);
 	videoContainer.style.display = "flex";
-	startLiveStream(credentialsProvider, videoElement);
+	switch (import.meta.env.VITE_EXAMPLE_TYPE) {
+		case "live":
+			startLiveStream(credentialsProvider, videoElement);
+			break;
+		case "playback": {
+			const playbackControls = document.querySelector<HTMLDivElement>("#playback-controls");
+			if (!playbackControls) {
+				throw new Error("Could not find element in DOM");
+			}
+			playbackControls.style.display = "flex";
+			startPlayback(credentialsProvider, videoElement);
+			break;
+		}
+	}
 });

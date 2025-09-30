@@ -81,5 +81,19 @@ Note: If audio is requested it will start playback with mute=true and volume=0.0
 
 
 </td></tr>
+<tr><td>
+
+[startPlayback({ recordingDetails, videoElement, autoPlay, offset, })](./axis-web-video-player.webrtcclient.startplayback.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Starts playback of a recording
+
+
+</td></tr>
 </tbody></table>
 

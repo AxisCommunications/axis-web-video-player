@@ -13,3 +13,97 @@ declare class WebRtcLiveStreamContext extends WebRtcContext
 ```
 **Extends:** [WebRtcContext](./axis-web-video-player.webrtccontext.md)
 
+## Remarks
+
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `WebRtcLiveStreamContext` class.
+
+## Methods
+
+<table><thead><tr><th>
+
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[center(x, y)](./axis-web-video-player.webrtclivestreamcontext.center.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Centers the view on the provided coordinates. The coordinates are in pixels, relative to the video container HTML element. The offsetX/offsetY parameters from a click event handler on the video container element can be used unmodified.
+
+
+</td></tr>
+<tr><td>
+
+[getPtzPresets()](./axis-web-video-player.webrtclivestreamcontext.getptzpresets.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Fetches the configured PTZ presets.
+
+
+</td></tr>
+<tr><td>
+
+[gotoPtzPreset(preset)](./axis-web-video-player.webrtclivestreamcontext.gotoptzpreset.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Jumps to a PTZ preset.
+
+
+</td></tr>
+<tr><td>
+
+[zoomContinuous(velocity)](./axis-web-video-player.webrtclivestreamcontext.zoomcontinuous.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Zooms continuously with the provided velocity.
+
+
+</td></tr>
+<tr><td>
+
+[zoomRelative(steps)](./axis-web-video-player.webrtclivestreamcontext.zoomrelative.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Zooms by the provided number of steps relative to the current position.
+
+
+</td></tr>
+</tbody></table>
+

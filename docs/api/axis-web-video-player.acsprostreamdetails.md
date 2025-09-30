@@ -11,7 +11,7 @@ Use an ACS stream profile. A stream profile contains a collection of parameters 
 ```typescript
 declare class AcsProStreamDetails implements StreamDetails 
 ```
-**Implements:** StreamDetails
+**Implements:** [StreamDetails](./axis-web-video-player.streamdetails.md)
 
 ## Constructors
 
