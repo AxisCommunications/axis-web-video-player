@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@axiscommunications/axis-web-video-player": "file:..",
-    "express": "5.1.0",
-    "undici": "7.16.0"
+    "oidc-client-ts": "3.3.0"
   }
 }

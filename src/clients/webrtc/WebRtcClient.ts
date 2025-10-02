@@ -1,23 +1,24 @@
 import {
 	LiveVideoRequestParamObject,
 	PlaybackVideoRequestParamObject,
-	type SignalingHandler,
 	WebRtcContext,
 	type WebRtcError,
 	WebRtcErrorCode,
 } from "@axiscommunications/webrtcvideo";
-import { CredentialsClient, type CredentialsClientOptions } from "../CredentialsClient";
-import { SignalingClient } from "../signaling";
+import type { SignalingConnection } from "../signaling";
 import { WebRtcLiveStreamContext } from "./WebRtcLiveStreamContext";
 import type { StreamDetails } from "./stream-details";
 import { WebRtcContextError } from "./WebRtcContextError";
 import { CloudStorageRecordingDetails, type RecordingDetails } from "./recording-details";
 import { PlaybackContext } from "./PlaybackContext";
+import { convertToken, type AuthPurpose, type TokenRequestCallback } from "../../auth";
 
 /**
  * Options for the WebRtcClient.
  */
-export interface WebRtcClientOptions extends CredentialsClientOptions {
+export interface WebRtcClientOptions {
+	signalingConnection: SignalingConnection;
+	tokenRequestCallback: TokenRequestCallback;
 	/**
 	 * Id of the target to connect to.
 	 * Mandatory except for Cloud Storage playback
@@ -91,12 +92,8 @@ declare global {
 /**
  * Client that handles WebRTC communication with a specific target.
  */
-export class WebRtcClient extends CredentialsClient {
-	constructor(private options: WebRtcClientOptions) {
-		super({
-			...options,
-		});
-	}
+export class WebRtcClient {
+	constructor(private options: WebRtcClientOptions) {}
 
 	/**
 	 * Starts a live stream using WebRTC.
@@ -115,7 +112,8 @@ export class WebRtcClient extends CredentialsClient {
 				"targetId is mandatory for live streaming",
 			);
 		}
-		const context = await this.setupContext(videoElement);
+		// TODO: Handle purposes when webrtcvideo supports them
+		const context = await this.setupContext(videoElement, []);
 
 		const request = new LiveVideoRequestParamObject(this.options.targetId);
 		request.setStreamDetails(streamDetails.build());
@@ -163,7 +161,8 @@ export class WebRtcClient extends CredentialsClient {
 				"targetId is mandatory for the requested playback type",
 			);
 		}
-		const context = await this.setupContext(videoElement);
+		// TODO: Handle purposes when webrtcvideo supports them
+		const context = await this.setupContext(videoElement, []);
 
 		const request = new PlaybackVideoRequestParamObject(
 			recordingDetails.build(this.options.targetId),
@@ -193,28 +192,18 @@ export class WebRtcClient extends CredentialsClient {
 		return playbackContext;
 	}
 
-	private async setupContext(videoElement: HTMLElement): Promise<WebRtcContext> {
-		const signalingHandler = await this.setupSignalingConnection();
+	private async setupContext(
+		videoElement: HTMLElement,
+		purposes: AuthPurpose[],
+	): Promise<WebRtcContext> {
+		const signalingHandler = this.options.signalingConnection.getSignalingHandler();
 		const context = new WebRtcContext(signalingHandler, videoElement);
-		await context.setDeviceTokenCallback(this.onTokenCallback);
+		await context.setDeviceTokenCallback(async () => {
+			const token = await this.options.tokenRequestCallback({ purposes });
+			return convertToken(token);
+		});
 		// Bind reference to the video element so it keeps the context alive as long as it's present.
 		videoElement._axisWebVideoPlayer = context;
 		return context;
-	}
-
-	private async setupSignalingConnection(): Promise<SignalingHandler> {
-		try {
-			return await SignalingClient.Instance.connect(this.onTokenCallback);
-		} catch (error) {
-			const webRtcError = error as WebRtcError;
-			if (webRtcError.code === WebRtcErrorCode.Timeout) {
-				throw new WebRtcContextError(
-					"SignalingConnectionFailed",
-					"Timeout when connecting to signaling server",
-					webRtcError,
-				);
-			}
-			throw WebRtcContextError.fromWebRtcError(webRtcError);
-		}
 	}
 }

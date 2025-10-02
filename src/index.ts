@@ -1,3 +1,2 @@
 export * from "./clients";
-export * from "./credentials";
-export * from "./config";
+export type { AuthPurpose, BearerToken, TokenRequest, TokenRequestCallback, Token } from "./auth";

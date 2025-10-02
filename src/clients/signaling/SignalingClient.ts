@@ -1,104 +1,83 @@
-import {
-	SignalingHandler,
-	type ErrorCallback,
-	WebRtcErrorCode,
-	type RequestTokenCallback,
-	type WebRtcError,
-} from "@axiscommunications/webrtcvideo";
-import { config } from "../../config";
-import { axisWebVideoInit, isInited } from "../init";
+import { SignalingHandler, type WebRtcError } from "@axiscommunications/webrtcvideo";
+import { type TokenRequestCallback, convertToken } from "../../auth";
+import { WebRtcContextError, type WebRtcContextErrorCallback } from "../webrtc";
+
+const DEFAULT_SIGNALING_SERVER_URL = "wss://signaling.prod.webrtc.connect.axis.com/client";
 
 /**
- * Singleton class that handles communication to the signaling server.
+ * Sets up a connection to the signaling server.
  */
 export class SignalingClient {
-	private static _instance: SignalingClient | undefined;
-	private signalingHandler: SignalingHandler | undefined;
-	private errorCallbacks: ErrorCallback[];
-	private isConnected = false;
-	private connectionPromise: Promise<SignalingHandler> | undefined;
+	private errorCallback: WebRtcContextErrorCallback | undefined;
+	private url = DEFAULT_SIGNALING_SERVER_URL;
 
-	private constructor() {
-		this.errorCallbacks = [];
+	/**
+	 * @param tokenRequestCallback The callback to be called when a token for the signaling server is needed.
+	 */
+	constructor(private tokenRequestCallback: TokenRequestCallback) {}
+
+	/**
+	 * Sets up an error callback function
+	 * @param callback The callback function
+	 */
+	setErrorCallback(callback: WebRtcContextErrorCallback) {
+		this.errorCallback = callback;
 	}
 
 	/**
-	 * @returns The current instance of the SignalingClient.
+	 * Sets a signaling server URL. Only needed if not using the Axis default.
+	 * @param url URL to a signaling server.
 	 */
-	static get Instance() {
-		if (!SignalingClient._instance) {
-			SignalingClient._instance = new SignalingClient();
-		}
-		return SignalingClient._instance;
+	setUrl(url: string) {
+		this.url = url;
 	}
 
 	/**
-	 * Connects to the signaling server. If already connected, the existing connection is returned.
-	 *
-	 * @param onTokenCallback The callback to be called when a token for the signaling server is needed.
-	 * @returns The signaling handler.
+	 * Connects to the signaling server.
+	 * Only one connection at a time should be active. The returned object can be reused
+	 * for each device connection.
+	 * @returns The signaling connection.
 	 */
-	async connect(onTokenCallback: RequestTokenCallback): Promise<SignalingHandler> {
-		if (this.connectionPromise) {
-			return this.connectionPromise;
+	async connect(): Promise<SignalingConnection> {
+		const signalingHandler = new SignalingHandler();
+
+		if (this.errorCallback) {
+			const weakErrorCallback = new WeakRef(this.errorCallback);
+			await signalingHandler.setErrorHandler(async (error) => {
+				const errorCallback = weakErrorCallback.deref();
+				if (!errorCallback) {
+					return;
+				}
+
+				errorCallback(WebRtcContextError.fromWebRtcError(error));
+			});
 		}
-		if (this.isConnected && this.signalingHandler) {
-			return this.signalingHandler;
-		}
-
-		if (!isInited) {
-			console.warn(
-				"Deprecation warning: axisWebVideoInit() should be called and resolved before calling any other Axis Web Video function",
-			);
-			await axisWebVideoInit();
-		}
-
-		let connectionResolve: ((signalingHandler: SignalingHandler) => void) | undefined;
-		let connectionReject: ((error: WebRtcError) => void) | undefined;
-		this.connectionPromise = new Promise((resolve, reject) => {
-			connectionResolve = resolve;
-			connectionReject = reject;
-		});
-
-		this.signalingHandler = new SignalingHandler();
-
-		const { url, autoReconnect } = config.signalingServer;
-		await this.signalingHandler.setErrorHandler(async (error) => {
-			for (const cb of this.errorCallbacks) {
-				cb(error);
-			}
-
-			// If the error is a signaling server error, we should try to reconnect.
-			if (autoReconnect && error.code === WebRtcErrorCode.OtherSignalingServerError) {
-				this.isConnected = false;
-				await this.connect(onTokenCallback);
-			}
-		});
 
 		try {
-			await this.signalingHandler.connect(url, onTokenCallback);
-		} catch (e) {
-			if (connectionReject) {
-				const error = e as WebRtcError;
-				connectionReject(error);
-				this.connectionPromise = undefined;
-			}
-			throw e;
+			await signalingHandler.connect(this.url, async () => {
+				// TODO: Handle purposes when webrtcvideo supports them
+				const token = await this.tokenRequestCallback({ purposes: [] });
+				return convertToken(token);
+			});
+		} catch (error) {
+			const webRtcError = error as WebRtcError;
+			throw new WebRtcContextError("SignalingConnectionFailed", webRtcError.message);
 		}
 
-		this.isConnected = true;
-
-		if (connectionResolve) {
-			connectionResolve(this.signalingHandler);
-			this.connectionPromise = undefined;
-		}
-		return this.signalingHandler;
+		return new SignalingConnection(signalingHandler);
 	}
+}
+
+/**
+ * A connection to a signaling server
+ */
+export class SignalingConnection {
+	constructor(private signalingHandler: SignalingHandler) {}
 
 	/**
-	 * @param cb The callback to be called when an error in the signaling server occurs.
+	 * @internal
 	 */
-	registerCallback(cb: ErrorCallback) {
-		this.errorCallbacks.push(cb);
+	getSignalingHandler(): SignalingHandler {
+		return this.signalingHandler;
 	}
 }

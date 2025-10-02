@@ -52,17 +52,6 @@ Details for Cloud Storage recordings
 </td></tr>
 <tr><td>
 
-[CustomDPopProvider](./axis-web-video-player.customdpopprovider.md)
-
-
-</td><td>
-
-A DPoP credentials provider that uses a callback to get the bound token.
-
-
-</td></tr>
-<tr><td>
-
 [EdgeLiveStreamDetails](./axis-web-video-player.edgelivestreamdetails.md)
 
 
@@ -96,17 +85,6 @@ Details for Edge recordings
 </td></tr>
 <tr><td>
 
-[OidcProvider](./axis-web-video-player.oidcprovider.md)
-
-
-</td><td>
-
-A credentials provider that uses the OpenID Connect protocol to authenticate users.
-
-
-</td></tr>
-<tr><td>
-
 [PlaybackContext](./axis-web-video-player.playbackcontext.md)
 
 
@@ -124,6 +102,28 @@ Context for a recording playback session.
 </td><td>
 
 A PTZ preset
+
+
+</td></tr>
+<tr><td>
+
+[SignalingClient](./axis-web-video-player.signalingclient.md)
+
+
+</td><td>
+
+Sets up a connection to the signaling server.
+
+
+</td></tr>
+<tr><td>
+
+[SignalingConnection](./axis-web-video-player.signalingconnection.md)
+
+
+</td><td>
+
+A connection to a signaling server
 
 
 </td></tr>
@@ -166,43 +166,6 @@ Context for a WebRTC communication.
 </td><td>
 
 Context for a live stream WebRTC communication.
-
-
-</td></tr>
-</tbody></table>
-
-## Abstract Classes
-
-<table><thead><tr><th>
-
-Abstract Class
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[BaseDPopProvider](./axis-web-video-player.basedpopprovider.md)
-
-
-</td><td>
-
-An abstract base class for DPoP providers.
-
-
-</td></tr>
-<tr><td>
-
-[CredentialsClient](./axis-web-video-player.credentialsclient.md)
-
-
-</td><td>
-
-Abstract class that handle communication with the credentials provider.
 
 
 </td></tr>
@@ -271,12 +234,12 @@ Options for the AcsProStreamDetails instance.
 </td></tr>
 <tr><td>
 
-[BaseDPopProviderOptions](./axis-web-video-player.basedpopprovideroptions.md)
+[BearerToken](./axis-web-video-player.bearertoken.md)
 
 
 </td><td>
 
-Options for the base DPoP provider.
+A token for use with Bearer authentication.
 
 
 </td></tr>
@@ -288,39 +251,6 @@ Options for the base DPoP provider.
 </td><td>
 
 Options for the [CloudStorageRecordingDetails](./axis-web-video-player.cloudstoragerecordingdetails.md) instance
-
-
-</td></tr>
-<tr><td>
-
-[CredentialsClientOptions](./axis-web-video-player.credentialsclientoptions.md)
-
-
-</td><td>
-
-Options for the credentials client.
-
-
-</td></tr>
-<tr><td>
-
-[CredentialsProvider](./axis-web-video-player.credentialsprovider.md)
-
-
-</td><td>
-
-A credentials provider that provides authentication for requests.
-
-
-</td></tr>
-<tr><td>
-
-[CustomDPopProviderOptions](./axis-web-video-player.customdpopprovideroptions.md)
-
-
-</td><td>
-
-Options for the custom DPoP provider.
 
 
 </td></tr>
@@ -359,45 +289,12 @@ Options for the [EdgeRecordingDetails](./axis-web-video-player.edgerecordingdeta
 </td></tr>
 <tr><td>
 
-[GetAuthBearer](./axis-web-video-player.getauthbearer.md)
-
-
-</td><td>
-
-Authentication response using a bearer token.
-
-
-</td></tr>
-<tr><td>
-
-[GetAuthDPoP](./axis-web-video-player.getauthdpop.md)
-
-
-</td><td>
-
-Authentication response using DPoP bound token.
-
-
-</td></tr>
-<tr><td>
-
 [LiveStreamOptions](./axis-web-video-player.livestreamoptions.md)
 
 
 </td><td>
 
 Options for starting a live stream.
-
-
-</td></tr>
-<tr><td>
-
-[OidcProviderOptions](./axis-web-video-player.oidcprovideroptions.md)
-
-
-</td><td>
-
-Options for the OIDC provider.
 
 
 </td></tr>
@@ -436,38 +333,23 @@ Interface for different types of live stream targets
 </td></tr>
 <tr><td>
 
+[TokenRequest](./axis-web-video-player.tokenrequest.md)
+
+
+</td><td>
+
+Request information provided to the token request callback.
+
+
+</td></tr>
+<tr><td>
+
 [WebRtcClientOptions](./axis-web-video-player.webrtcclientoptions.md)
 
 
 </td><td>
 
 Options for the WebRtcClient.
-
-
-</td></tr>
-</tbody></table>
-
-## Variables
-
-<table><thead><tr><th>
-
-Variable
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[config](./axis-web-video-player.config.md)
-
-
-</td><td>
-
-The configuration instance. This should only be used if other than the default values is needed.
 
 
 </td></tr>
@@ -494,6 +376,17 @@ Description
 </td><td>
 
 Transmitting audio from the client to the target failed.
+
+
+</td></tr>
+<tr><td>
+
+[AuthPurpose](./axis-web-video-player.authpurpose.md)
+
+
+</td><td>
+
+Available purposes for a token request.
 
 
 </td></tr>
@@ -648,6 +541,28 @@ The target could not fulfil the playback request.
 </td><td>
 
 The requested operation timed out.
+
+
+</td></tr>
+<tr><td>
+
+[Token](./axis-web-video-player.token.md)
+
+
+</td><td>
+
+The type of the returned token from the token request callback.
+
+
+</td></tr>
+<tr><td>
+
+[TokenRequestCallback](./axis-web-video-player.tokenrequestcallback.md)
+
+
+</td><td>
+
+Callback function for token requests
 
 
 </td></tr>

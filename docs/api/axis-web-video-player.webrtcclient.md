@@ -9,9 +9,8 @@ Client that handles WebRTC communication with a specific target.
 **Signature:**
 
 ```typescript
-declare class WebRtcClient extends CredentialsClient 
+declare class WebRtcClient 
 ```
-**Extends:** [CredentialsClient](./axis-web-video-player.credentialsclient.md)
 
 ## Constructors
 

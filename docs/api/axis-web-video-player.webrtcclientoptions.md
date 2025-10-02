@@ -9,9 +9,8 @@ Options for the WebRtcClient.
 **Signature:**
 
 ```typescript
-interface WebRtcClientOptions extends CredentialsClientOptions 
+interface WebRtcClientOptions 
 ```
-**Extends:** [CredentialsClientOptions](./axis-web-video-player.credentialsclientoptions.md)
 
 ## Properties
 
@@ -57,6 +56,23 @@ The organization id that the target belongs to.
 </td></tr>
 <tr><td>
 
+[signalingConnection](./axis-web-video-player.webrtcclientoptions.signalingconnection.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[SignalingConnection](./axis-web-video-player.signalingconnection.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [targetId?](./axis-web-video-player.webrtcclientoptions.targetid.md)
 
 
@@ -71,6 +87,23 @@ string
 </td><td>
 
 _(Optional)_ Id of the target to connect to. Mandatory except for Cloud Storage playback
+
+
+</td></tr>
+<tr><td>
+
+[tokenRequestCallback](./axis-web-video-player.webrtcclientoptions.tokenrequestcallback.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[TokenRequestCallback](./axis-web-video-player.tokenrequestcallback.md)
+
+
+</td><td>
 
 
 </td></tr>
