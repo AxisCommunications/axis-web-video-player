@@ -46,14 +46,23 @@ export interface AcsProStreamDetailsBuildObject {
 export class AcsProStreamDetails implements StreamDetails {
 	constructor(private options: AcsProStreamDetailsOptions) {}
 
+	/**
+	 * @internal
+	 */
 	get withVideoReceive(): boolean {
 		return this.options.videoReceive ?? true;
 	}
 
+	/**
+	 * @internal
+	 */
 	get withAudioReceive(): boolean {
 		return this.options.audioReceive ?? false;
 	}
 
+	/**
+	 * @internal
+	 */
 	get withAudioSend(): boolean {
 		return this.options.audioSend ?? false;
 	}

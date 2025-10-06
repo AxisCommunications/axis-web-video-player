@@ -62,14 +62,23 @@ export interface EdgeLiveStreamDetailsVideoOptions {
 export class EdgeLiveStreamDetails implements StreamDetails {
 	constructor(private options: EdgeLiveStreamDetailsOptions) {}
 
+	/**
+	 * @internal
+	 */
 	get withVideoReceive(): boolean {
 		return this.options.videoReceive ?? true;
 	}
 
+	/**
+	 * @internal
+	 */
 	get withAudioReceive(): boolean {
 		return this.options.audioReceive ?? false;
 	}
 
+	/**
+	 * @internal
+	 */
 	get withAudioSend(): boolean {
 		return this.options.audioSend ?? false;
 	}

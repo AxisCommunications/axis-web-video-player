@@ -56,7 +56,7 @@ _(Optional)_ Whether to include audio in the stream.
 </td></tr>
 <tr><td>
 
-[audioTransmitStream?](./axis-web-video-player.edgeprofilestreamdetailsoptions.audiotransmitstream.md)
+[audioSend?](./axis-web-video-player.edgeprofilestreamdetailsoptions.audiosend.md)
 
 
 </td><td>
@@ -64,18 +64,18 @@ _(Optional)_ Whether to include audio in the stream.
 
 </td><td>
 
-MediaStream
+boolean
 
 
 </td><td>
 
-_(Optional)_ An optional `MediaStream` containing one or more audio tracks, for audio transmission to the device, e.g. the stream returned by `navigator.mediaDevices.getUserMedia({audio: true})`<!-- -->. If not set, audio will not be transmitted.
+_(Optional)_ Whether to allow sending audio to the target.
 
 
 </td></tr>
 <tr><td>
 
-[streamProfile](./axis-web-video-player.edgeprofilestreamdetailsoptions.streamprofile.md)
+[streamProfile?](./axis-web-video-player.edgeprofilestreamdetailsoptions.streamprofile.md)
 
 
 </td><td>
@@ -88,7 +88,26 @@ string
 
 </td><td>
 
-The profile to use for the stream.
+_(Optional)_ The profile to use for the stream.
+
+
+</td></tr>
+<tr><td>
+
+[videoReceive?](./axis-web-video-player.edgeprofilestreamdetailsoptions.videoreceive.md)
+
+
+</td><td>
+
+
+</td><td>
+
+boolean
+
+
+</td><td>
+
+_(Optional)_ Whether to include video in the stream.
 
 
 </td></tr>

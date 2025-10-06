@@ -267,6 +267,15 @@ Options for the EdgeLiveStreamDetails instance.
 </td></tr>
 <tr><td>
 
+[EdgeLiveStreamDetailsVideoOptions](./axis-web-video-player.edgelivestreamdetailsvideooptions.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [EdgeProfileStreamDetailsOptions](./axis-web-video-player.edgeprofilestreamdetailsoptions.md)
 
 

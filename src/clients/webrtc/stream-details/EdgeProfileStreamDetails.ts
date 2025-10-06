@@ -5,6 +5,9 @@ import type { AudioReceiveObject, AudioSendObject, StreamDetails } from "./Strea
  * Options for the EdgeLiveStreamDetails instance.
  */
 export interface EdgeProfileStreamDetailsOptions {
+	/**
+	 * Whether to include video in the stream.
+	 */
 	videoReceive?: boolean;
 	/**
 	 * The profile to use for the stream.
@@ -38,14 +41,23 @@ export interface EdgeProfileStreamDetailsBuildObject {
 export class EdgeProfileStreamDetails implements StreamDetails {
 	constructor(private options: EdgeProfileStreamDetailsOptions) {}
 
+	/**
+	 * @internal
+	 */
 	get withVideoReceive(): boolean {
 		return this.options.videoReceive ?? true;
 	}
 
+	/**
+	 * @internal
+	 */
 	get withAudioReceive(): boolean {
 		return this.options.audioReceive ?? false;
 	}
 
+	/**
+	 * @internal
+	 */
 	get withAudioSend(): boolean {
 		return this.options.audioSend ?? false;
 	}
