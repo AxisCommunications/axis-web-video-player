@@ -19,9 +19,12 @@ export async function startLiveStream(
 	});
 
 	const streamDetails = new EdgeLiveStreamDetails({
-		framerate: 30,
-		height: 720,
-		width: 1280,
+		videoReceive: true,
+		videoOptions: {
+			framerate: 30,
+			height: 720,
+			width: 1280,
+		},
 	});
 
 	try {

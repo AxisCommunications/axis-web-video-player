@@ -119,11 +119,9 @@ export class WebRtcClient {
 		request.setStreamDetails(streamDetails.build());
 
 		request.setOrgId(this.options.orgId);
-		request.setVideoReceive(true);
-		request.setAudioReceive(streamDetails.withAudio);
-		if (streamDetails.audioTransmitStream) {
-			request.setInputStreams([streamDetails.audioTransmitStream]);
-		}
+		request.setVideoReceive(streamDetails.withVideoReceive);
+		request.setAudioReceive(streamDetails.withAudioReceive);
+		request.setAudioSend(streamDetails.withAudioSend);
 
 		// Create wrapper for the context to register listeners before the request is sent.
 		const liveContext = new WebRtcLiveStreamContext(context);

@@ -2,6 +2,7 @@ export * from "./WebRtcClient";
 export {
 	EdgeLiveStreamDetails,
 	type EdgeLiveStreamDetailsOptions,
+	type EdgeLiveStreamDetailsVideoOptions,
 	EdgeProfileStreamDetails,
 	type EdgeProfileStreamDetailsOptions,
 	AcsProStreamDetails,

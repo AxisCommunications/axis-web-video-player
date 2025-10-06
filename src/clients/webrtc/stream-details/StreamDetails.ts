@@ -12,13 +12,17 @@ export interface StreamDetails {
 	build(): StreamDetailsBuildObject;
 
 	/**
+	 * Whether the stream should include video.
+	 */
+	get withVideoReceive(): boolean;
+	/**
 	 * Whether the stream should include audio.
 	 */
-	get withAudio(): boolean;
+	get withAudioReceive(): boolean;
 	/**
-	 * Optional audio transmission stream
+	 * Whether to allow sending audio to the target.
 	 */
-	get audioTransmitStream(): MediaStream | undefined;
+	get withAudioSend(): boolean;
 }
 
 // Extend with other stream details types
@@ -27,5 +31,6 @@ type StreamDetailsBuildObject =
 	| EdgeProfileStreamDetailsBuildObject
 	| AcsProStreamDetailsBuildObject;
 
-// biome-ignore lint/complexity/noBannedTypes: will be expanded later
-export type AudioReceiveObject = {};
+// Empty objects
+export type AudioReceiveObject = Record<string, never>;
+export type AudioSendObject = Record<string, never>;
