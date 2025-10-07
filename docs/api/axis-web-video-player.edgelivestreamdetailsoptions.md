@@ -56,7 +56,7 @@ _(Optional)_ Whether to include audio in the stream.
 </td></tr>
 <tr><td>
 
-[audioTransmitStream?](./axis-web-video-player.edgelivestreamdetailsoptions.audiotransmitstream.md)
+[audioSend?](./axis-web-video-player.edgelivestreamdetailsoptions.audiosend.md)
 
 
 </td><td>
@@ -64,18 +64,18 @@ _(Optional)_ Whether to include audio in the stream.
 
 </td><td>
 
-MediaStream
+boolean
 
 
 </td><td>
 
-_(Optional)_ An optional `MediaStream` containing one or more audio tracks, for audio transmission to the device, e.g. the stream returned by `navigator.mediaDevices.getUserMedia({audio: true})`<!-- -->. If not set, audio will not be transmitted.
+_(Optional)_ Whether to allow sending audio to the target.
 
 
 </td></tr>
 <tr><td>
 
-[channel?](./axis-web-video-player.edgelivestreamdetailsoptions.channel.md)
+[videoOptions?](./axis-web-video-player.edgelivestreamdetailsoptions.videooptions.md)
 
 
 </td><td>
@@ -83,18 +83,18 @@ _(Optional)_ An optional `MediaStream` containing one or more audio tracks, for 
 
 </td><td>
 
-number
+[EdgeLiveStreamDetailsVideoOptions](./axis-web-video-player.edgelivestreamdetailsvideooptions.md)
 
 
 </td><td>
 
-_(Optional)_ The video channel to use.
+_(Optional)_ Video stream options
 
 
 </td></tr>
 <tr><td>
 
-[framerate](./axis-web-video-player.edgelivestreamdetailsoptions.framerate.md)
+[videoReceive?](./axis-web-video-player.edgelivestreamdetailsoptions.videoreceive.md)
 
 
 </td><td>
@@ -102,50 +102,12 @@ _(Optional)_ The video channel to use.
 
 </td><td>
 
-number
+boolean
 
 
 </td><td>
 
-Framerate of the video stream.
-
-
-</td></tr>
-<tr><td>
-
-[height](./axis-web-video-player.edgelivestreamdetailsoptions.height.md)
-
-
-</td><td>
-
-
-</td><td>
-
-number
-
-
-</td><td>
-
-Height of the video stream.
-
-
-</td></tr>
-<tr><td>
-
-[width](./axis-web-video-player.edgelivestreamdetailsoptions.width.md)
-
-
-</td><td>
-
-
-</td><td>
-
-number
-
-
-</td><td>
-
-Width of the video stream.
+_(Optional)_ Whether to include video in the stream.
 
 
 </td></tr>

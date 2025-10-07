@@ -9,5 +9,5 @@ The profile to use for the stream.
 **Signature:**
 
 ```typescript
-streamProfile: string;
+streamProfile?: string;
 ```

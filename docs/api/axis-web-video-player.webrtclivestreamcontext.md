@@ -79,6 +79,34 @@ Jumps to a PTZ preset.
 </td></tr>
 <tr><td>
 
+[setAudioInput(stream)](./axis-web-video-player.webrtclivestreamcontext.setaudioinput.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Sets a stream for sending audio to the target. Note that audio input starts disabled, and [WebRtcLiveStreamContext.setAudioInputEnabled()](./axis-web-video-player.webrtclivestreamcontext.setaudioinputenabled.md) must be used in order to actually start sending audio.
+
+
+</td></tr>
+<tr><td>
+
+[setAudioInputEnabled(enabled)](./axis-web-video-player.webrtclivestreamcontext.setaudioinputenabled.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Enable/disable audio input. To enable, a stream must have been set first using [WebRtcLiveStreamContext.setAudioInput()](./axis-web-video-player.webrtclivestreamcontext.setaudioinput.md)<!-- -->.
+
+
+</td></tr>
+<tr><td>
+
 [zoomContinuous(velocity)](./axis-web-video-player.webrtclivestreamcontext.zoomcontinuous.md)
 
 

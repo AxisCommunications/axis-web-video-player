@@ -99,4 +99,24 @@ export class WebRtcLiveStreamContext extends WebRtcContext {
 			throw WebRtcContextError.fromWebRtcError(error as WebRtcError);
 		}
 	}
+
+	/**
+	 * Sets a stream for sending audio to the target. Note that audio input starts
+	 * disabled, and {@link WebRtcLiveStreamContext.setAudioInputEnabled} must be used
+	 * in order to actually start sending audio.
+	 * @param stream A `MediaStream` containing one or more audio tracks,
+	 * e.g. the stream returned by `navigator.mediaDevices.getUserMedia({audio: true})`.
+	 */
+	setAudioInput(stream: MediaStream) {
+		this.context.setAudioInputStream(stream);
+	}
+
+	/**
+	 * Enable/disable audio input. To enable, a stream must have been set first
+	 * using {@link WebRtcLiveStreamContext.setAudioInput}.
+	 * @param enabled Whether or not to enable audio input
+	 */
+	async setAudioInputEnabled(enabled: boolean) {
+		await this.context.setAudioInputEnabled(enabled);
+	}
 }

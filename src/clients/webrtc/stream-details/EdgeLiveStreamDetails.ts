@@ -1,22 +1,43 @@
-import type { AudioReceiveObject, StreamDetails } from "./StreamDetails";
+import { WebRtcContextError } from "../WebRtcContextError";
+import type { AudioReceiveObject, AudioSendObject, StreamDetails } from "./StreamDetails";
 
 /**
  * @internal
  */
 export interface EdgeLiveStreamDetailsBuildObject {
-	videoReceive: {
+	videoReceive?: {
 		height: number;
 		framerate: number;
 		width: number;
 		channel?: number;
 	};
 	audioReceive?: AudioReceiveObject;
+	audioSend?: AudioSendObject;
 }
 
 /**
  * Options for the EdgeLiveStreamDetails instance.
  */
 export interface EdgeLiveStreamDetailsOptions {
+	/**
+	 * Whether to include video in the stream.
+	 */
+	videoReceive?: boolean;
+	/**
+	 * Video stream options
+	 */
+	videoOptions?: EdgeLiveStreamDetailsVideoOptions;
+	/**
+	 * Whether to include audio in the stream.
+	 */
+	audioReceive?: boolean;
+	/**
+	 * Whether to allow sending audio to the target.
+	 */
+	audioSend?: boolean;
+}
+
+export interface EdgeLiveStreamDetailsVideoOptions {
 	/**
 	 * Width of the video stream.
 	 */
@@ -30,20 +51,9 @@ export interface EdgeLiveStreamDetailsOptions {
 	 */
 	framerate: number;
 	/**
-	 * Whether to include audio in the stream.
-	 */
-	audioReceive?: boolean;
-	/**
 	 * The video channel to use.
 	 */
 	channel?: number;
-	/**
-	 * An optional `MediaStream` containing one or more audio tracks,
-	 * for audio transmission to the device, e.g. the stream returned by
-	 * `navigator.mediaDevices.getUserMedia({audio: true})`. If not set,
-	 * audio will not be transmitted.
-	 */
-	audioTransmitStream?: MediaStream;
 }
 
 /**
@@ -52,26 +62,45 @@ export interface EdgeLiveStreamDetailsOptions {
 export class EdgeLiveStreamDetails implements StreamDetails {
 	constructor(private options: EdgeLiveStreamDetailsOptions) {}
 
-	get withAudio(): boolean {
+	/**
+	 * @internal
+	 */
+	get withVideoReceive(): boolean {
+		return this.options.videoReceive ?? true;
+	}
+
+	/**
+	 * @internal
+	 */
+	get withAudioReceive(): boolean {
 		return this.options.audioReceive ?? false;
 	}
 
-	get audioTransmitStream(): MediaStream | undefined {
-		return this.options.audioTransmitStream;
+	/**
+	 * @internal
+	 */
+	get withAudioSend(): boolean {
+		return this.options.audioSend ?? false;
 	}
 
 	/**
 	 * @internal
 	 */
 	build(): EdgeLiveStreamDetailsBuildObject {
+		let videoReceive: EdgeLiveStreamDetailsVideoOptions | undefined;
+		if (this.withVideoReceive) {
+			if (!this.options.videoOptions) {
+				throw new WebRtcContextError(
+					"ConfigurationError",
+					"videoOptions are mandatory when videoReceive is enabled",
+				);
+			}
+			videoReceive = this.options.videoOptions;
+		}
 		return {
-			videoReceive: {
-				framerate: this.options.framerate,
-				height: this.options.height,
-				width: this.options.width,
-				channel: this.options.channel,
-			},
-			audioReceive: this.options.audioReceive ? {} : undefined,
+			videoReceive: videoReceive,
+			audioReceive: this.withAudioReceive ? {} : undefined,
+			audioSend: this.withAudioSend ? {} : undefined,
 		};
 	}
 }

@@ -1,34 +1,37 @@
-import type { AudioReceiveObject, StreamDetails } from "./StreamDetails";
+import { WebRtcContextError } from "../WebRtcContextError";
+import type { AudioReceiveObject, AudioSendObject, StreamDetails } from "./StreamDetails";
 
 /**
  * Options for the EdgeLiveStreamDetails instance.
  */
 export interface EdgeProfileStreamDetailsOptions {
 	/**
+	 * Whether to include video in the stream.
+	 */
+	videoReceive?: boolean;
+	/**
 	 * The profile to use for the stream.
 	 */
-	streamProfile: string;
+	streamProfile?: string;
 	/**
 	 * Whether to include audio in the stream.
 	 */
 	audioReceive?: boolean;
 	/**
-	 * An optional `MediaStream` containing one or more audio tracks,
-	 * for audio transmission to the device, e.g. the stream returned by
-	 * `navigator.mediaDevices.getUserMedia({audio: true})`. If not set,
-	 * audio will not be transmitted.
+	 * Whether to allow sending audio to the target.
 	 */
-	audioTransmitStream?: MediaStream;
+	audioSend?: boolean;
 }
 
 /**
  * @internal
  */
 export interface EdgeProfileStreamDetailsBuildObject {
-	videoReceive: {
+	videoReceive?: {
 		streamProfile: string;
 	};
 	audioReceive?: AudioReceiveObject;
+	audioSend?: AudioSendObject;
 }
 
 /**
@@ -38,23 +41,46 @@ export interface EdgeProfileStreamDetailsBuildObject {
 export class EdgeProfileStreamDetails implements StreamDetails {
 	constructor(private options: EdgeProfileStreamDetailsOptions) {}
 
-	get withAudio(): boolean {
+	/**
+	 * @internal
+	 */
+	get withVideoReceive(): boolean {
+		return this.options.videoReceive ?? true;
+	}
+
+	/**
+	 * @internal
+	 */
+	get withAudioReceive(): boolean {
 		return this.options.audioReceive ?? false;
 	}
 
-	get audioTransmitStream(): MediaStream | undefined {
-		return this.options.audioTransmitStream;
+	/**
+	 * @internal
+	 */
+	get withAudioSend(): boolean {
+		return this.options.audioSend ?? false;
 	}
 
 	/**
 	 * @internal
 	 */
 	build(): EdgeProfileStreamDetailsBuildObject {
+		let videoReceive: { streamProfile: string } | undefined;
+		if (this.withVideoReceive) {
+			if (!this.options.streamProfile) {
+				throw new WebRtcContextError(
+					"ConfigurationError",
+					"streamProfile is mandatory when videoReceive is enabled",
+				);
+			}
+			videoReceive = { streamProfile: this.options.streamProfile };
+		}
+
 		return {
-			videoReceive: {
-				streamProfile: this.options.streamProfile,
-			},
-			audioReceive: this.options.audioReceive ? {} : undefined,
+			videoReceive: videoReceive,
+			audioReceive: this.withAudioReceive ? {} : undefined,
+			audioSend: this.withAudioSend ? {} : undefined,
 		};
 	}
 }

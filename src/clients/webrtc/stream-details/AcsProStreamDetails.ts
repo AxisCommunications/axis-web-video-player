@@ -1,24 +1,26 @@
-import type { AudioReceiveObject, StreamDetails } from "./StreamDetails";
+import { WebRtcContextError } from "../WebRtcContextError";
+import type { AudioReceiveObject, AudioSendObject, StreamDetails } from "./StreamDetails";
 
 /**
  * Options for the AcsProStreamDetails instance.
  */
 export interface AcsProStreamDetailsOptions {
 	/**
+	 * Whether to include video in the stream.
+	 */
+	videoReceive?: boolean;
+	/**
 	 * The profile to use for the stream.
 	 */
-	streamProfile: "low" | "medium" | "high";
+	streamProfile?: "low" | "medium" | "high";
 	/**
 	 * Whether to include audio in the stream.
 	 */
 	audioReceive?: boolean;
 	/**
-	 * An optional `MediaStream` containing one or more audio tracks,
-	 * for audio transmission to the device, e.g. the stream returned by
-	 * `navigator.mediaDevices.getUserMedia({audio: true})`. If not set,
-	 * audio will not be transmitted.
+	 * Whether to allow sending audio to the target.
 	 */
-	audioTransmitStream?: MediaStream;
+	audioSend?: boolean;
 	/**
 	 * The ACS video source ID of the stream
 	 */
@@ -29,10 +31,11 @@ export interface AcsProStreamDetailsOptions {
  * @internal
  */
 export interface AcsProStreamDetailsBuildObject {
-	videoReceive: {
+	videoReceive?: {
 		streamProfile: string;
 	};
 	audioReceive?: AudioReceiveObject;
+	audioSend?: AudioSendObject;
 	source: string;
 }
 
@@ -43,24 +46,47 @@ export interface AcsProStreamDetailsBuildObject {
 export class AcsProStreamDetails implements StreamDetails {
 	constructor(private options: AcsProStreamDetailsOptions) {}
 
-	get withAudio(): boolean {
+	/**
+	 * @internal
+	 */
+	get withVideoReceive(): boolean {
+		return this.options.videoReceive ?? true;
+	}
+
+	/**
+	 * @internal
+	 */
+	get withAudioReceive(): boolean {
 		return this.options.audioReceive ?? false;
 	}
 
-	get audioTransmitStream(): MediaStream | undefined {
-		return this.options.audioTransmitStream;
+	/**
+	 * @internal
+	 */
+	get withAudioSend(): boolean {
+		return this.options.audioSend ?? false;
 	}
 
 	/**
 	 * @internal
 	 */
 	build(): AcsProStreamDetailsBuildObject {
+		let videoReceive: { streamProfile: string } | undefined;
+		if (this.withVideoReceive) {
+			if (!this.options.streamProfile) {
+				throw new WebRtcContextError(
+					"ConfigurationError",
+					"streamProfile is mandatory when videoReceive is enabled",
+				);
+			}
+			videoReceive = { streamProfile: this.options.streamProfile };
+		}
+
 		return {
-			videoReceive: {
-				streamProfile: this.options.streamProfile,
-			},
-			audioReceive: this.options.audioReceive ? {} : undefined,
+			videoReceive: videoReceive,
+			audioReceive: this.withAudioReceive ? {} : undefined,
 			source: this.options.source,
+			audioSend: this.withAudioSend ? {} : undefined,
 		};
 	}
 }
