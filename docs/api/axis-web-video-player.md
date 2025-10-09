@@ -401,6 +401,83 @@ Available purposes for a token request.
 </td></tr>
 <tr><td>
 
+[AuthPurposeCloudStorage](./axis-web-video-player.authpurposecloudstorage.md)
+
+
+</td><td>
+
+Fetching from Cloud Storage
+
+
+</td></tr>
+<tr><td>
+
+[AuthPurposeDeviceConnection](./axis-web-video-player.authpurposedeviceconnection.md)
+
+
+</td><td>
+
+Initial connection to a device, without a live stream
+
+
+</td></tr>
+<tr><td>
+
+[AuthPurposeLive](./axis-web-video-player.authpurposelive.md)
+
+
+</td><td>
+
+Live stream
+
+
+</td></tr>
+<tr><td>
+
+[AuthPurposePlayback](./axis-web-video-player.authpurposeplayback.md)
+
+
+</td><td>
+
+Playback from a device
+
+
+</td></tr>
+<tr><td>
+
+[AuthPurposePtz](./axis-web-video-player.authpurposeptz.md)
+
+
+</td><td>
+
+PTZ commands
+
+
+</td></tr>
+<tr><td>
+
+[AuthPurposeSignalServerConnection](./axis-web-video-player.authpurposesignalserverconnection.md)
+
+
+</td><td>
+
+Initial connection to the signaling server
+
+
+</td></tr>
+<tr><td>
+
+[AuthPurposeTargetSignaling](./axis-web-video-player.authpurposetargetsignaling.md)
+
+
+</td><td>
+
+Signaling message to a target
+
+
+</td></tr>
+<tr><td>
+
 [ChangeRecordingOptions](./axis-web-video-player.changerecordingoptions.md)
 
 

@@ -28,7 +28,7 @@
     "typescript": "5.9.3"
   },
   "dependencies": {
-    "@axiscommunications/webrtcvideo": "2.12.3"
+    "@axiscommunications/webrtcvideo": "2.15.0"
   },
   "files": [
     "dist",

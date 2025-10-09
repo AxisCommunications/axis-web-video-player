@@ -69,6 +69,8 @@ The organization id that the target belongs to.
 
 </td><td>
 
+A connection to a signaling server
+
 
 </td></tr>
 <tr><td>
@@ -104,6 +106,8 @@ _(Optional)_ Id of the target to connect to. Mandatory except for Cloud Storage 
 
 
 </td><td>
+
+A function that will be called when an authorization token is needed
 
 
 </td></tr>

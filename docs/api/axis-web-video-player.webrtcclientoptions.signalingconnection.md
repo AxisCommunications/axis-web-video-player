@@ -4,6 +4,8 @@
 
 ## WebRtcClientOptions.signalingConnection property
 
+A connection to a signaling server
+
 **Signature:**
 
 ```typescript
