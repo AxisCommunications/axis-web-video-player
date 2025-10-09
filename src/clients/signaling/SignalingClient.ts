@@ -1,5 +1,5 @@
 import { SignalingHandler, type WebRtcError } from "@axiscommunications/webrtcvideo";
-import { type TokenRequestCallback, convertToken } from "../../auth";
+import { type TokenRequestCallback, convertPurpose, convertToken } from "../../auth";
 import { WebRtcContextError, type WebRtcContextErrorCallback } from "../webrtc";
 
 const DEFAULT_SIGNALING_SERVER_URL = "wss://signaling.prod.webrtc.connect.axis.com/client";
@@ -54,9 +54,8 @@ export class SignalingClient {
 		}
 
 		try {
-			await signalingHandler.connect(this.url, async () => {
-				// TODO: Handle purposes when webrtcvideo supports them
-				const token = await this.tokenRequestCallback({ purposes: [] });
+			await signalingHandler.connect(this.url, async (_url, _method, purposes) => {
+				const token = await this.tokenRequestCallback({ purposes: purposes.map(convertPurpose) });
 				return convertToken(token);
 			});
 		} catch (error) {

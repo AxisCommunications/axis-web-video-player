@@ -11,13 +11,19 @@ import type { StreamDetails } from "./stream-details";
 import { WebRtcContextError } from "./WebRtcContextError";
 import { CloudStorageRecordingDetails, type RecordingDetails } from "./recording-details";
 import { PlaybackContext } from "./PlaybackContext";
-import { convertToken, type AuthPurpose, type TokenRequestCallback } from "../../auth";
+import { convertPurpose, convertToken, type TokenRequestCallback } from "../../auth";
 
 /**
  * Options for the WebRtcClient.
  */
 export interface WebRtcClientOptions {
+	/**
+	 * A connection to a signaling server
+	 */
 	signalingConnection: SignalingConnection;
+	/**
+	 * A function that will be called when an authorization token is needed
+	 */
 	tokenRequestCallback: TokenRequestCallback;
 	/**
 	 * Id of the target to connect to.
@@ -112,8 +118,7 @@ export class WebRtcClient {
 				"targetId is mandatory for live streaming",
 			);
 		}
-		// TODO: Handle purposes when webrtcvideo supports them
-		const context = await this.setupContext(videoElement, []);
+		const context = await this.setupContext(videoElement);
 
 		const request = new LiveVideoRequestParamObject(this.options.targetId);
 		request.setStreamDetails(streamDetails.build());
@@ -159,8 +164,7 @@ export class WebRtcClient {
 				"targetId is mandatory for the requested playback type",
 			);
 		}
-		// TODO: Handle purposes when webrtcvideo supports them
-		const context = await this.setupContext(videoElement, []);
+		const context = await this.setupContext(videoElement);
 
 		const request = new PlaybackVideoRequestParamObject(
 			recordingDetails.build(this.options.targetId),
@@ -190,14 +194,13 @@ export class WebRtcClient {
 		return playbackContext;
 	}
 
-	private async setupContext(
-		videoElement: HTMLElement,
-		purposes: AuthPurpose[],
-	): Promise<WebRtcContext> {
+	private async setupContext(videoElement: HTMLElement): Promise<WebRtcContext> {
 		const signalingHandler = this.options.signalingConnection.getSignalingHandler();
 		const context = new WebRtcContext(signalingHandler, videoElement);
-		await context.setDeviceTokenCallback(async () => {
-			const token = await this.options.tokenRequestCallback({ purposes });
+		await context.setDeviceTokenCallback(async (_url, _method, purposes) => {
+			const token = await this.options.tokenRequestCallback({
+				purposes: purposes.map(convertPurpose),
+			});
 			return convertToken(token);
 		});
 		// Bind reference to the video element so it keeps the context alive as long as it's present.

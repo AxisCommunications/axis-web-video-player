@@ -1,14 +1,29 @@
-import { WebRtcTokenType, type WebRtcToken } from "@axiscommunications/webrtcvideo";
+import {
+	AuthorizationPurpose,
+	WebRtcTokenType,
+	type WebRtcToken,
+} from "@axiscommunications/webrtcvideo";
+import type {
+	AuthPurposeCloudStorage,
+	AuthPurposeDeviceConnection,
+	AuthPurposeLive,
+	AuthPurposePlayback,
+	AuthPurposePtz,
+	AuthPurposeSignalServerConnection,
+	AuthPurposeTargetSignaling,
+} from "./purposes";
 
 /**
  * Available purposes for a token request.
  */
 export type AuthPurpose =
-	| "signalserver-connection"
-	| "target-signaling"
-	| "live"
-	| "playback"
-	| "ptz";
+	| AuthPurposeSignalServerConnection
+	| AuthPurposeTargetSignaling
+	| AuthPurposeLive
+	| AuthPurposePlayback
+	| AuthPurposePtz
+	| AuthPurposeCloudStorage
+	| AuthPurposeDeviceConnection;
 
 /**
  * Request information provided to the token request callback.
@@ -46,4 +61,25 @@ export const convertToken = (token: Token): WebRtcToken => {
 		authorization: token.token,
 		proof: undefined,
 	};
+};
+
+export const convertPurpose = (purpose: AuthorizationPurpose): AuthPurpose => {
+	switch (purpose) {
+		case AuthorizationPurpose.SignalServerConnection:
+			return "SignalServerConnection";
+		case AuthorizationPurpose.TargetSignaling:
+			return "TargetSignaling";
+		case AuthorizationPurpose.Live:
+			return "Live";
+		case AuthorizationPurpose.Playback:
+			return "Playback";
+		case AuthorizationPurpose.Ptz:
+			return "Ptz";
+		case AuthorizationPurpose.CloudStorage:
+			return "CloudStorage";
+		case AuthorizationPurpose.ConnectToDevice:
+			return "DeviceConnection";
+		default:
+			throw new Error("Unexpected token purpose");
+	}
 };
