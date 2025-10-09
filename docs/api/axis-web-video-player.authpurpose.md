@@ -9,5 +9,7 @@ Available purposes for a token request.
 **Signature:**
 
 ```typescript
-type AuthPurpose = "signalserver-connection" | "target-signaling" | "live" | "playback" | "ptz";
+type AuthPurpose = AuthPurposeSignalServerConnection | AuthPurposeTargetSignaling | AuthPurposeLive | AuthPurposePlayback | AuthPurposePtz | AuthPurposeCloudStorage | AuthPurposeDeviceConnection;
 ```
+**References:** [AuthPurposeSignalServerConnection](./axis-web-video-player.authpurposesignalserverconnection.md)<!-- -->, [AuthPurposeTargetSignaling](./axis-web-video-player.authpurposetargetsignaling.md)<!-- -->, [AuthPurposeLive](./axis-web-video-player.authpurposelive.md)<!-- -->, [AuthPurposePlayback](./axis-web-video-player.authpurposeplayback.md)<!-- -->, [AuthPurposePtz](./axis-web-video-player.authpurposeptz.md)<!-- -->, [AuthPurposeCloudStorage](./axis-web-video-player.authpurposecloudstorage.md)<!-- -->, [AuthPurposeDeviceConnection](./axis-web-video-player.authpurposedeviceconnection.md)
+

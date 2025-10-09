@@ -4,6 +4,8 @@
 
 ## WebRtcClientOptions.tokenRequestCallback property
 
+A function that will be called when an authorization token is needed
+
 **Signature:**
 
 ```typescript
