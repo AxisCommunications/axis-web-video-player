@@ -19,12 +19,12 @@
   ],
   "license": "UNLICENSED",
   "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "@microsoft/api-documenter": "7.27.0",
-    "@microsoft/api-extractor": "7.53.0",
+    "@biomejs/biome": "2.2.6",
+    "@microsoft/api-documenter": "7.27.1",
+    "@microsoft/api-extractor": "7.53.1",
     "@types/lodash.merge": "4.6.9",
     "tsup": "8.5.0",
-    "type-fest": "5.0.1",
+    "type-fest": "5.1.0",
     "typescript": "5.9.3"
   },
   "dependencies": {
