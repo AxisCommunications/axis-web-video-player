@@ -30,7 +30,7 @@
   "dependencies": {
     "@axiscommunications/webrtcvideo": "2.15.0"
   },
-  "bundledDependencies": [
+  "bundleDependencies": [
     "@axiscommunications/webrtcvideo"
   ],
   "files": [
