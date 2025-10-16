@@ -1,6 +1,6 @@
 {
   "name": "@axiscommunications/axis-web-video-player",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "description": "Axis Web Video player",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,6 +30,9 @@
   "dependencies": {
     "@axiscommunications/webrtcvideo": "2.15.0"
   },
+  "bundledDependencies": [
+    "@axiscommunications/webrtcvideo"
+  ],
   "files": [
     "dist",
     "docs"
