@@ -1,4 +1,4 @@
-import { UserManager, type UserManagerSettings } from "oidc-client-ts";
+import { UserManager } from "oidc-client-ts";
 import type { Token, TokenRequest } from "@axiscommunications/axis-web-video-player";
 
 export async function setupOidc(): Promise<OidcClient> {
@@ -44,17 +44,12 @@ export interface OidcClientOptions {
 export class OidcClient {
 	private userManager: UserManager;
 
-	constructor(private options: OidcClientOptions) {
-		const userManagerSettings = this.createUserManagerSettingsFromOptions();
-		this.userManager = new UserManager(userManagerSettings);
-	}
-
-	private createUserManagerSettingsFromOptions(): UserManagerSettings {
-		return {
-			authority: this.options.endpoint,
-			client_id: this.options.clientId,
-			redirect_uri: this.options.redirectUri,
-		};
+	constructor(options: OidcClientOptions) {
+		this.userManager = new UserManager({
+			authority: options.endpoint,
+			client_id: options.clientId,
+			redirect_uri: options.redirectUri,
+		});
 	}
 
 	createOnTokenRequest(): (request: TokenRequest) => Promise<Token> {
