@@ -29,6 +29,40 @@ enum PtzState {
 
 const PTZ_TIMEOUT_MS = 5000;
 
+class PromiseMap {
+	private counter = 0;
+	private map: Map<number, [(value: unknown) => void, (reason: unknown) => void]> = new Map();
+
+	register(resolve: (value: unknown) => void, reject: (reason: unknown) => void): number {
+		const id = this.counter;
+		this.map.set(id, [resolve, reject]);
+		this.counter += 1;
+		return id;
+	}
+
+	reject(id: number, reason: string) {
+		const callbacks = this.map.get(id);
+		if (callbacks) {
+			callbacks[1](new WebRtcContextError("PtzFailed", reason));
+			this.map.delete(id);
+		}
+	}
+
+	resolveAll() {
+		for (const [_id, [resolve, _reject]] of this.map) {
+			resolve(undefined);
+		}
+		this.map.clear();
+	}
+
+	rejectAll(reason: string) {
+		for (const [_id, [_resolve, reject]] of this.map) {
+			reject(new WebRtcContextError("PtzFailed", reason));
+		}
+		this.map.clear();
+	}
+}
+
 export class Ptz {
 	private state: PtzState;
 	private promiseMap: PromiseMap = new PromiseMap();
@@ -81,39 +115,5 @@ export class Ptz {
 		} else if (newState === PtzState.Error) {
 			this.promiseMap.rejectAll("PTZ initialization failed");
 		}
-	}
-}
-
-class PromiseMap {
-	private counter = 0;
-	private map: Map<number, [(value: unknown) => void, (reason: unknown) => void]> = new Map();
-
-	register(resolve: (value: unknown) => void, reject: (reason: unknown) => void): number {
-		const id = this.counter;
-		this.map.set(id, [resolve, reject]);
-		this.counter += 1;
-		return id;
-	}
-
-	reject(id: number, reason: string) {
-		const callbacks = this.map.get(id);
-		if (callbacks) {
-			callbacks[1](new WebRtcContextError("PtzFailed", reason));
-			this.map.delete(id);
-		}
-	}
-
-	resolveAll() {
-		for (const [_id, [resolve, _reject]] of this.map) {
-			resolve(undefined);
-		}
-		this.map.clear();
-	}
-
-	rejectAll(reason: string) {
-		for (const [_id, [_resolve, reject]] of this.map) {
-			reject(new WebRtcContextError("PtzFailed", reason));
-		}
-		this.map.clear();
 	}
 }

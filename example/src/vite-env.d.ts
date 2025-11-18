@@ -14,7 +14,6 @@ interface ImportMetaEnv {
 	readonly VITE_PLAYBACK_DURATION_SECONDS: number;
 }
 
-// biome-ignore lint/correctness/noUnusedVariables: interface merging
-interface ImportMeta {
+export interface ImportMeta {
 	readonly env: ImportMetaEnv;
 }
