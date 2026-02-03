@@ -37,7 +37,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[changeRecording({ recordingDetails, autoPlay, offset })](./axis-web-video-player.playbackcontext.changerecording.md)
+[changeRecording({ recordingDetails, autoPlay, offset }, input)](./axis-web-video-player.playbackcontext.changerecording.md)
 
 
 </td><td>
