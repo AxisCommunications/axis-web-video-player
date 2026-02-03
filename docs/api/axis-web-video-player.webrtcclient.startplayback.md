@@ -9,7 +9,7 @@ Starts playback of a recording
 **Signature:**
 
 ```typescript
-startPlayback<T extends RecordingDetails>({ recordingDetails, videoElement, autoPlay, offset, }: PlaybackOptions<T>): Promise<PlaybackContext<T>>;
+startPlayback<T extends RecordingDetails>(input: PlaybackOptions<T>): Promise<PlaybackContext<T>>;
 ```
 
 ## Parameters
@@ -33,6 +33,20 @@ Description
 <tbody><tr><td>
 
 { recordingDetails, videoElement, autoPlay, offset, }
+
+
+</td><td>
+
+(not declared)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+input
 
 
 </td><td>
