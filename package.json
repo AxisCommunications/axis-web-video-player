@@ -25,7 +25,7 @@
     "@types/lodash.merge": "4.6.9",
     "tsup": "8.5.1",
     "type-fest": "5.5.0",
-    "typescript": "5.9.3"
+    "typescript": "6.0.2"
   },
   "dependencies": {
     "@axiscommunications/webrtcvideo": "2.15.0"
