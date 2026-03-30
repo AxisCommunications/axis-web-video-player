@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsup src/index.ts --config tsup.config.ts",
+    "build": "tsdown src/index.ts --config tsdown.config.ts",
     "fix": "biome check . --write --unsafe && biome format . --write",
     "lint-ci": "npm run build && biome ci . && cd example && tsc",
     "docs": "./scripts/generate-docs.sh",
@@ -23,7 +23,7 @@
     "@microsoft/api-documenter": "7.29.7",
     "@microsoft/api-extractor": "7.57.7",
     "@types/lodash.merge": "4.6.9",
-    "tsup": "8.5.1",
+    "tsdown": "^0.21.7",
     "type-fest": "5.5.0",
     "typescript": "6.0.2"
   },
