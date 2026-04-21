@@ -9,7 +9,7 @@ Change to a different recording on the same target.
 **Signature:**
 
 ```typescript
-changeRecording(input: ChangeRecordingOptions<T>): Promise<void>;
+changeRecording(options: ChangeRecordingOptions<T>): Promise<void>;
 ```
 
 ## Parameters
@@ -32,21 +32,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-{ recordingDetails, autoPlay, offset }
-
-
-</td><td>
-
-(not declared)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-input
+options
 
 
 </td><td>
@@ -55,6 +41,8 @@ input
 
 
 </td><td>
+
+Options for playback of the new recording.
 
 
 </td></tr>

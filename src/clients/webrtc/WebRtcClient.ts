@@ -108,25 +108,22 @@ export class WebRtcClient {
 	 *
 	 * @returns The context for the live stream.
 	 */
-	async startLiveStream({
-		streamDetails,
-		videoElement,
-	}: LiveStreamOptions): Promise<WebRtcLiveStreamContext> {
+	async startLiveStream(options: LiveStreamOptions): Promise<WebRtcLiveStreamContext> {
 		if (!this.options.targetId) {
 			throw new WebRtcContextError(
 				"ConfigurationError",
 				"targetId is mandatory for live streaming",
 			);
 		}
-		const context = await this.setupContext(videoElement);
+		const context = await this.setupContext(options.videoElement);
 
 		const request = new LiveVideoRequestParamObject(this.options.targetId);
-		request.setStreamDetails(streamDetails.build());
+		request.setStreamDetails(options.streamDetails.build());
 
 		request.setOrgId(this.options.orgId);
-		request.setVideoReceive(streamDetails.withVideoReceive);
-		request.setAudioReceive(streamDetails.withAudioReceive);
-		request.setAudioSend(streamDetails.withAudioSend);
+		request.setVideoReceive(options.streamDetails.withVideoReceive);
+		request.setAudioReceive(options.streamDetails.withAudioReceive);
+		request.setAudioSend(options.streamDetails.withAudioSend);
 
 		// Create wrapper for the context to register listeners before the request is sent.
 		const liveContext = new WebRtcLiveStreamContext(context);
@@ -152,27 +149,27 @@ export class WebRtcClient {
 	 *
 	 * @returns The context for the playback session.
 	 */
-	async startPlayback<T extends RecordingDetails>({
-		recordingDetails,
-		videoElement,
-		autoPlay,
-		offset,
-	}: PlaybackOptions<T>): Promise<PlaybackContext<T>> {
-		if (!this.options.targetId && !(recordingDetails instanceof CloudStorageRecordingDetails)) {
+	async startPlayback<T extends RecordingDetails>(
+		options: PlaybackOptions<T>,
+	): Promise<PlaybackContext<T>> {
+		if (
+			!this.options.targetId &&
+			!(options.recordingDetails instanceof CloudStorageRecordingDetails)
+		) {
 			throw new WebRtcContextError(
 				"ConfigurationError",
 				"targetId is mandatory for the requested playback type",
 			);
 		}
-		const context = await this.setupContext(videoElement);
+		const context = await this.setupContext(options.videoElement);
 
 		const request = new PlaybackVideoRequestParamObject(
-			recordingDetails.build(this.options.targetId),
+			options.recordingDetails.build(this.options.targetId),
 		);
 		request.setOrgId(this.options.orgId);
-		request.setAutoplay(autoPlay);
-		if (offset) {
-			request.setOffset(offset);
+		request.setAutoplay(options.autoPlay);
+		if (options.offset) {
+			request.setOffset(options.offset);
 		}
 
 		const playbackContext = new PlaybackContext(context, this.options);

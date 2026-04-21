@@ -11,7 +11,7 @@ Note: If audio is requested it will start playback with mute=true and volume=0.0
 **Signature:**
 
 ```typescript
-startLiveStream(input: LiveStreamOptions): Promise<WebRtcLiveStreamContext>;
+startLiveStream(options: LiveStreamOptions): Promise<WebRtcLiveStreamContext>;
 ```
 
 ## Parameters
@@ -34,21 +34,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-{ streamDetails, videoElement, }
-
-
-</td><td>
-
-(not declared)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-input
+options
 
 
 </td><td>
