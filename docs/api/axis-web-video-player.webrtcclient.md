@@ -66,7 +66,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[startLiveStream({ streamDetails, videoElement, }, input)](./axis-web-video-player.webrtcclient.startlivestream.md)
+[startLiveStream(options)](./axis-web-video-player.webrtcclient.startlivestream.md)
 
 
 </td><td>
@@ -82,7 +82,7 @@ Note: If audio is requested it will start playback with mute=true and volume=0.0
 </td></tr>
 <tr><td>
 
-[startPlayback({ recordingDetails, videoElement, autoPlay, offset, }, input)](./axis-web-video-player.webrtcclient.startplayback.md)
+[startPlayback(options)](./axis-web-video-player.webrtcclient.startplayback.md)
 
 
 </td><td>

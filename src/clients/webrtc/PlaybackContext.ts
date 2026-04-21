@@ -69,14 +69,14 @@ export class PlaybackContext<T extends RecordingDetails> extends WebRtcContext {
 	 * Change to a different recording on the same target.
 	 * @param options Options for playback of the new recording.
 	 */
-	async changeRecording({ recordingDetails, autoPlay, offset }: ChangeRecordingOptions<T>) {
+	async changeRecording(options: ChangeRecordingOptions<T>) {
 		const request = new PlaybackVideoRequestParamObject(
-			recordingDetails.build(this.options.targetId),
+			options.recordingDetails.build(this.options.targetId),
 		);
 		request.setOrgId(this.options.orgId);
-		request.setAutoplay(autoPlay);
-		if (offset) {
-			request.setOffset(offset);
+		request.setAutoplay(options.autoPlay);
+		if (options.offset) {
+			request.setOffset(options.offset);
 		}
 		await this.requestPlayback(request);
 	}
