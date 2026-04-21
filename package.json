@@ -21,7 +21,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.8",
     "@microsoft/api-documenter": "7.29.7",
-    "@microsoft/api-extractor": "7.57.7",
+    "@microsoft/api-extractor": "7.58.2",
     "@types/lodash.merge": "4.6.9",
     "tsdown": "^0.21.7",
     "type-fest": "5.5.0",
