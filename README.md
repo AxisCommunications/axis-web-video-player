@@ -24,11 +24,11 @@ npm install @axiscommunications/axis-web-video-player
 
 ### Api reference
 
-See the [API reference](./docs/api/axis-web-video-player.md) for detailed information about the classes and interfaces in the Axis Web Video Player.
+See the [API reference](https://github.com/AxisCommunications/axis-web-video-player/blob/main/docs/api/axis-web-video-player.md) for detailed information about the classes and interfaces in the Axis Web Video Player.
 
 ### Code example
 
-See the [code example](./example/README.md) for a basic example on how to use the Axis Web Video Player.
+See the [code example](https://github.com/AxisCommunications/axis-web-video-player/blob/main/example/README.md) for a basic example on how to use the Axis Web Video Player.
 
 ### Build and run the example
 
