@@ -12,16 +12,6 @@ body {
 	padding: 20px 0;
 }
 
-.login-screen {
-	height: 100%;
-	width: 100%;
-	display: flex;
-}
-
-.login-screen > button {
-	margin: auto;
-}
-
 .video-container {
 	height: 100%;
 	width: 100%;

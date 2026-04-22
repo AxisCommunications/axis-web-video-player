@@ -29,17 +29,3 @@ See the [API reference](./docs/api/axis-web-video-player.md) for detailed inform
 ### Code example
 
 See the [code example](./example/README.md) for a basic example on how to use the Axis Web Video Player.
-
-### Build and run the example
-
-1. `cp example/.env.local{.template,}`
-
-2. Update `example/.env.local` with your settings
-    - Change VITE_VIDEO_ORG_ID to your organization id and VITE_VIDEO_TARGET_ID to your device target id.
-    - Change VITE_OIDC_CLIENT_ID and VITE_OIDC_ENDPOINT.
-
-3. `npm install && npm run build && (cd example && npm install)`
-
-4. `npm run example`
-
-5. Open the URL printed by the server in 4. in a web browser.
