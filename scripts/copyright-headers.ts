@@ -23,7 +23,7 @@ enum Mode {
 const args = process.argv.slice(2);
 
 function printUsage(): never {
-	console.error("Usage: ts-node copyright-headers.ts <check | fix> <startPath> [startPath2 ...]");
+	console.error("Usage: tsx copyright-headers.ts <check | fix> <startPath> [startPath2 ...]");
 	process.exit(1);
 }
 
