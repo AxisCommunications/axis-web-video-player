@@ -9,14 +9,12 @@
     "start-server": "tsx src/server/server.ts"
   },
   "devDependencies": {
-    "@types/express": "5.0.6",
     "@types/node": "25.6.0",
     "tsx": "4.21.0",
     "vite": "8.0.9",
     "vite-plugin-wasm": "3.6.0"
   },
   "dependencies": {
-    "@axiscommunications/axis-web-video-player": "file:..",
-    "oidc-client-ts": "3.5.0"
+    "@axiscommunications/axis-web-video-player": "file:.."
   }
 }
