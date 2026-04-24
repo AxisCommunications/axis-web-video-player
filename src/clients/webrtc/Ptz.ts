@@ -91,6 +91,10 @@ export class Ptz {
 		await promise;
 	}
 
+	setReady() {
+		this.setState(PtzState.Ready);
+	}
+
 	private setState(state: PtzState) {
 		if (state !== this.state) {
 			this.state = state;

@@ -256,6 +256,28 @@ Options for the [CloudStorageRecordingDetails](./axis-web-video-player.cloudstor
 </td></tr>
 <tr><td>
 
+[DewarpParameters](./axis-web-video-player.dewarpparameters.md)
+
+
+</td><td>
+
+Parameters for image dewarping
+
+
+</td></tr>
+<tr><td>
+
+[DigitalPtzOptions](./axis-web-video-player.digitalptzoptions.md)
+
+
+</td><td>
+
+Options for Digital PTZ
+
+
+</td></tr>
+<tr><td>
+
 [EdgeLiveStreamDetailsOptions](./axis-web-video-player.edgelivestreamdetailsoptions.md)
 
 

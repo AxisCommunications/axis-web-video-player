@@ -56,6 +56,25 @@ Whether to start playing the recording directly
 </td></tr>
 <tr><td>
 
+[digitalPtz?](./axis-web-video-player.playbackoptions.digitalptz.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[DigitalPtzOptions](./axis-web-video-player.digitalptzoptions.md)
+
+
+</td><td>
+
+_(Optional)_ Options for Digital PTZ
+
+
+</td></tr>
+<tr><td>
+
 [offset?](./axis-web-video-player.playbackoptions.offset.md)
 
 
