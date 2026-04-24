@@ -1,9 +1,6 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-	readonly VITE_OIDC_CLIENT_ID: string;
-	readonly VITE_OIDC_ENDPOINT: string;
-	readonly VITE_OIDC_REDIRECT_URI: string;
 	readonly VITE_VIDEO_ORG_ID: string;
 	readonly VITE_VIDEO_TARGET_ID: string;
 	readonly VITE_VIDEO_SIGNALING_URL: string;

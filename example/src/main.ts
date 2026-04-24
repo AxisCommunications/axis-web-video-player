@@ -6,7 +6,7 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import { type OidcClient, setupOidc } from "./oidc";
+import { AuthClient } from "./auth";
 import * as AxisWebVideoPlayer from "@axiscommunications/axis-web-video-player";
 import { startLiveStream } from "./live";
 import {
@@ -15,8 +15,8 @@ import {
 } from "@axiscommunications/axis-web-video-player";
 import { startPlayback } from "./playback";
 
-async function connectToSignalingServer(oidcClient: OidcClient): Promise<SignalingConnection> {
-	const signalingClient = new SignalingClient(oidcClient.createOnTokenRequest());
+async function connectToSignalingServer(authClient: AuthClient): Promise<SignalingConnection> {
+	const signalingClient = new SignalingClient(authClient.createOnTokenRequest());
 	if (import.meta.env.VITE_VIDEO_SIGNALING_URL) {
 		signalingClient.setUrl(import.meta.env.VITE_VIDEO_SIGNALING_URL);
 	}
@@ -33,15 +33,15 @@ AxisWebVideoPlayer.axisWebVideoInit().then(async () => {
 		throw new Error("Could not find element in DOM");
 	}
 
-	const oidcClient = await setupOidc();
+	const authClient = new AuthClient();
 
-	const signalingConnection = await connectToSignalingServer(oidcClient);
+	const signalingConnection = await connectToSignalingServer(authClient);
 
 	videoContainer.style.display = "flex";
 
 	switch (import.meta.env.VITE_EXAMPLE_TYPE) {
 		case "live":
-			startLiveStream(signalingConnection, oidcClient.createOnTokenRequest(), videoElement);
+			startLiveStream(signalingConnection, authClient.createOnTokenRequest(), videoElement);
 			break;
 		case "playback": {
 			const playbackControls = document.querySelector<HTMLDivElement>("#playback-controls");
@@ -49,7 +49,7 @@ AxisWebVideoPlayer.axisWebVideoInit().then(async () => {
 				throw new Error("Could not find element in DOM");
 			}
 			playbackControls.style.display = "flex";
-			startPlayback(signalingConnection, oidcClient.createOnTokenRequest(), videoElement);
+			startPlayback(signalingConnection, authClient.createOnTokenRequest(), videoElement);
 			break;
 		}
 	}
