@@ -29,4 +29,3 @@ See the [API reference](https://github.com/AxisCommunications/axis-web-video-pla
 ### Code example
 
 See the [code example](https://github.com/AxisCommunications/axis-web-video-player/blob/main/example/README.md) for a basic example on how to use the Axis Web Video Player.
-
