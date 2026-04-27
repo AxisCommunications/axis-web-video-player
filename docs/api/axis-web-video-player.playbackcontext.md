@@ -37,6 +37,22 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[center(x, y)](./axis-web-video-player.playbackcontext.center.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Centers the view on the provided coordinates. The coordinates are in pixels, relative to the video container HTML element. The offsetX/offsetY parameters from a click event handler on the video container element can be used unmodified.
+
+Throws if digital PTZ isn't configured
+
+
+</td></tr>
+<tr><td>
+
 [changeRecording(options)](./axis-web-video-player.playbackcontext.changerecording.md)
 
 
@@ -132,6 +148,38 @@ Start playing.
 </td><td>
 
 Sets a callback for when the playback position is updated.
+
+
+</td></tr>
+<tr><td>
+
+[zoomContinuous(velocity)](./axis-web-video-player.playbackcontext.zoomcontinuous.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Zooms continuously with the provided velocity.
+
+Throws if digital PTZ isn't configured
+
+
+</td></tr>
+<tr><td>
+
+[zoomRelative(steps)](./axis-web-video-player.playbackcontext.zoomrelative.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Zooms by the provided number of steps relative to the current position.
+
+Throws if digital PTZ isn't configured
 
 
 </td></tr>

@@ -20,6 +20,7 @@ import { WebRtcContextError } from "./WebRtcContextError";
 import { CloudStorageRecordingDetails, type RecordingDetails } from "./recording-details";
 import { PlaybackContext } from "./PlaybackContext";
 import { convertPurpose, convertToken, type TokenRequestCallback } from "../../auth";
+import { convertDewarpParameters, type DewarpParameters } from "./DigitalPtz";
 
 /**
  * Options for the WebRtcClient.
@@ -65,6 +66,11 @@ export interface LiveStreamOptions {
 	 * ```
 	 */
 	streamDetails: StreamDetails;
+
+	/**
+	 * Options for Digital PTZ
+	 */
+	digitalPtz?: DigitalPtzOptions;
 }
 
 /**
@@ -95,6 +101,25 @@ export interface PlaybackOptions<T extends RecordingDetails> {
 	 * Offset in seconds from the specified recording start to begin playback from
 	 */
 	offset?: number;
+
+	/**
+	 * Options for Digital PTZ
+	 */
+	digitalPtz?: DigitalPtzOptions;
+}
+
+/**
+ * Options for Digital PTZ
+ */
+export interface DigitalPtzOptions {
+	/**
+	 * Whether to enable digital PTZ
+	 */
+	enabled: boolean;
+	/**
+	 * Parameters for image dewarping
+	 */
+	dewarpParameters?: DewarpParameters;
 }
 
 declare global {
@@ -133,8 +158,23 @@ export class WebRtcClient {
 		request.setAudioReceive(options.streamDetails.withAudioReceive);
 		request.setAudioSend(options.streamDetails.withAudioSend);
 
+		if (options.digitalPtz?.enabled) {
+			request.setUseVirtualPtz(true);
+			const dewarpParameters = options.digitalPtz?.dewarpParameters;
+			if (dewarpParameters) {
+				const internalDewarpParameters = convertDewarpParameters(dewarpParameters);
+				request.setDewarpParameters(
+					internalDewarpParameters.radialDistortion,
+					internalDewarpParameters.opticalCenter,
+					internalDewarpParameters.mountOrientation,
+				);
+			}
+		}
+
 		// Create wrapper for the context to register listeners before the request is sent.
-		const liveContext = new WebRtcLiveStreamContext(context);
+		const liveContext = new WebRtcLiveStreamContext(context, {
+			digitalPtz: options.digitalPtz?.enabled ?? false,
+		});
 
 		try {
 			await context.requestLive(request);
@@ -180,6 +220,19 @@ export class WebRtcClient {
 			request.setOffset(options.offset);
 		}
 
+		if (options.digitalPtz?.enabled) {
+			request.setUseVirtualPtz(true);
+			const dewarpParameters = options.digitalPtz?.dewarpParameters;
+			if (dewarpParameters) {
+				const internalDewarpParameters = convertDewarpParameters(dewarpParameters);
+				request.setDewarpParameters(
+					internalDewarpParameters.radialDistortion,
+					internalDewarpParameters.opticalCenter,
+					internalDewarpParameters.mountOrientation,
+				);
+			}
+		}
+
 		const playbackContext = new PlaybackContext(context, this.options);
 
 		try {
@@ -201,7 +254,7 @@ export class WebRtcClient {
 
 	private async setupContext(videoElement: HTMLElement): Promise<WebRtcContext> {
 		const signalingHandler = this.options.signalingConnection.getSignalingHandler();
-		const context = new WebRtcContext(signalingHandler, videoElement);
+		const context = new WebRtcContext(signalingHandler, videoElement, true);
 		await context.setDeviceTokenCallback(async (_url, _method, purposes) => {
 			const token = await this.options.tokenRequestCallback({
 				purposes: purposes.map(convertPurpose),
