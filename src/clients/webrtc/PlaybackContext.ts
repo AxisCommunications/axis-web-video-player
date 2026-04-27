@@ -101,6 +101,51 @@ export class PlaybackContext<T extends RecordingDetails> extends WebRtcContext {
 		return new Date(position);
 	}
 
+	/**
+	 * Zooms by the provided number of steps relative to the current position.
+	 *
+	 * Throws if digital PTZ isn't configured
+	 * @param steps The number of steps to zoom. Positive numbers zoom in, negative numbers zoom out. Range -9999...9999.
+	 */
+	async zoomRelative(steps: number): Promise<void> {
+		try {
+			await this.context.ptzRelativeZoom(steps);
+		} catch (error) {
+			throw WebRtcContextError.fromWebRtcError(error as WebRtcError);
+		}
+	}
+
+	/**
+	 * Zooms continuously with the provided velocity.
+	 *
+	 * Throws if digital PTZ isn't configured
+	 * @param velocity The zoom velocity. Positive numbers zoom in, negative numbers zoom out. 0 stops the zooming. Range -100...100.
+	 */
+	async zoomContinuous(velocity: number): Promise<void> {
+		try {
+			await this.context.ptzContinuousZoom(velocity);
+		} catch (error) {
+			throw WebRtcContextError.fromWebRtcError(error as WebRtcError);
+		}
+	}
+
+	/**
+	 * Centers the view on the provided coordinates.
+	 * The coordinates are in pixels, relative to the video container HTML element.
+	 * The offsetX/offsetY parameters from a click event handler on the video container element can be used unmodified.
+	 *
+	 * Throws if digital PTZ isn't configured
+	 * @param x x coordinate.
+	 * @param y y coordinate.
+	 */
+	async center(x: number, y: number): Promise<void> {
+		try {
+			await this.context.ptzCenter(x, y);
+		} catch (error) {
+			throw WebRtcContextError.fromWebRtcError(error as WebRtcError);
+		}
+	}
+
 	private async requestPlayback(request: PlaybackVideoRequestParamObject) {
 		// We need to save these in order to restore
 		// them after requestPlayback, since it will reset audio settings

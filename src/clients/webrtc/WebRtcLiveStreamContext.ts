@@ -8,6 +8,10 @@ import { WebRtcContext } from "./WebRtcContext";
 import { WebRtcContextError } from "./WebRtcContextError";
 import { Ptz, PtzPreset } from "./Ptz";
 
+export interface LiveStreamContextOptions {
+	digitalPtz: boolean;
+}
+
 /**
  * Context for a live stream WebRTC communication.
  */
@@ -17,16 +21,20 @@ export class WebRtcLiveStreamContext extends WebRtcContext {
 	/**
 	 * @internal
 	 */
-	constructor(context: InnerWebRtcContext) {
+	constructor(context: InnerWebRtcContext, options: LiveStreamContextOptions) {
 		super(context);
 
 		this.ptz = new Ptz();
-		// Create a weak reference to the ptz object so that it doesn't keep the context alive.
-		const weakPtz = new WeakRef(this.ptz);
-		const eventCallback = (event: WebRtcEvent) => {
-			weakPtz.deref()?.onEvent(event);
-		};
-		this.context.setEventHandler(eventCallback);
+		if (options.digitalPtz) {
+			this.ptz.setReady();
+		} else {
+			// Create a weak reference to the ptz object so that it doesn't keep the context alive.
+			const weakPtz = new WeakRef(this.ptz);
+			const eventCallback = (event: WebRtcEvent) => {
+				weakPtz.deref()?.onEvent(event);
+			};
+			this.context.setEventHandler(eventCallback);
+		}
 	}
 
 	/**

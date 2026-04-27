@@ -18,8 +18,9 @@ export {
 	type CloudStorageRecordingDetailsOptions,
 	type RecordingDetails,
 } from "./recording-details";
+export type { DewarpParameters } from "./DigitalPtz";
 export * from "./PlaybackContext";
 export { PtzPreset } from "./Ptz";
 export * from "./WebRtcContext";
 export * from "./WebRtcContextError";
-export * from "./WebRtcLiveStreamContext";
+export { WebRtcLiveStreamContext } from "./WebRtcLiveStreamContext";

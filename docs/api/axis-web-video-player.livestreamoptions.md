@@ -37,6 +37,25 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[digitalPtz?](./axis-web-video-player.livestreamoptions.digitalptz.md)
+
+
+</td><td>
+
+
+</td><td>
+
+[DigitalPtzOptions](./axis-web-video-player.digitalptzoptions.md)
+
+
+</td><td>
+
+_(Optional)_ Options for Digital PTZ
+
+
+</td></tr>
+<tr><td>
+
 [streamDetails](./axis-web-video-player.livestreamoptions.streamdetails.md)
 
 
