@@ -8,7 +8,9 @@
   "scripts": {
     "build": "tsdown src/index.ts --config tsdown.config.ts",
     "fix": "biome check . --write --unsafe && biome format . --write",
-    "lint-ci": "npm run build && biome ci . && cd example && tsc",
+    "lint-ci": "npm run build && biome ci . && (cd example && tsc) && npm run headers:check",
+    "headers:check": "tsx scripts/copyright-headers.ts check src/ example/",
+    "headers:fix": "tsx scripts/copyright-headers.ts fix src/ example/",
     "docs": "./scripts/generate-docs.sh",
     "example": "npm ci && npm run build && cd example && npm run example",
     "prepublishOnly": "./scripts/prepare-publish.sh"
@@ -23,7 +25,9 @@
     "@microsoft/api-documenter": "7.29.7",
     "@microsoft/api-extractor": "7.58.2",
     "@types/lodash.merge": "4.6.9",
+    "@types/node": "^25.6.0",
     "tsdown": "^0.21.7",
+    "tsx": "^4.21.0",
     "type-fest": "5.5.0",
     "typescript": "6.0.2"
   },

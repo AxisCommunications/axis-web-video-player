@@ -1,3 +1,11 @@
+/**
+ * Copyright (C) Axis Communications AB, Lund, Sweden
+ *
+ * Use of this source code is governed by an MIT-style
+ * license that can be found in the LICENSE.md file or at
+ * https://opensource.org/licenses/MIT.
+ */
+
 import type { AcsProStreamDetailsBuildObject } from "./AcsProStreamDetails";
 import type { EdgeLiveStreamDetailsBuildObject } from "./EdgeLiveStreamDetails";
 import type { EdgeProfileStreamDetailsBuildObject } from "./EdgeProfileStreamDetails";
