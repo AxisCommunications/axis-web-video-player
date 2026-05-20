@@ -1,3 +1,5 @@
+*©2006 Axis Communications AB. AXIS COMMUNICATIONS, AXIS, ARTPEC and VAPIX are registered trademarks of Axis AB in various jurisdictions. All other trademarks are the property of their respective owners.*
+
 # Axis Web Video Player
 
 ## Overview
@@ -29,3 +31,7 @@ See the [API reference](https://github.com/AxisCommunications/axis-web-video-pla
 ### Code example
 
 See the [code example](https://github.com/AxisCommunications/axis-web-video-player/blob/main/example/README.md) for a basic example on how to use the Axis Web Video Player.
+
+## License
+
+[MIT](./LICENSE.md)
