@@ -3,7 +3,9 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-const COPYRIGHT_HEADER = `/**
+const MIN_YEAR = 2026;
+
+const LEGACY_COPYRIGHT_HEADER = `/**
  * Copyright (C) Axis Communications AB, Lund, Sweden
  *
  * Use of this source code is governed by an MIT-style
@@ -12,6 +14,9 @@ const COPYRIGHT_HEADER = `/**
  */
 
 `;
+
+const COPYRIGHT_HEADER_REGEX =
+	/^\/\*\*\n \* Copyright \(C\) (\d{4}) Axis Communications AB, Lund, Sweden\n \*\n \* Use of this source code is governed by an MIT-style\n \* license that can be found in the LICENSE.md file or at\n \* https:\/\/opensource.org\/licenses\/MIT\.\n \*\/\n\n/;
 
 const EXCLUDES = ["vite.config.ts", "vite-env.d.ts"];
 
@@ -40,6 +45,22 @@ if (modeFlag === "check") {
 const startPaths = args.slice(1);
 if (startPaths.length === 0) {
 	printUsage();
+}
+
+function getCurrentYear(): number {
+	return new Date().getFullYear();
+}
+
+function getCopyrightHeader(year: number): string {
+	return `/**
+ * Copyright (C) ${year} Axis Communications AB, Lund, Sweden
+ *
+ * Use of this source code is governed by an MIT-style
+ * license that can be found in the LICENSE.md file or at
+ * https://opensource.org/licenses/MIT.
+ */
+
+`;
 }
 
 function collectTsFiles(dir: string): string[] {
@@ -71,20 +92,47 @@ function collectTsFiles(dir: string): string[] {
 
 function checkHeader(filePath: string): boolean {
 	const content = fs.readFileSync(filePath, "utf8");
-	if (!content.startsWith(COPYRIGHT_HEADER)) {
+	const match = content.match(COPYRIGHT_HEADER_REGEX);
+	if (!match) {
 		console.error(`Missing copyright header: ${filePath}`);
 		return false;
 	}
+
+	const year = Number(match[1]);
+	const currentYear = getCurrentYear();
+	if (year < MIN_YEAR || year > currentYear) {
+		console.error(
+			`Invalid copyright year in ${filePath}: ${year}. Expected between ${MIN_YEAR} and ${currentYear}.`,
+		);
+		return false;
+	}
+
 	return true;
 }
 
 function addHeader(filePath: string): void {
 	const content = fs.readFileSync(filePath, "utf8");
-	if (content.startsWith(COPYRIGHT_HEADER)) {
+	const currentYear = getCurrentYear();
+	const expectedHeader = getCopyrightHeader(currentYear);
+
+	if (content.startsWith(expectedHeader)) {
 		return;
 	}
-	fs.writeFileSync(filePath, COPYRIGHT_HEADER + content, "utf8");
-	console.log(`Added copyright header header to ${filePath}`);
+
+	let updatedContent: string;
+	const match = content.match(COPYRIGHT_HEADER_REGEX);
+	if (match) {
+		updatedContent = expectedHeader + content.slice(match[0].length);
+	} else if (content.startsWith(LEGACY_COPYRIGHT_HEADER)) {
+		updatedContent = expectedHeader + content.slice(LEGACY_COPYRIGHT_HEADER.length);
+	} else {
+		updatedContent = expectedHeader + content;
+	}
+
+	if (updatedContent !== content) {
+		fs.writeFileSync(filePath, updatedContent, "utf8");
+		console.log(`Updated copyright header in ${filePath}`);
+	}
 }
 
 const allFiles: string[] = [];

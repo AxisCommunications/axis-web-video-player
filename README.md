@@ -1,3 +1,5 @@
+*©2006 Axis Communications AB. AXIS COMMUNICATIONS, AXIS, ARTPEC and VAPIX are registered trademarks of Axis AB in various jurisdictions. All other trademarks are the property of their respective owners.*
+
 # Axis Web Video Player
 
 ## Overview
