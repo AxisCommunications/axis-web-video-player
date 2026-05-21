@@ -19,7 +19,7 @@
   "collaborators": [
     "Axis Communications AB"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
     "@microsoft/api-documenter": "7.30.5",
