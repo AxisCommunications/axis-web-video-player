@@ -24,7 +24,7 @@ Package can then be installed with:
 npm install @axiscommunications/axis-web-video-player
 ```
 
-### Api reference
+### API reference
 
 See the [API reference](./docs/api/axis-web-video-player.md) for detailed information about the classes and interfaces in the Axis Web Video Player.
 
