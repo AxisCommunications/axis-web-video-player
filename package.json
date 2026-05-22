@@ -1,7 +1,7 @@
 {
   "name": "@axiscommunications/axis-web-video-player",
   "version": "1.1.0",
-  "description": "Axis Web Video player",
+  "description": "Axis Web Video Player",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -19,7 +19,7 @@
   "collaborators": [
     "Axis Communications AB"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
     "@microsoft/api-documenter": "7.30.5",
