@@ -20,6 +20,10 @@
     "Axis Communications AB"
   ],
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/AxisCommunications/axis-web-video-player.git",
+    "type": "git"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
     "@microsoft/api-documenter": "7.30.5",
