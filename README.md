@@ -10,7 +10,7 @@ The Axis Web Video Player makes it easy to use Axis camera video inside a browse
 
 ### Installation
 
-The Axis Web Video Player is packaged as an npm package published to AxisCommunications github NPM registry.
+The Axis Web Video Player is packaged as an NPM package published to AxisCommunications github NPM registry.
 
 To access packages from github NPM registry you need to provide a Personal Access Token to NPM. Add the following lines to your `~/.npmrc`:
 ```sh
@@ -24,7 +24,7 @@ Package can then be installed with:
 npm install @axiscommunications/axis-web-video-player
 ```
 
-### Api reference
+### API reference
 
 See the [API reference](./docs/api/axis-web-video-player.md) for detailed information about the classes and interfaces in the Axis Web Video Player.
 
@@ -34,7 +34,7 @@ See the [code example](./example/README.md) for a basic example on how to use th
 
 ### WebAssembly binary, bundling and CSP
 
-The published npm package built from this repository includes a WebAssembly binary that contains the vast majority of the application logic. It includes performance-sensitive media features for live and playback functionality as well as Axis-specific signaling protocols (used in WebRTC).
+The published NPM package built from this repository includes a WebAssembly binary that contains the vast majority of the application logic. It includes performance-sensitive media features for live and playback functionality as well as Axis-specific signaling protocols (used in WebRTC).
 That packaged WebAssembly binary is located in the bundled file `webrtcvideo_bg.wasm`, and it is loaded at runtime by the dependency initialization code.
 
 #### Bundler behavior and path resolution
@@ -46,7 +46,7 @@ This means your build must:
 - preserve a working URL from the emitted JS to the emitted wasm file,
 - serve the wasm file with `Content-Type: application/wasm`.
 
-Usually a modern bundler will do all this for you, but some bundlers may fail to detect or emit wasm assets correctly when dependencies are transformed, externalized, or copied without their adjacent binary files. If you see runtime fetch/404 errors for `webrtcvideo_bg.wasm`, verify the emitted asset path and bundler wasm handling in the npm package build.
+Usually a modern bundler will do all this for you, but some bundlers may fail to detect or emit wasm assets correctly when dependencies are transformed, externalized, or copied without their adjacent binary files. If you see runtime fetch/404 errors for `webrtcvideo_bg.wasm`, verify the emitted asset path and bundler wasm handling in the NPM package build.
 
 The example app in this repository enables wasm handling in Vite via `vite-plugin-wasm` so you can verify the published package behavior in a browser build.
 
@@ -72,4 +72,4 @@ Notes:
 
 ## License
 
-The repository source code is MIT-licensed. See [LICENSE.md](./LICENSE.md) for the repository license and [LICENSE-NPM.md](./LICENSE-NPM.md) for the separate terms that apply to the bundled wasm binary in the npm package.
+The repository source code is MIT-licensed. See [LICENSE.md](./LICENSE.md) for the repository license and [LICENSE-NPM.md](./LICENSE-NPM.md) for the separate terms that apply to the bundled wasm binary in the NPM package.
