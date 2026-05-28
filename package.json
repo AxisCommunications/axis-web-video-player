@@ -19,7 +19,7 @@
   "collaborators": [
     "Axis Communications AB"
   ],
-  "license": "(MIT AND UNLICENSED)",
+  "license": "SEE LICENSE IN LICENSE-NPM.md",
   "repository": {
     "url": "https://github.com/AxisCommunications/axis-web-video-player.git",
     "type": "git"
