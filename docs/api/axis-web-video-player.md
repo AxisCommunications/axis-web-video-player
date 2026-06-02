@@ -171,32 +171,6 @@ Context for a live stream WebRTC communication.
 </td></tr>
 </tbody></table>
 
-## Enumerations
-
-<table><thead><tr><th>
-
-Enumeration
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[PlaybackSpeed](./axis-web-video-player.playbackspeed.md)
-
-
-</td><td>
-
-Available playback speeds
-
-
-</td></tr>
-</tbody></table>
-
 ## Functions
 
 <table><thead><tr><th>

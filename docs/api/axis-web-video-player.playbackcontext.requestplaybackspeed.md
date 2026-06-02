@@ -11,7 +11,7 @@ Note: It is possible that the browser does not support the requested speed. Chec
 **Signature:**
 
 ```typescript
-requestPlaybackSpeed(speed: PlaybackSpeed): Promise<number>;
+requestPlaybackSpeed(speed: number): Promise<number>;
 ```
 
 ## Parameters
@@ -39,7 +39,7 @@ speed
 
 </td><td>
 
-[PlaybackSpeed](./axis-web-video-player.playbackspeed.md)
+number
 
 
 </td><td>
