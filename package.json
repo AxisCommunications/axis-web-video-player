@@ -36,7 +36,7 @@
     "typescript": "6.0.3"
   },
   "dependencies": {
-    "@axiscommunications/webrtcvideo": "2.15.0"
+    "@axiscommunications/webrtcvideo-lib": "2.23.0"
   },
   "bundleDependencies": [
     "@axiscommunications/webrtcvideo"
