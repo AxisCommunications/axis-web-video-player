@@ -139,6 +139,22 @@ Start playing.
 </td></tr>
 <tr><td>
 
+[requestPlaybackSpeed(speed)](./axis-web-video-player.playbackcontext.requestplaybackspeed.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Request a desired playback speed.
+
+Note: It is possible that the browser does not support the requested speed. Check the return value to see what the actual playback speed is after this function resolves.
+
+
+</td></tr>
+<tr><td>
+
 [setPositionChangedCallback(callback)](./axis-web-video-player.playbackcontext.setpositionchangedcallback.md)
 
 
