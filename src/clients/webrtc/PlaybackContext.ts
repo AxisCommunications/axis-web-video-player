@@ -154,6 +154,18 @@ export class PlaybackContext<T extends RecordingDetails> extends WebRtcContext {
 		}
 	}
 
+	/**
+	 * Request a desired playback speed.
+	 *
+	 * Note: It is possible that the browser does not support the requested speed.
+	 * Check the return value to see what the actual playback speed is after this function resolves.
+	 * @param speed The desired playback speed
+	 * @returns The actual playback speed after the operation
+	 */
+	async requestPlaybackSpeed(speed: number): Promise<number> {
+		return await this.context.setPlaybackSpeed(speed);
+	}
+
 	private async requestPlayback(request: PlaybackVideoRequestParamObject) {
 		// We need to save these in order to restore
 		// them after requestPlayback, since it will reset audio settings
