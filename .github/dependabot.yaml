@@ -13,6 +13,8 @@ updates:
       dependencies-major:
         update-types:
           - "major"
+    cooldown:
+      default-days: 3
   - package-ecosystem: "npm"
     directory: "example"
     versioning-strategy: increase
@@ -26,6 +28,8 @@ updates:
       dependencies-major:
         update-types:
           - "major"
+    cooldown:
+      default-days: 3
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -34,3 +38,5 @@ updates:
       dependencies:
         patterns:
           - "*"
+    cooldown:
+      default-days: 3
