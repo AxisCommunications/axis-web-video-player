@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.0.2
       - name: Get version from package.json
         run: |
           echo RELEASE_VERSION=v$(jq -r .version package.json) >> $GITHUB_ENV
@@ -40,7 +40,7 @@ jobs:
         working-directory: ./
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.0.2
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
