@@ -88,6 +88,23 @@ export class WebRtcLiveStreamContext extends WebRtcContext {
 	}
 
 	/**
+	 * Moves the camera continuously in the specified pan and tilt directions.
+	 * Both speeds must be between -100 and 100, inclusive.
+	 * Speeds greater than zero moves right/top and speeds lower than zero moves left/down.
+	 * Set a speed to zero to stop movement along that axis.
+	 * @param verticalSpeed vertical speed
+	 * @param horizontalSpeed horizontal speed
+	 */
+	async panTiltContinuous(verticalSpeed: number, horizontalSpeed: number) {
+		await this.ptz.waitForPtzReady();
+		try {
+			await this.context.ptzContinuousPanTilt(verticalSpeed, horizontalSpeed);
+		} catch (error) {
+			throw WebRtcContextError.fromWebRtcError(error as WebRtcError);
+		}
+	}
+
+	/**
 	 * Fetches the configured PTZ presets.
 	 * @returns The list of configured PTZ presets.
 	 */
