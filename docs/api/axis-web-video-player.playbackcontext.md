@@ -111,6 +111,22 @@ Note that `Date` only has millisecond precision. If the recording start time has
 </td></tr>
 <tr><td>
 
+[panTiltContinuous(verticalSpeed, horizontalSpeed)](./axis-web-video-player.playbackcontext.pantiltcontinuous.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Moves the camera continuously in the specified pan and tilt directions. Both speeds must be between -100 and 100, inclusive. Speeds greater than zero moves right/top and speeds lower than zero moves left/down. Set a speed to zero to stop movement along that axis.
+
+Throws if digital PTZ isn't configured
+
+
+</td></tr>
+<tr><td>
+
 [pause()](./axis-web-video-player.playbackcontext.pause.md)
 
 

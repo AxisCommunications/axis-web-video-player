@@ -155,6 +155,24 @@ export class PlaybackContext<T extends RecordingDetails> extends WebRtcContext {
 	}
 
 	/**
+	 * Moves the camera continuously in the specified pan and tilt directions.
+	 * Both speeds must be between -100 and 100, inclusive.
+	 * Speeds greater than zero moves right/top and speeds lower than zero moves left/down.
+	 * Set a speed to zero to stop movement along that axis.
+	 *
+	 * Throws if digital PTZ isn't configured
+	 * @param verticalSpeed vertical speed
+	 * @param horizontalSpeed horizontal speed
+	 */
+	async panTiltContinuous(verticalSpeed: number, horizontalSpeed: number) {
+		try {
+			await this.context.ptzContinuousPanTilt(verticalSpeed, horizontalSpeed);
+		} catch (error) {
+			throw WebRtcContextError.fromWebRtcError(error as WebRtcError);
+		}
+	}
+
+	/**
 	 * Request a desired playback speed.
 	 *
 	 * Note: It is possible that the browser does not support the requested speed.
