@@ -25,13 +25,13 @@
     "type": "git"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.7",
-    "@microsoft/api-documenter": "7.30.10",
+    "@biomejs/biome": "2.5.8",
+    "@microsoft/api-documenter": "7.30.11",
     "@microsoft/api-extractor": "7.58.12",
     "@types/lodash.merge": "4.6.9",
     "@types/node": "^26.2.0",
     "tsdown": "^0.22.14",
-    "tsx": "^4.23.11",
+    "tsx": "^4.23.12",
     "type-fest": "5.8.0",
     "typescript": "6.0.3"
   },
