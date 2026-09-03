@@ -1,3 +1,15 @@
+# License
+
+Axis Web Video Player and its bundled dependencies are licensed from three sources:
+
+1. Axis-owned open source code
+2. third party-owned open source code
+3. Axis proprietary code.
+
+Axis-owned open source code is licensed under the license stated below. Third-party owned open source code are licensed under the licenses stated in third-party-licenses.txt bundled with the NPM-packet. Proprietary components not otherwise licensed under the attached open source licenses are licensed by the software's end user under the applicable end user license for the software  solution that utilizes the component. The end user license agreements for Axis software products and solutions can be found at https://www.axis.com/legal/license-agreements.
+
+---
+
 MIT License
 
 Copyright (c) 2026 Axis Communications AB

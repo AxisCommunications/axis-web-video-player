@@ -13,13 +13,15 @@
     "headers:fix": "tsx scripts/copyright-headers.ts fix src/ example/",
     "docs": "./scripts/generate-docs.sh",
     "example": "npm ci && npm run build && cd example && npm run example",
+      "prepack": "./scripts/prepack.sh",
+      "postpack": "./scripts/postpack.sh",
     "prepublishOnly": "./scripts/prepare-publish.sh"
   },
   "author": "Axis Communications AB",
   "collaborators": [
     "Axis Communications AB"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "url": "https://github.com/AxisCommunications/axis-web-video-player.git",
     "type": "git"
@@ -36,13 +38,14 @@
     "typescript": "6.0.3"
   },
   "dependencies": {
-    "@axiscommunications/webrtcvideo": "2.27.0"
+    "@axiscommunications/webrtcvideo": "2.28.0"
   },
   "bundleDependencies": [
     "@axiscommunications/webrtcvideo"
   ],
   "files": [
     "dist",
-    "docs"
+    "docs",
+    "third-party-licenses.txt"
   ]
 }
