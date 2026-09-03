@@ -70,4 +70,4 @@ Notes:
 
 ## License
 
-The repository source code is MIT-licensed. See [LICENSE.md](./LICENSE.md) for the repository license and [LICENSE-NPM.md](./LICENSE-NPM.md) for the separate terms that apply to the bundled wasm binary in the npm package.
+Information about licenses applicable for Axis Web Video Player components is stated in [LICENSE.md](./LICENSE.md).
