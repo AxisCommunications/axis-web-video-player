@@ -6,7 +6,7 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import type { Token, TokenRequest } from "@axiscommunications/axis-web-video-player";
+import type { Token, TokenRequest } from "@axis-communications/axis-web-video-player";
 
 export class AuthClient {
 	createOnTokenRequest(): (request: TokenRequest) => Promise<Token> {

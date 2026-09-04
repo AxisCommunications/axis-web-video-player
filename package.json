@@ -1,5 +1,5 @@
 {
-  "name": "@axiscommunications/axis-web-video-player",
+  "name": "@axis-communications/axis-web-video-player",
   "version": "1.2.0",
   "description": "Axis Web Video Player",
   "main": "dist/index.js",
@@ -13,8 +13,8 @@
     "headers:fix": "tsx scripts/copyright-headers.ts fix src/ example/",
     "docs": "./scripts/generate-docs.sh",
     "example": "npm ci && npm run build && cd example && npm run example",
-      "prepack": "./scripts/prepack.sh",
-      "postpack": "./scripts/postpack.sh",
+    "prepack": "./scripts/prepack.sh",
+    "postpack": "./scripts/postpack.sh",
     "prepublishOnly": "./scripts/prepare-publish.sh"
   },
   "author": "Axis Communications AB",

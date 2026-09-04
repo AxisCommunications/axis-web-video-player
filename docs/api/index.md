@@ -19,7 +19,7 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
-[@axiscommunications/axis-web-video-player](./axis-web-video-player.md)
+[@axis-communications/axis-web-video-player](./axis-web-video-player.md)
 
 
 </td><td>
