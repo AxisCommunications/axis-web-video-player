@@ -10,7 +10,8 @@ on:
 
 permissions:
   contents: write
-  packages: write
+  id-token: write
+  packages: read
 
 jobs:
   create-release:
@@ -47,6 +48,7 @@ jobs:
         with:
           node-version: "24"
           registry-url: "https://npm.pkg.github.com"
+          package-manager-cache: false
       - name: Prepare publish
         run: npm run prepublishOnly
         env:
@@ -57,6 +59,4 @@ jobs:
           if [[ "${{ inputs.release_candidate }}" = "true" ]]; then
             TAG="--tag rc"
           fi
-          npm publish $TAG
-        env:
-          NODE_AUTH_TOKEN: ${{ github.token }}
+          npm publish --registry https://registry.npmjs.org $TAG
