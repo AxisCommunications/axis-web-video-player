@@ -13,7 +13,7 @@ import {
 	type TokenRequestCallback,
 	WebRtcClient,
 	type WebRtcContextError,
-} from "@axiscommunications/axis-web-video-player";
+} from "@axis-communications/axis-web-video-player";
 
 export async function startPlayback(
 	signalingConnection: SignalingConnection,

@@ -7,12 +7,12 @@
  */
 
 import { AuthClient } from "./auth";
-import * as AxisWebVideoPlayer from "@axiscommunications/axis-web-video-player";
+import * as AxisWebVideoPlayer from "@axis-communications/axis-web-video-player";
 import { startLiveStream } from "./live";
 import {
 	SignalingClient,
 	type SignalingConnection,
-} from "@axiscommunications/axis-web-video-player";
+} from "@axis-communications/axis-web-video-player";
 import { startPlayback } from "./playback";
 
 async function connectToSignalingServer(authClient: AuthClient): Promise<SignalingConnection> {

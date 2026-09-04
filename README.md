@@ -1,6 +1,6 @@
 *©2026 Axis Communications AB. AXIS COMMUNICATIONS, AXIS, ARTPEC and VAPIX are registered trademarks of Axis AB in various jurisdictions. All other trademarks are the property of their respective owners.*
 
-# Axis Web Video Player
+# Axis Web Video Player [![npm version](https://img.shields.io/npm/v/@axis-communications/axis-web-video-player.svg?style=flat)](https://www.npmjs.com/package/@axis-communications/axis-web-video-player)
 
 ## Overview
 
@@ -10,18 +10,10 @@ The Axis Web Video Player makes it easy to use Axis camera video inside a browse
 
 ### Installation
 
-The Axis Web Video Player is packaged as an npm package published to AxisCommunications github npm registry.
-
-To access packages from github npm registry you need to provide a Personal Access Token to npm. Add the following lines to your `~/.npmrc`:
-```sh
-@axiscommunications:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=<github_personal_access_token>
-```
-
-Package can then be installed with:
+Install the package from npmjs.com:
 
 ```sh
-npm install @axiscommunications/axis-web-video-player
+npm install @axis-communications/axis-web-video-player
 ```
 
 ### API reference
