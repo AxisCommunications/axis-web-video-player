@@ -9,7 +9,7 @@ Options for the WebRtcClient.
 **Signature:**
 
 ```typescript
-interface WebRtcClientOptions 
+export interface WebRtcClientOptions 
 ```
 
 ## Properties

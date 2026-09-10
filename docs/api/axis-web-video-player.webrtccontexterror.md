@@ -7,7 +7,7 @@
 **Signature:**
 
 ```typescript
-declare class WebRtcContextError extends Error 
+export declare class WebRtcContextError extends Error 
 ```
 **Extends:** Error
 

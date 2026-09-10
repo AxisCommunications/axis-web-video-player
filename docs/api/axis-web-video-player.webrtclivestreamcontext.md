@@ -9,7 +9,7 @@ Context for a live stream WebRTC communication.
 **Signature:**
 
 ```typescript
-declare class WebRtcLiveStreamContext extends WebRtcContext 
+export declare class WebRtcLiveStreamContext extends WebRtcContext 
 ```
 **Extends:** [WebRtcContext](./axis-web-video-player.webrtccontext.md)
 

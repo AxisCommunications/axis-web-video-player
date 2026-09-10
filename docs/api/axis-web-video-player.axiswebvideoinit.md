@@ -9,7 +9,7 @@ Initializes the Axis Web Video library. This function must be called and its pro
 **Signature:**
 
 ```typescript
-declare function axisWebVideoInit(): Promise<void>;
+export declare function axisWebVideoInit(): Promise<void>;
 ```
 **Returns:**
 

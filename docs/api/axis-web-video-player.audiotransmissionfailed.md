@@ -9,5 +9,5 @@ Transmitting audio from the client to the target failed.
 **Signature:**
 
 ```typescript
-type AudioTransmissionFailed = "AudioTransmissionFailed";
+export type AudioTransmissionFailed = "AudioTransmissionFailed";
 ```

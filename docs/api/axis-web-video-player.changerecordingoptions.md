@@ -9,7 +9,7 @@ Options for changing the recording in an active playback session.
 **Signature:**
 
 ```typescript
-type ChangeRecordingOptions<T extends RecordingDetails> = Omit<PlaybackOptions<T>, "videoElement">;
+export type ChangeRecordingOptions<T extends RecordingDetails> = Omit<PlaybackOptions<T>, "videoElement">;
 ```
 **References:** [RecordingDetails](./axis-web-video-player.recordingdetails.md)<!-- -->, [PlaybackOptions](./axis-web-video-player.playbackoptions.md)
 

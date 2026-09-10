@@ -9,7 +9,7 @@ Options for starting playback
 **Signature:**
 
 ```typescript
-interface PlaybackOptions<T extends RecordingDetails> 
+export interface PlaybackOptions<T extends RecordingDetails> 
 ```
 
 ## Properties

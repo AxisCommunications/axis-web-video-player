@@ -9,5 +9,5 @@ The client was not authorized to connect to the target.
 **Signature:**
 
 ```typescript
-type TargetConnectionDenied = "TargetConnectionDenied";
+export type TargetConnectionDenied = "TargetConnectionDenied";
 ```

@@ -9,5 +9,5 @@ Callback function for playback position updates.
 **Signature:**
 
 ```typescript
-type PlaybackPositionChangedCallback = (position: Date) => void;
+export type PlaybackPositionChangedCallback = (position: Date) => void;
 ```

@@ -9,7 +9,7 @@ Callback function for context errors.
 **Signature:**
 
 ```typescript
-type WebRtcContextErrorCallback = (error: WebRtcContextError) => void;
+export type WebRtcContextErrorCallback = (error: WebRtcContextError) => void;
 ```
 **References:** [WebRtcContextError](./axis-web-video-player.webrtccontexterror.md)
 

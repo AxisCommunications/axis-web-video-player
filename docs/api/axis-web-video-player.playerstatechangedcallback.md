@@ -9,7 +9,7 @@ Callback function for player state changes.
 **Signature:**
 
 ```typescript
-type PlayerStateChangedCallback = (state: PlayerState) => void;
+export type PlayerStateChangedCallback = (state: PlayerState) => void;
 ```
 **References:** [PlayerState](./axis-web-video-player.playerstate.md)
 

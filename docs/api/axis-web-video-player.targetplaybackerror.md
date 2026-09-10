@@ -9,5 +9,5 @@ The target could not fulfil the playback request.
 **Signature:**
 
 ```typescript
-type TargetPlaybackError = "TargetPlaybackError";
+export type TargetPlaybackError = "TargetPlaybackError";
 ```

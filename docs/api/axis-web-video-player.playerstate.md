@@ -9,5 +9,5 @@ Possible player states
 **Signature:**
 
 ```typescript
-type PlayerState = "initializing" | "playing" | "paused" | "ended";
+export type PlayerState = "initializing" | "playing" | "paused" | "ended";
 ```

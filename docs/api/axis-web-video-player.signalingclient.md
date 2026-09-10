@@ -9,7 +9,7 @@ Sets up a connection to the signaling server.
 **Signature:**
 
 ```typescript
-declare class SignalingClient 
+export declare class SignalingClient 
 ```
 
 ## Constructors

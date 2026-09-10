@@ -9,5 +9,5 @@ The target is not connected to the signaling server.
 **Signature:**
 
 ```typescript
-type TargetNotConnected = "TargetNotConnected";
+export type TargetNotConnected = "TargetNotConnected";
 ```
