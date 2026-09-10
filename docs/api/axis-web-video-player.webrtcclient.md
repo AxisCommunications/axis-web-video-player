@@ -9,7 +9,7 @@ Client that handles WebRTC communication with a specific target.
 **Signature:**
 
 ```typescript
-declare class WebRtcClient 
+export declare class WebRtcClient 
 ```
 
 ## Constructors

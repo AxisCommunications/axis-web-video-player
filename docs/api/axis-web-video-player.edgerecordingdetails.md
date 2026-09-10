@@ -9,7 +9,7 @@ Details for Edge recordings
 **Signature:**
 
 ```typescript
-declare class EdgeRecordingDetails implements RecordingDetails 
+export declare class EdgeRecordingDetails implements RecordingDetails 
 ```
 **Implements:** [RecordingDetails](./axis-web-video-player.recordingdetails.md)
 

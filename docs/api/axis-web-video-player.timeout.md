@@ -9,5 +9,5 @@ The requested operation timed out.
 **Signature:**
 
 ```typescript
-type Timeout = "Timeout";
+export type Timeout = "Timeout";
 ```

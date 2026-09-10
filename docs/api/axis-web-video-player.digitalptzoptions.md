@@ -9,7 +9,7 @@ Options for Digital PTZ
 **Signature:**
 
 ```typescript
-interface DigitalPtzOptions 
+export interface DigitalPtzOptions 
 ```
 
 ## Properties

@@ -9,7 +9,7 @@ A PTZ preset
 **Signature:**
 
 ```typescript
-declare class PtzPreset 
+export declare class PtzPreset 
 ```
 
 ## Remarks

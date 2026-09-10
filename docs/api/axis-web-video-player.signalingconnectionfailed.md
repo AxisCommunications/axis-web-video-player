@@ -9,5 +9,5 @@ The connection to the signaling server failed.
 **Signature:**
 
 ```typescript
-type SignalingConnectionFailed = "SignalingConnectionFailed";
+export type SignalingConnectionFailed = "SignalingConnectionFailed";
 ```

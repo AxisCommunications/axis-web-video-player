@@ -9,7 +9,7 @@ Details for Cloud Storage recordings
 **Signature:**
 
 ```typescript
-declare class CloudStorageRecordingDetails implements RecordingDetails 
+export declare class CloudStorageRecordingDetails implements RecordingDetails 
 ```
 **Implements:** [RecordingDetails](./axis-web-video-player.recordingdetails.md)
 

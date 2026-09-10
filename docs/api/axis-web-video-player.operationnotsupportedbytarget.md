@@ -9,5 +9,5 @@ A requested operation (typically audio to/from the target) was not supported.
 **Signature:**
 
 ```typescript
-type OperationNotSupportedByTarget = "OperationNotSupportedByTarget";
+export type OperationNotSupportedByTarget = "OperationNotSupportedByTarget";
 ```

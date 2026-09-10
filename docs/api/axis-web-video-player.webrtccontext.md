@@ -9,7 +9,7 @@ Context for a WebRTC communication.
 **Signature:**
 
 ```typescript
-declare class WebRtcContext 
+export declare class WebRtcContext 
 ```
 
 ## Remarks

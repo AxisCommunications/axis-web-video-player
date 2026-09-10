@@ -9,5 +9,5 @@ An error occured which did not fit into any other category.
 **Signature:**
 
 ```typescript
-type OtherError = "OtherError";
+export type OtherError = "OtherError";
 ```

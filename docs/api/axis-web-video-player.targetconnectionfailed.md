@@ -9,5 +9,5 @@ The connection to the target failed.
 **Signature:**
 
 ```typescript
-type TargetConnectionFailed = "TargetConnectionFailed";
+export type TargetConnectionFailed = "TargetConnectionFailed";
 ```

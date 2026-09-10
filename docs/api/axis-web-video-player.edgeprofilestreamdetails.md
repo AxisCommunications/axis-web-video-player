@@ -9,7 +9,7 @@ Use a named stream profile. A stream profile contains a collection of parameters
 **Signature:**
 
 ```typescript
-declare class EdgeProfileStreamDetails implements StreamDetails 
+export declare class EdgeProfileStreamDetails implements StreamDetails 
 ```
 **Implements:** [StreamDetails](./axis-web-video-player.streamdetails.md)
 

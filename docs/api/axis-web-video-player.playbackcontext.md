@@ -9,7 +9,7 @@ Context for a recording playback session.
 **Signature:**
 
 ```typescript
-declare class PlaybackContext<T extends RecordingDetails> extends WebRtcContext 
+export declare class PlaybackContext<T extends RecordingDetails> extends WebRtcContext 
 ```
 **Extends:** [WebRtcContext](./axis-web-video-player.webrtccontext.md)
 

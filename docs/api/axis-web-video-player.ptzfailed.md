@@ -9,5 +9,5 @@ A PTZ operation failed.
 **Signature:**
 
 ```typescript
-type PtzFailed = "PtzFailed";
+export type PtzFailed = "PtzFailed";
 ```

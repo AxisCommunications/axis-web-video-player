@@ -9,7 +9,7 @@ Set stream details such as resolution and framerate for an edge live stream.
 **Signature:**
 
 ```typescript
-declare class EdgeLiveStreamDetails implements StreamDetails 
+export declare class EdgeLiveStreamDetails implements StreamDetails 
 ```
 **Implements:** [StreamDetails](./axis-web-video-player.streamdetails.md)
 

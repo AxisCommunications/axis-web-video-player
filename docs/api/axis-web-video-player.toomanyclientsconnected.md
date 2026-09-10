@@ -9,5 +9,5 @@ The connection to the target was lost because the max number of connected client
 **Signature:**
 
 ```typescript
-type TooManyClientsConnected = "TooManyClientsConnected";
+export type TooManyClientsConnected = "TooManyClientsConnected";
 ```

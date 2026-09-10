@@ -9,5 +9,5 @@ An error occured due to invalid configuration by the library user.
 **Signature:**
 
 ```typescript
-type ConfigurationError = "ConfigurationError";
+export type ConfigurationError = "ConfigurationError";
 ```

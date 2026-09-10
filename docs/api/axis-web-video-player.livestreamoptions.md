@@ -9,7 +9,7 @@ Options for starting a live stream.
 **Signature:**
 
 ```typescript
-interface LiveStreamOptions 
+export interface LiveStreamOptions 
 ```
 
 ## Properties

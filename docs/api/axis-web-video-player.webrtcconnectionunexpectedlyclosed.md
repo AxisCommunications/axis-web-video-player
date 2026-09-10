@@ -9,5 +9,5 @@ The WebRTC connection was unexpectedly closed.
 **Signature:**
 
 ```typescript
-type WebRtcConnectionUnexpectedlyClosed = "WebRtcConnectionUnexpectedlyClosed";
+export type WebRtcConnectionUnexpectedlyClosed = "WebRtcConnectionUnexpectedlyClosed";
 ```

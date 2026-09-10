@@ -9,7 +9,7 @@ Details for ACS Pro recordings
 **Signature:**
 
 ```typescript
-declare class AcsProRecordingDetails implements RecordingDetails 
+export declare class AcsProRecordingDetails implements RecordingDetails 
 ```
 **Implements:** [RecordingDetails](./axis-web-video-player.recordingdetails.md)
 
