@@ -27,11 +27,11 @@
     "type": "git"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.12",
-    "@microsoft/api-documenter": "7.30.13",
-    "@microsoft/api-extractor": "7.59.0",
+    "@biomejs/biome": "2.5.13",
+    "@microsoft/api-documenter": "7.30.14",
+    "@microsoft/api-extractor": "7.59.1",
     "@types/lodash.merge": "4.6.9",
-    "@types/node": "^26.4.1",
+    "@types/node": "^26.5.1",
     "tsdown": "^0.23.0",
     "tsx": "^4.23.13",
     "type-fest": "5.9.0",
