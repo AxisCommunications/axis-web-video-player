@@ -28,10 +28,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
-    "@microsoft/api-documenter": "7.30.15",
-    "@microsoft/api-extractor": "7.59.1",
+    "@microsoft/api-documenter": "7.30.16",
+    "@microsoft/api-extractor": "7.59.2",
     "@types/lodash.merge": "4.6.9",
-    "@types/node": "^26.6.2",
+    "@types/node": "^26.6.3",
     "tsdown": "^0.23.0",
     "tsx": "^4.23.15",
     "type-fest": "5.10.0",
