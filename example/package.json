@@ -9,7 +9,7 @@
     "start-server": "tsx src/server/server.ts"
   },
   "devDependencies": {
-    "@types/node": "25.6.0",
+    "@types/node": "26.6.6",
     "tsx": "4.23.15",
     "vite": "8.3.8",
     "vite-plugin-wasm": "3.6.0"
