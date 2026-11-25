@@ -34,7 +34,7 @@
     "@types/node": "^26.6.6",
     "tsdown": "^0.23.7",
     "tsx": "^4.23.15",
-    "type-fest": "5.10.0",
+    "type-fest": "6.0.3",
     "typescript": "6.0.3"
   },
   "dependencies": {
